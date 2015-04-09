@@ -8,7 +8,7 @@ class TellContext {
   
   def TAIL_FILES = config.get("tail.files","")
   
-  def MATRIX_PERIOD = config.getLong("matrix.period", 1000)
+  def MATRIX_PERIOD = config.getLong("matrix.period", 2000)
   
   def TIME_SLICE = config.getLong("time.slice", 1000)
   

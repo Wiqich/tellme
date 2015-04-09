@@ -14,6 +14,17 @@ object Utils {
   def listToString(lis:Array[_]):String = {
     lis.toString
   }
+  def formate_time(time_o:Long) : Long = {
+    val time = time_o.toString
+    if(time.length() == 10){
+      time.toLong
+    }else{
+      time.substring(0, 10).toLong
+    }
+  }
+  def get_minute(time:Long) :Int = {
+    (time%86400%3600/60).toInt
+  }
   
   def main(args:Array[String]){
     val bbt = base64Decoder("CigyZGYyODdmMjk5MTllY2UzMzQ3YjNiMjc5Y2U5NTRlOTg3OWEzZmRhEKDVjqkFGi0IAxIIZmM5Y2MwMDEaCGFjZmYwMjUwIgIKACoRCg1nLmZhc3RhcGkubmV0EgAiHQoIczM3MzI3ZjQQCBoGCMACEMACIAEomPvJmskpKrQCCAESAggEGhQIARIOQTAwMDAwNDk3NTQ2MEUYASIAKgAy6wFNb3ppbGxhLzUuMCAoTGludXg7IFU7IEFuZHJvaWQgNC4xLjI7IHpoLWNuOyBIVUFXRUkgQzg4MTUgQnVpbGQvSHVhd2VpQzg4MTUpIEFwcGxlV2ViS2l0LzUzMy4xIChLSFRNTCwgbGlrZSBHZWNrbylWZXJzaW9uLzQuMCBNUVFCcm93c2VyLzUuNCBUQlMvMDI1NDEzIE1vYmlsZSBTYWZhcmkvNTMzLjEgVjFfQU5EX1NRXzUuNS4wXzIyOF9ZWUJfRCBRUS81LjUuMC4yNDE1IE5ldFR5cGUvV0lGSSBXZWJQLzAuMy4wOiBEREZCN0RDMEVCMTFDRERBNTUyM0FBQTAwMjcxMTBCRkABSgAyLQgCEAIYAiDsgTEoADAAOABAZEhkUOqSAVjo2nKKAQgxMDA0NDkzNJIBAKABAEAASgoIAhIGCAEQJxgAUhIIABIOMjE4LjIwNS4xNy4yMzVaDmN0cl9tb2RlbDpiYXNlWgRudWxsWg90ZXh0X2ljb25fdHBsOjVaCnRleHRfdHBsOjViBwhWEBAY4wFqDjIxOC4yMDUuMTcuMjM1cAE=")
@@ -25,5 +36,7 @@ object Utils {
     val builder2 :Message.Builder = jesgoo.protocol.Protocol.Event.newBuilder
     builder2.mergeFrom(bbt2.toArray)
     println(builder2.build().toString().replace("/r/n", " "))
+    val t:Long = 1428577142000L
+    println(formate_time(t))
   }
 }

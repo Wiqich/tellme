@@ -1,8 +1,9 @@
 package com.jesgoo.tellme
 
 import scala.collection.mutable.HashMap
+import scala.concurrent.duration.DurationInt
+import scala.concurrent.duration.DurationLong
 
-import com.jesgoo.tellme.config.TellConfig
 import com.jesgoo.tellme.config.TellContext
 import com.jesgoo.tellme.driver.EventExcuteProtoBufCounter
 import com.jesgoo.tellme.driver.NormalCounter
@@ -11,13 +12,12 @@ import com.jesgoo.tellme.driver.TailSource
 import com.jesgoo.tellme.driver.UPDATE_CUT
 import com.jesgoo.tellme.driver.UiExcuteProtoBufCounter
 import com.jesgoo.tellme.matrix.LOAD_DATA
-import com.jesgoo.tellme.matrix.STORE_DATA
 import com.jesgoo.tellme.matrix.MatrixContext
 import com.jesgoo.tellme.matrix.START
+import com.jesgoo.tellme.matrix.STORE_DATA
 import com.jesgoo.tellme.matrix.SnapshotDriver
 import com.jesgoo.tellme.matrix.TableManager
 import com.jesgoo.tellme.tools.Utils
-import scala.concurrent.duration._
 
 import akka.actor.ActorRef
 import akka.actor.ActorSystem
@@ -32,7 +32,7 @@ object TMain {
   val item_ids = new HashMap[String, String]
 
   val protobuf_actor = new HashMap[String, ActorRef]
-
+  
   implicit val system = ActorSystem("Main")
   import system.dispatcher
   def init = {
@@ -91,12 +91,13 @@ object TMain {
     //load之前的tables
     val snap_actor = system.actorOf(Props(new SnapshotDriver(tblm_actor)), name = "snapshot_driver")
     snap_actor ! LOAD_DATA
+    
     //初始化 各个counter
     initActor(matrix_actor)
     //start http server
     println("start http server")
     val handler = system.actorOf(Props(new HttpHandle(tblm_actor)), name = "handler")
-    IO(Http) ! Http.Bind(handler, interface = "0.0.0.0", port = tcontext.HTTP_PORT)
+    IO(Http) ! Http.Bind(handler, interface = "0.0.0.0",port = tcontext.HTTP_PORT)
     
     val cancellable_matrix = system.scheduler.schedule(0 milliseconds,
         tcontext.MATRIX_PERIOD milliseconds, matrix_actor, START)

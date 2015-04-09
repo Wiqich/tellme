@@ -29,6 +29,10 @@ class Table(name: String) {
     }
   }
 
+  def lastCounter :Counter = {
+    counterlist.last
+  }
+  
   def clearCounter() = {
     val cur_time = System.currentTimeMillis()
     for (c <- counterlist.toArray) {

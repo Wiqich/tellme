@@ -1,42 +1,47 @@
 package com.jesgoo.tellme.matrix
 
+import scala.annotation.migration
 import scala.collection.mutable.HashMap
 import com.jesgoo.tellme.TMain
 import akka.actor.Actor
-import akka.actor.ActorSystem
-import akka.actor.Props
+import akka.actor.ActorRef
 import akka.actor.actorRef2Scala
 import akka.event.Logging
-import akka.pattern.ask
 import akka.util.Timeout
-import scala.concurrent.Future
-import scala.concurrent.Await
-import akka.actor.ActorRef
+import com.jesgoo.tellme.tools.Utils
 
 case object START
 case class INCREASE(ins: String)
 
-class MatrixContext(tblm_actor:ActorRef) extends Actor {
+class MatrixContext(tblm_actor: ActorRef) extends Actor {
   val log = Logging(context.system, this)
-  val period = TMain.tcontext.MATRIX_PERIOD
-  val slice = TMain.tcontext.TIME_SLICE
   implicit val timeout = Timeout(1000)
 
   var last_time = System.currentTimeMillis()
 
   val counterNUM = new HashMap[String, Long]
 
+  def follow_feel(cur_time: Long): Boolean = {
+    val m = Utils.get_minute(cur_time)
+    val slice = TMain.tcontext.TIME_SLICE / 1000 / 60
+    if(slice == 0){
+       true
+    }else{
+      m % slice == 0
+    }
+  }
+
   override def receive = {
     case START =>
       val cur_time = System.currentTimeMillis()
-      if (cur_time - last_time >= slice) {
+      if (cur_time - last_time >= (TMain.tcontext.TIME_SLICE * (if (TMain.tcontext.TIME_SLICE >= 120000) 0.95 else 1)) && follow_feel(cur_time)) {
         for (key <- counterNUM.keys) {
           val coun = new Counter(counterNUM.get(key).get)
           counterNUM += (key -> 0)
           tblm_actor ! InsertCountor(key, coun)
         }
         last_time = cur_time
-        tblm_actor!ClearTable
+        tblm_actor ! ClearTable
       }
     case INCREASE(ins) =>
       if (counterNUM.contains(ins)) {
