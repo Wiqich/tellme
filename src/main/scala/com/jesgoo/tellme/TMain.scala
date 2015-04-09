@@ -32,7 +32,7 @@ object TMain {
   val item_ids = new HashMap[String, String]
 
   val protobuf_actor = new HashMap[String, ActorRef]
-  
+
   implicit val system = ActorSystem("Main")
   import system.dispatcher
   def init = {
@@ -96,7 +96,7 @@ object TMain {
     //start http server
     println("start http server")
     val handler = system.actorOf(Props(new HttpHandle(tblm_actor)), name = "handler")
-    IO(Http) ! Http.Bind(handler, interface = "localhost", port = tcontext.HTTP_PORT)
+    IO(Http) ! Http.Bind(handler, interface = "0.0.0.0", port = tcontext.HTTP_PORT)
     
     val cancellable_matrix = system.scheduler.schedule(0 milliseconds,
         tcontext.MATRIX_PERIOD milliseconds, matrix_actor, START)
