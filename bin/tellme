@@ -2,9 +2,9 @@
 cur=`cd $(dirname $0); pwd`
 TYPE=$1
 
-if [ -e "$cur/../conf/tell-env.sh" ]
+if [ -e "$cur/../conf/tellme-env.sh" ]
 then
-    source $cur/../conf/tell-env.sh
+    source $cur/../conf/tellme-env.sh
 fi
 
 if [ "$TELLME_HOME" == "" ]
