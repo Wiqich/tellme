@@ -1,0 +1,52 @@
+#!/bin/bash
+cur=`cd $(dirname $0); pwd`
+TYPE=$1
+
+if [ -e "$cur/../conf/tell-env.sh" ]
+then
+    source $cur/../conf/tell-env.sh
+fi
+
+if [ "$TELLME_HOME" == "" ]
+then
+    TELLME_HOME=`cd $cur/../; pwd`
+fi
+
+if [ "$JAVA_HOME" == "" ]
+then
+    export JAVA_HOME=`dirname $(which java)`
+fi
+
+if [ "$SCALA_HOME" == ""  ]
+then
+    SCALA=`which scala`
+else
+    SCALA=$SCALA_HOME/bin/scala
+fi
+
+if [ "$JAVA_HEAP" == "" ]
+then
+    JAVA_HEAP="1024m"
+fi
+
+TELLME_OPTS="-J-Xmx$JAVA_HEAP -J-Xms$JAVA_HEAP $TELLME_OPTS"
+
+if [ "$TYPE" == "tellme" ]
+then
+    CLASS="com.jesgoo.tellme.TMain"
+else
+    print "TYPE $TYPE ERROR"
+    exit 3
+fi
+
+for i in `ls $TELLME_HOME/tellme-*-jar-with-dependencies.jar`
+do
+    CLASS_PATH=$CLASS_PATH:$i
+done
+CLASS_PATH=$TELLME_HOME$CLASS_PATH:$TELLME_HOME/conf
+
+#exec $SCALA $WHARF_OPTS -cp $CLASS_PATH $CLASS
+#echo exec $SCALA -J"-Xmx$JAVA_HEAP" -J"-Xms$JAVA_HEAP" -J-server  -DWHARF.CONFIG="$WHARF_HOME/conf" -cp $CLASS_PATH $CLASS
+#exec $SCALA -J"-Xmx$JAVA_HEAP" -J"-Xms$JAVA_HEAP" -J-server  -DTELLME.CONFIG="$TELLME_HOME/conf" -cp $CLASS_PATH $CLASS
+echo "exec $JAVA_HOME/bin/java -D"-Xmx$JAVA_HEAP" -D"-Xms$JAVA_HEAP" -cp $CLASS_PATH $CLASS"
+exec $JAVA_HOME/bin/java -D"-Xmx$JAVA_HEAP" -D"-Xms$JAVA_HEAP" -DTELLME.CONFIG="$TELLME_HOME/conf" -cp $CLASS_PATH $CLASS
