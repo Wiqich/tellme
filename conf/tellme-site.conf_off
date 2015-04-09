@@ -1,9 +1,9 @@
 tail.files=/tmp/log,/tmp/text
 
 http.port=9090
-table.ttl.ms=86400000
-time.slice=120000
-config.update.period=120000
+table.ttl.ms=8000
+time.slice=5000
+config.update.period=6000
 
 parser.map=log:EVENT;text:UI
 
