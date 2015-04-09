@@ -39,7 +39,11 @@ else
     exit 3
 fi
 
-for i in `ls $TELLME_HOME/tellme-*-jar-with-dependencies.jar`
+for i in `ls $TELLME_HOME/tellme-*.jar`
+do
+    CLASS_PATH=$CLASS_PATH:$i
+done
+for i in `ls $TELLME_HOME/lib/*.jar`
 do
     CLASS_PATH=$CLASS_PATH:$i
 done
