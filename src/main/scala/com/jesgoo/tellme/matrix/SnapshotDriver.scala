@@ -27,6 +27,7 @@ class SnapshotDriver(tbl_manager: ActorRef) extends Actor {
             tbl_manager ! ADD_TABLE(line)
           }
       }
+      println("LOAD_DATA finish")
     case STORE_DATA =>
       try {
         val dump_tmp_file = new File(dump_file_str + ".tmp")

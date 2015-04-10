@@ -24,6 +24,8 @@ class ParserMessage(mc: ActorRef, actor: ActorRef) extends Actor {
           builder = jesgoo.uilog.Uilog.NoticeLogBody.newBuilder
         }
       }
+    }else{
+      builder.clear
     }
   }
   def receive = {
@@ -40,8 +42,8 @@ class ParserMessage(mc: ActorRef, actor: ActorRef) extends Actor {
         }
       } catch {
         case e: Exception =>
-          e.printStackTrace()
-          mc ! INCREASE("PARSER_MESSAGE:ERRROR")
+          //e.printStackTrace()
+          mc ! INCREASE("PARSER_MESSAGE:ERROR Name="+d.dname)
       }
     case _ => log.info("received unknown message")
   }

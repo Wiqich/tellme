@@ -1777,6 +1777,14 @@ public final class Protocol {
      * <code>XF_DSP = 6;</code>
      */
     XF_DSP(5, 6),
+    /**
+     * <code>BIDDER_DSP = 7;</code>
+     */
+    BIDDER_DSP(6, 7),
+    /**
+     * <code>YOUKU_DSP = 8;</code>
+     */
+    YOUKU_DSP(7, 8),
     ;
 
     /**
@@ -1803,6 +1811,14 @@ public final class Protocol {
      * <code>XF_DSP = 6;</code>
      */
     public static final int XF_DSP_VALUE = 6;
+    /**
+     * <code>BIDDER_DSP = 7;</code>
+     */
+    public static final int BIDDER_DSP_VALUE = 7;
+    /**
+     * <code>YOUKU_DSP = 8;</code>
+     */
+    public static final int YOUKU_DSP_VALUE = 8;
 
 
     public final int getNumber() { return value; }
@@ -1815,6 +1831,8 @@ public final class Protocol {
         case 4: return TANX_DSP;
         case 5: return CY_DSP;
         case 6: return XF_DSP;
+        case 7: return BIDDER_DSP;
+        case 8: return YOUKU_DSP;
         default: return null;
       }
     }
@@ -2104,10 +2122,10 @@ public final class Protocol {
     // @@protoc_insertion_point(enum_scope:jesgoo.protocol.AntispamRule)
   }
 
-  public interface VersionOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface VersionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Version)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required uint32 major = 1;
     /**
      * <code>required uint32 major = 1;</code>
      *
@@ -2125,7 +2143,6 @@ public final class Protocol {
      */
     int getMajor();
 
-    // optional uint32 minor = 2;
     /**
      * <code>optional uint32 minor = 2;</code>
      *
@@ -2143,7 +2160,6 @@ public final class Protocol {
      */
     int getMinor();
 
-    // optional uint32 micro = 3;
     /**
      * <code>optional uint32 micro = 3;</code>
      *
@@ -2161,7 +2177,6 @@ public final class Protocol {
      */
     int getMicro();
 
-    // optional uint32 build = 4;
     /**
      * <code>optional uint32 build = 4;</code>
      *
@@ -2187,8 +2202,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Version extends
-      com.google.protobuf.GeneratedMessage
-      implements VersionOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Version)
+      VersionOrBuilder {
     // Use Version.newBuilder() to construct.
     private Version(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -2294,7 +2310,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required uint32 major = 1;
     public static final int MAJOR_FIELD_NUMBER = 1;
     private int major_;
     /**
@@ -2318,7 +2333,6 @@ public final class Protocol {
       return major_;
     }
 
-    // optional uint32 minor = 2;
     public static final int MINOR_FIELD_NUMBER = 2;
     private int minor_;
     /**
@@ -2342,7 +2356,6 @@ public final class Protocol {
       return minor_;
     }
 
-    // optional uint32 micro = 3;
     public static final int MICRO_FIELD_NUMBER = 3;
     private int micro_;
     /**
@@ -2366,7 +2379,6 @@ public final class Protocol {
       return micro_;
     }
 
-    // optional uint32 build = 4;
     public static final int BUILD_FIELD_NUMBER = 4;
     private int build_;
     /**
@@ -2399,7 +2411,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasMajor()) {
         memoizedIsInitialized = 0;
@@ -2535,8 +2548,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.VersionOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Version)
+        jesgoo.protocol.Protocol.VersionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Version_descriptor;
@@ -2680,7 +2694,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required uint32 major = 1;
       private int major_ ;
       /**
        * <code>required uint32 major = 1;</code>
@@ -2729,7 +2742,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional uint32 minor = 2;
       private int minor_ ;
       /**
        * <code>optional uint32 minor = 2;</code>
@@ -2778,7 +2790,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional uint32 micro = 3;
       private int micro_ ;
       /**
        * <code>optional uint32 micro = 3;</code>
@@ -2827,7 +2838,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional uint32 build = 4;
       private int build_ ;
       /**
        * <code>optional uint32 build = 4;</code>
@@ -2887,10 +2897,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Version)
   }
 
-  public interface SizeOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface SizeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Size)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required uint32 width = 1;
     /**
      * <code>required uint32 width = 1;</code>
      *
@@ -2908,7 +2918,6 @@ public final class Protocol {
      */
     int getWidth();
 
-    // required uint32 height = 2;
     /**
      * <code>required uint32 height = 2;</code>
      *
@@ -2934,8 +2943,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Size extends
-      com.google.protobuf.GeneratedMessage
-      implements SizeOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Size)
+      SizeOrBuilder {
     // Use Size.newBuilder() to construct.
     private Size(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -3031,7 +3041,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required uint32 width = 1;
     public static final int WIDTH_FIELD_NUMBER = 1;
     private int width_;
     /**
@@ -3055,7 +3064,6 @@ public final class Protocol {
       return width_;
     }
 
-    // required uint32 height = 2;
     public static final int HEIGHT_FIELD_NUMBER = 2;
     private int height_;
     /**
@@ -3086,7 +3094,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasWidth()) {
         memoizedIsInitialized = 0;
@@ -3212,8 +3221,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.SizeOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Size)
+        jesgoo.protocol.Protocol.SizeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Size_descriptor;
@@ -3343,7 +3353,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required uint32 width = 1;
       private int width_ ;
       /**
        * <code>required uint32 width = 1;</code>
@@ -3392,7 +3401,6 @@ public final class Protocol {
         return this;
       }
 
-      // required uint32 height = 2;
       private int height_ ;
       /**
        * <code>required uint32 height = 2;</code>
@@ -3452,10 +3460,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Size)
   }
 
-  public interface AppOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface AppOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.App)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required string package_name = 1;
     /**
      * <code>required string package_name = 1;</code>
      *
@@ -3482,7 +3490,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getPackageNameBytes();
 
-    // repeated uint32 categories = 2;
     /**
      * <code>repeated uint32 categories = 2;</code>
      *
@@ -3517,8 +3524,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class App extends
-      com.google.protobuf.GeneratedMessage
-      implements AppOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.App)
+      AppOrBuilder {
     // Use App.newBuilder() to construct.
     private App(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -3565,8 +3573,9 @@ public final class Protocol {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              packageName_ = input.readBytes();
+              packageName_ = bs;
               break;
             }
             case 16: {
@@ -3633,7 +3642,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required string package_name = 1;
     public static final int PACKAGE_NAME_FIELD_NUMBER = 1;
     private java.lang.Object packageName_;
     /**
@@ -3688,7 +3696,6 @@ public final class Protocol {
       }
     }
 
-    // repeated uint32 categories = 2;
     public static final int CATEGORIES_FIELD_NUMBER = 2;
     private java.util.List<java.lang.Integer> categories_;
     /**
@@ -3730,7 +3737,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasPackageName()) {
         memoizedIsInitialized = 0;
@@ -3858,8 +3866,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.AppOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.App)
+        jesgoo.protocol.Protocol.AppOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_App_descriptor;
@@ -3995,7 +4004,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required string package_name = 1;
       private java.lang.Object packageName_ = "";
       /**
        * <code>required string package_name = 1;</code>
@@ -4017,9 +4025,12 @@ public final class Protocol {
       public java.lang.String getPackageName() {
         java.lang.Object ref = packageName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          packageName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            packageName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4093,7 +4104,6 @@ public final class Protocol {
         return this;
       }
 
-      // repeated uint32 categories = 2;
       private java.util.List<java.lang.Integer> categories_ = java.util.Collections.emptyList();
       private void ensureCategoriesIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
@@ -4169,7 +4179,8 @@ public final class Protocol {
       public Builder addAllCategories(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureCategoriesIsMutable();
-        super.addAll(values, categories_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, categories_);
         onChanged();
         return this;
       }
@@ -4198,10 +4209,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.App)
   }
 
-  public interface SiteOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface SiteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Site)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required bytes domain = 1;
     /**
      * <code>required bytes domain = 1;</code>
      *
@@ -4219,7 +4230,6 @@ public final class Protocol {
      */
     com.google.protobuf.ByteString getDomain();
 
-    // repeated uint32 categories = 2;
     /**
      * <code>repeated uint32 categories = 2;</code>
      *
@@ -4245,7 +4255,6 @@ public final class Protocol {
      */
     int getCategories(int index);
 
-    // optional bytes url = 3;
     /**
      * <code>optional bytes url = 3;</code>
      *
@@ -4272,8 +4281,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Site extends
-      com.google.protobuf.GeneratedMessage
-      implements SiteOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Site)
+      SiteOrBuilder {
     // Use Site.newBuilder() to construct.
     private Site(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -4393,7 +4403,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required bytes domain = 1;
     public static final int DOMAIN_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString domain_;
     /**
@@ -4417,7 +4426,6 @@ public final class Protocol {
       return domain_;
     }
 
-    // repeated uint32 categories = 2;
     public static final int CATEGORIES_FIELD_NUMBER = 2;
     private java.util.List<java.lang.Integer> categories_;
     /**
@@ -4452,7 +4460,6 @@ public final class Protocol {
       return categories_.get(index);
     }
 
-    // optional bytes url = 3;
     public static final int URL_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString url_;
     /**
@@ -4484,7 +4491,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasDomain()) {
         memoizedIsInitialized = 0;
@@ -4619,8 +4627,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.SiteOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Site)
+        jesgoo.protocol.Protocol.SiteOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Site_descriptor;
@@ -4763,7 +4772,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required bytes domain = 1;
       private com.google.protobuf.ByteString domain_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes domain = 1;</code>
@@ -4815,7 +4823,6 @@ public final class Protocol {
         return this;
       }
 
-      // repeated uint32 categories = 2;
       private java.util.List<java.lang.Integer> categories_ = java.util.Collections.emptyList();
       private void ensureCategoriesIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
@@ -4891,7 +4898,8 @@ public final class Protocol {
       public Builder addAllCategories(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureCategoriesIsMutable();
-        super.addAll(values, categories_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, categories_);
         onChanged();
         return this;
       }
@@ -4909,7 +4917,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional bytes url = 3;
       private com.google.protobuf.ByteString url_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes url = 3;</code>
@@ -4972,10 +4979,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Site)
   }
 
-  public interface BrowserOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface BrowserOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Browser)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional string user_agent = 1;
     /**
      * <code>optional string user_agent = 1;</code>
      *
@@ -5010,8 +5017,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Browser extends
-      com.google.protobuf.GeneratedMessage
-      implements BrowserOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Browser)
+      BrowserOrBuilder {
     // Use Browser.newBuilder() to construct.
     private Browser(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -5058,8 +5066,9 @@ public final class Protocol {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              userAgent_ = input.readBytes();
+              userAgent_ = bs;
               break;
             }
           }
@@ -5102,7 +5111,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // optional string user_agent = 1;
     public static final int USER_AGENT_FIELD_NUMBER = 1;
     private java.lang.Object userAgent_;
     /**
@@ -5163,7 +5171,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -5274,8 +5283,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.BrowserOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Browser)
+        jesgoo.protocol.Protocol.BrowserOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Browser_descriptor;
@@ -5390,7 +5400,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // optional string user_agent = 1;
       private java.lang.Object userAgent_ = "";
       /**
        * <code>optional string user_agent = 1;</code>
@@ -5412,9 +5421,12 @@ public final class Protocol {
       public java.lang.String getUserAgent() {
         java.lang.Object ref = userAgent_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          userAgent_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userAgent_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5499,10 +5511,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Browser)
   }
 
-  public interface MediaOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface MediaOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Media)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required string id = 1;
     /**
      * <code>required string id = 1;</code>
      *
@@ -5529,7 +5541,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getIdBytes();
 
-    // required string channel_id = 2;
     /**
      * <code>required string channel_id = 2;</code>
      *
@@ -5556,7 +5567,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getChannelIdBytes();
 
-    // required .jesgoo.protocol.MediaType type = 3;
     /**
      * <code>required .jesgoo.protocol.MediaType type = 3;</code>
      *
@@ -5574,7 +5584,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.MediaType getType();
 
-    // optional .jesgoo.protocol.App app = 4;
     /**
      * <code>optional .jesgoo.protocol.App app = 4;</code>
      *
@@ -5600,7 +5609,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.AppOrBuilder getAppOrBuilder();
 
-    // optional .jesgoo.protocol.Site site = 5;
     /**
      * <code>optional .jesgoo.protocol.Site site = 5;</code>
      *
@@ -5626,7 +5634,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.SiteOrBuilder getSiteOrBuilder();
 
-    // optional .jesgoo.protocol.Browser browser = 6;
     /**
      * <code>optional .jesgoo.protocol.Browser browser = 6;</code>
      *
@@ -5660,8 +5667,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Media extends
-      com.google.protobuf.GeneratedMessage
-      implements MediaOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Media)
+      MediaOrBuilder {
     // Use Media.newBuilder() to construct.
     private Media(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -5708,13 +5716,15 @@ public final class Protocol {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              id_ = input.readBytes();
+              id_ = bs;
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              channelId_ = input.readBytes();
+              channelId_ = bs;
               break;
             }
             case 24: {
@@ -5807,7 +5817,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required string id = 1;
     public static final int ID_FIELD_NUMBER = 1;
     private java.lang.Object id_;
     /**
@@ -5862,7 +5871,6 @@ public final class Protocol {
       }
     }
 
-    // required string channel_id = 2;
     public static final int CHANNEL_ID_FIELD_NUMBER = 2;
     private java.lang.Object channelId_;
     /**
@@ -5917,7 +5925,6 @@ public final class Protocol {
       }
     }
 
-    // required .jesgoo.protocol.MediaType type = 3;
     public static final int TYPE_FIELD_NUMBER = 3;
     private jesgoo.protocol.Protocol.MediaType type_;
     /**
@@ -5941,7 +5948,6 @@ public final class Protocol {
       return type_;
     }
 
-    // optional .jesgoo.protocol.App app = 4;
     public static final int APP_FIELD_NUMBER = 4;
     private jesgoo.protocol.Protocol.App app_;
     /**
@@ -5975,7 +5981,6 @@ public final class Protocol {
       return app_;
     }
 
-    // optional .jesgoo.protocol.Site site = 5;
     public static final int SITE_FIELD_NUMBER = 5;
     private jesgoo.protocol.Protocol.Site site_;
     /**
@@ -6009,7 +6014,6 @@ public final class Protocol {
       return site_;
     }
 
-    // optional .jesgoo.protocol.Browser browser = 6;
     public static final int BROWSER_FIELD_NUMBER = 6;
     private jesgoo.protocol.Protocol.Browser browser_;
     /**
@@ -6054,7 +6058,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasId()) {
         memoizedIsInitialized = 0;
@@ -6224,8 +6229,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.MediaOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Media)
+        jesgoo.protocol.Protocol.MediaOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Media_descriptor;
@@ -6438,7 +6444,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required string id = 1;
       private java.lang.Object id_ = "";
       /**
        * <code>required string id = 1;</code>
@@ -6460,9 +6465,12 @@ public final class Protocol {
       public java.lang.String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          id_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6536,7 +6544,6 @@ public final class Protocol {
         return this;
       }
 
-      // required string channel_id = 2;
       private java.lang.Object channelId_ = "";
       /**
        * <code>required string channel_id = 2;</code>
@@ -6558,9 +6565,12 @@ public final class Protocol {
       public java.lang.String getChannelId() {
         java.lang.Object ref = channelId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          channelId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            channelId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6634,7 +6644,6 @@ public final class Protocol {
         return this;
       }
 
-      // required .jesgoo.protocol.MediaType type = 3;
       private jesgoo.protocol.Protocol.MediaType type_ = jesgoo.protocol.Protocol.MediaType.APP;
       /**
        * <code>required .jesgoo.protocol.MediaType type = 3;</code>
@@ -6686,7 +6695,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional .jesgoo.protocol.App app = 4;
       private jesgoo.protocol.Protocol.App app_ = jesgoo.protocol.Protocol.App.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.App, jesgoo.protocol.Protocol.App.Builder, jesgoo.protocol.Protocol.AppOrBuilder> appBuilder_;
@@ -6831,7 +6839,7 @@ public final class Protocol {
         if (appBuilder_ == null) {
           appBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.App, jesgoo.protocol.Protocol.App.Builder, jesgoo.protocol.Protocol.AppOrBuilder>(
-                  app_,
+                  getApp(),
                   getParentForChildren(),
                   isClean());
           app_ = null;
@@ -6839,7 +6847,6 @@ public final class Protocol {
         return appBuilder_;
       }
 
-      // optional .jesgoo.protocol.Site site = 5;
       private jesgoo.protocol.Protocol.Site site_ = jesgoo.protocol.Protocol.Site.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Site, jesgoo.protocol.Protocol.Site.Builder, jesgoo.protocol.Protocol.SiteOrBuilder> siteBuilder_;
@@ -6984,7 +6991,7 @@ public final class Protocol {
         if (siteBuilder_ == null) {
           siteBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Site, jesgoo.protocol.Protocol.Site.Builder, jesgoo.protocol.Protocol.SiteOrBuilder>(
-                  site_,
+                  getSite(),
                   getParentForChildren(),
                   isClean());
           site_ = null;
@@ -6992,7 +6999,6 @@ public final class Protocol {
         return siteBuilder_;
       }
 
-      // optional .jesgoo.protocol.Browser browser = 6;
       private jesgoo.protocol.Protocol.Browser browser_ = jesgoo.protocol.Protocol.Browser.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Browser, jesgoo.protocol.Protocol.Browser.Builder, jesgoo.protocol.Protocol.BrowserOrBuilder> browserBuilder_;
@@ -7137,7 +7143,7 @@ public final class Protocol {
         if (browserBuilder_ == null) {
           browserBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Browser, jesgoo.protocol.Protocol.Browser.Builder, jesgoo.protocol.Protocol.BrowserOrBuilder>(
-                  browser_,
+                  getBrowser(),
                   getParentForChildren(),
                   isClean());
           browser_ = null;
@@ -7156,10 +7162,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Media)
   }
 
-  public interface WiFiOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface WiFiOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.WiFi)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required string mac = 1;
     /**
      * <code>required string mac = 1;</code>
      *
@@ -7186,7 +7192,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getMacBytes();
 
-    // required int32 rssi = 2;
     /**
      * <code>required int32 rssi = 2;</code>
      *
@@ -7212,8 +7217,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class WiFi extends
-      com.google.protobuf.GeneratedMessage
-      implements WiFiOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.WiFi)
+      WiFiOrBuilder {
     // Use WiFi.newBuilder() to construct.
     private WiFi(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -7260,8 +7266,9 @@ public final class Protocol {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              mac_ = input.readBytes();
+              mac_ = bs;
               break;
             }
             case 16: {
@@ -7309,7 +7316,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required string mac = 1;
     public static final int MAC_FIELD_NUMBER = 1;
     private java.lang.Object mac_;
     /**
@@ -7364,7 +7370,6 @@ public final class Protocol {
       }
     }
 
-    // required int32 rssi = 2;
     public static final int RSSI_FIELD_NUMBER = 2;
     private int rssi_;
     /**
@@ -7395,7 +7400,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasMac()) {
         memoizedIsInitialized = 0;
@@ -7521,8 +7527,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.WiFiOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.WiFi)
+        jesgoo.protocol.Protocol.WiFiOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_WiFi_descriptor;
@@ -7654,7 +7661,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required string mac = 1;
       private java.lang.Object mac_ = "";
       /**
        * <code>required string mac = 1;</code>
@@ -7676,9 +7682,12 @@ public final class Protocol {
       public java.lang.String getMac() {
         java.lang.Object ref = mac_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          mac_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            mac_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7752,7 +7761,6 @@ public final class Protocol {
         return this;
       }
 
-      // required int32 rssi = 2;
       private int rssi_ ;
       /**
        * <code>required int32 rssi = 2;</code>
@@ -7812,10 +7820,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.WiFi)
   }
 
-  public interface NetworkOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface NetworkOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Network)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional string ip = 1;
     /**
      * <code>optional string ip = 1;</code>
      *
@@ -7842,7 +7850,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getIpBytes();
 
-    // optional .jesgoo.protocol.NetworkType type = 2;
     /**
      * <code>optional .jesgoo.protocol.NetworkType type = 2;</code>
      *
@@ -7860,7 +7867,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.NetworkType getType();
 
-    // optional uint32 cellular_operator = 3;
     /**
      * <code>optional uint32 cellular_operator = 3;</code>
      *
@@ -7878,7 +7884,6 @@ public final class Protocol {
      */
     int getCellularOperator();
 
-    // optional string cellular_id = 4;
     /**
      * <code>optional string cellular_id = 4;</code>
      *
@@ -7905,7 +7910,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getCellularIdBytes();
 
-    // repeated .jesgoo.protocol.WiFi wifis = 5;
     /**
      * <code>repeated .jesgoo.protocol.WiFi wifis = 5;</code>
      *
@@ -7958,8 +7962,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Network extends
-      com.google.protobuf.GeneratedMessage
-      implements NetworkOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Network)
+      NetworkOrBuilder {
     // Use Network.newBuilder() to construct.
     private Network(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -8006,8 +8011,9 @@ public final class Protocol {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              ip_ = input.readBytes();
+              ip_ = bs;
               break;
             }
             case 16: {
@@ -8027,8 +8033,9 @@ public final class Protocol {
               break;
             }
             case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              cellularId_ = input.readBytes();
+              cellularId_ = bs;
               break;
             }
             case 42: {
@@ -8082,7 +8089,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // optional string ip = 1;
     public static final int IP_FIELD_NUMBER = 1;
     private java.lang.Object ip_;
     /**
@@ -8137,7 +8143,6 @@ public final class Protocol {
       }
     }
 
-    // optional .jesgoo.protocol.NetworkType type = 2;
     public static final int TYPE_FIELD_NUMBER = 2;
     private jesgoo.protocol.Protocol.NetworkType type_;
     /**
@@ -8161,7 +8166,6 @@ public final class Protocol {
       return type_;
     }
 
-    // optional uint32 cellular_operator = 3;
     public static final int CELLULAR_OPERATOR_FIELD_NUMBER = 3;
     private int cellularOperator_;
     /**
@@ -8185,7 +8189,6 @@ public final class Protocol {
       return cellularOperator_;
     }
 
-    // optional string cellular_id = 4;
     public static final int CELLULAR_ID_FIELD_NUMBER = 4;
     private java.lang.Object cellularId_;
     /**
@@ -8240,7 +8243,6 @@ public final class Protocol {
       }
     }
 
-    // repeated .jesgoo.protocol.WiFi wifis = 5;
     public static final int WIFIS_FIELD_NUMBER = 5;
     private java.util.List<jesgoo.protocol.Protocol.WiFi> wifis_;
     /**
@@ -8306,7 +8308,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       for (int i = 0; i < getWifisCount(); i++) {
         if (!getWifis(i).isInitialized()) {
@@ -8451,8 +8454,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.NetworkOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Network)
+        jesgoo.protocol.Protocol.NetworkOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Network_descriptor;
@@ -8644,7 +8648,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // optional string ip = 1;
       private java.lang.Object ip_ = "";
       /**
        * <code>optional string ip = 1;</code>
@@ -8666,9 +8669,12 @@ public final class Protocol {
       public java.lang.String getIp() {
         java.lang.Object ref = ip_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          ip_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            ip_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8742,7 +8748,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional .jesgoo.protocol.NetworkType type = 2;
       private jesgoo.protocol.Protocol.NetworkType type_ = jesgoo.protocol.Protocol.NetworkType.WIFI;
       /**
        * <code>optional .jesgoo.protocol.NetworkType type = 2;</code>
@@ -8794,7 +8799,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional uint32 cellular_operator = 3;
       private int cellularOperator_ ;
       /**
        * <code>optional uint32 cellular_operator = 3;</code>
@@ -8843,7 +8847,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional string cellular_id = 4;
       private java.lang.Object cellularId_ = "";
       /**
        * <code>optional string cellular_id = 4;</code>
@@ -8865,9 +8868,12 @@ public final class Protocol {
       public java.lang.String getCellularId() {
         java.lang.Object ref = cellularId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          cellularId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            cellularId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8941,7 +8947,6 @@ public final class Protocol {
         return this;
       }
 
-      // repeated .jesgoo.protocol.WiFi wifis = 5;
       private java.util.List<jesgoo.protocol.Protocol.WiFi> wifis_ =
         java.util.Collections.emptyList();
       private void ensureWifisIsMutable() {
@@ -9123,7 +9128,8 @@ public final class Protocol {
           java.lang.Iterable<? extends jesgoo.protocol.Protocol.WiFi> values) {
         if (wifisBuilder_ == null) {
           ensureWifisIsMutable();
-          super.addAll(values, wifis_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, wifis_);
           onChanged();
         } else {
           wifisBuilder_.addAllMessages(values);
@@ -9264,10 +9270,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Network)
   }
 
-  public interface DeviceIDOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface DeviceIDOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.DeviceID)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.protocol.DeviceIDType type = 1;
     /**
      * <code>required .jesgoo.protocol.DeviceIDType type = 1;</code>
      *
@@ -9285,7 +9291,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.DeviceIDType getType();
 
-    // required bytes id = 2;
     /**
      * <code>required bytes id = 2;</code>
      *
@@ -9303,7 +9308,6 @@ public final class Protocol {
      */
     com.google.protobuf.ByteString getId();
 
-    // optional bool compact = 3;
     /**
      * <code>optional bool compact = 3;</code>
      *
@@ -9321,7 +9325,6 @@ public final class Protocol {
      */
     boolean getCompact();
 
-    // optional bool md5 = 4;
     /**
      * <code>optional bool md5 = 4;</code>
      *
@@ -9348,8 +9351,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class DeviceID extends
-      com.google.protobuf.GeneratedMessage
-      implements DeviceIDOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.DeviceID)
+      DeviceIDOrBuilder {
     // Use DeviceID.newBuilder() to construct.
     private DeviceID(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -9461,7 +9465,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required .jesgoo.protocol.DeviceIDType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private jesgoo.protocol.Protocol.DeviceIDType type_;
     /**
@@ -9485,7 +9488,6 @@ public final class Protocol {
       return type_;
     }
 
-    // required bytes id = 2;
     public static final int ID_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString id_;
     /**
@@ -9509,7 +9511,6 @@ public final class Protocol {
       return id_;
     }
 
-    // optional bool compact = 3;
     public static final int COMPACT_FIELD_NUMBER = 3;
     private boolean compact_;
     /**
@@ -9533,7 +9534,6 @@ public final class Protocol {
       return compact_;
     }
 
-    // optional bool md5 = 4;
     public static final int MD5_FIELD_NUMBER = 4;
     private boolean md5_;
     /**
@@ -9566,7 +9566,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -9707,8 +9708,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.DeviceIDOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.DeviceID)
+        jesgoo.protocol.Protocol.DeviceIDOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_DeviceID_descriptor;
@@ -9856,7 +9858,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required .jesgoo.protocol.DeviceIDType type = 1;
       private jesgoo.protocol.Protocol.DeviceIDType type_ = jesgoo.protocol.Protocol.DeviceIDType.IMEI;
       /**
        * <code>required .jesgoo.protocol.DeviceIDType type = 1;</code>
@@ -9908,7 +9909,6 @@ public final class Protocol {
         return this;
       }
 
-      // required bytes id = 2;
       private com.google.protobuf.ByteString id_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes id = 2;</code>
@@ -9960,7 +9960,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional bool compact = 3;
       private boolean compact_ ;
       /**
        * <code>optional bool compact = 3;</code>
@@ -10009,7 +10008,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional bool md5 = 4;
       private boolean md5_ ;
       /**
        * <code>optional bool md5 = 4;</code>
@@ -10069,10 +10067,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.DeviceID)
   }
 
-  public interface DeviceOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface DeviceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Device)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.protocol.DeviceType type = 1;
     /**
      * <code>required .jesgoo.protocol.DeviceType type = 1;</code>
      *
@@ -10090,7 +10088,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.DeviceType getType();
 
-    // repeated .jesgoo.protocol.DeviceID ids = 2;
     /**
      * <code>repeated .jesgoo.protocol.DeviceID ids = 2;</code>
      *
@@ -10135,7 +10132,6 @@ public final class Protocol {
     jesgoo.protocol.Protocol.DeviceIDOrBuilder getIdsOrBuilder(
         int index);
 
-    // required .jesgoo.protocol.OSType os_type = 3;
     /**
      * <code>required .jesgoo.protocol.OSType os_type = 3;</code>
      *
@@ -10153,7 +10149,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.OSType getOsType();
 
-    // required .jesgoo.protocol.Version os_version = 4;
     /**
      * <code>required .jesgoo.protocol.Version os_version = 4;</code>
      *
@@ -10179,7 +10174,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.VersionOrBuilder getOsVersionOrBuilder();
 
-    // optional string brand = 5;
     /**
      * <code>optional string brand = 5;</code>
      *
@@ -10206,7 +10200,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getBrandBytes();
 
-    // optional string model = 6;
     /**
      * <code>optional string model = 6;</code>
      *
@@ -10233,7 +10226,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getModelBytes();
 
-    // optional .jesgoo.protocol.Size screen_size = 7;
     /**
      * <code>optional .jesgoo.protocol.Size screen_size = 7;</code>
      *
@@ -10259,7 +10251,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.SizeOrBuilder getScreenSizeOrBuilder();
 
-    // optional double screen_density = 8;
     /**
      * <code>optional double screen_density = 8;</code>
      *
@@ -10285,8 +10276,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Device extends
-      com.google.protobuf.GeneratedMessage
-      implements DeviceOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Device)
+      DeviceOrBuilder {
     // Use Device.newBuilder() to construct.
     private Device(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -10376,13 +10368,15 @@ public final class Protocol {
               break;
             }
             case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              brand_ = input.readBytes();
+              brand_ = bs;
               break;
             }
             case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
-              model_ = input.readBytes();
+              model_ = bs;
               break;
             }
             case 58: {
@@ -10446,7 +10440,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required .jesgoo.protocol.DeviceType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private jesgoo.protocol.Protocol.DeviceType type_;
     /**
@@ -10470,7 +10463,6 @@ public final class Protocol {
       return type_;
     }
 
-    // repeated .jesgoo.protocol.DeviceID ids = 2;
     public static final int IDS_FIELD_NUMBER = 2;
     private java.util.List<jesgoo.protocol.Protocol.DeviceID> ids_;
     /**
@@ -10526,7 +10518,6 @@ public final class Protocol {
       return ids_.get(index);
     }
 
-    // required .jesgoo.protocol.OSType os_type = 3;
     public static final int OS_TYPE_FIELD_NUMBER = 3;
     private jesgoo.protocol.Protocol.OSType osType_;
     /**
@@ -10550,7 +10541,6 @@ public final class Protocol {
       return osType_;
     }
 
-    // required .jesgoo.protocol.Version os_version = 4;
     public static final int OS_VERSION_FIELD_NUMBER = 4;
     private jesgoo.protocol.Protocol.Version osVersion_;
     /**
@@ -10584,7 +10574,6 @@ public final class Protocol {
       return osVersion_;
     }
 
-    // optional string brand = 5;
     public static final int BRAND_FIELD_NUMBER = 5;
     private java.lang.Object brand_;
     /**
@@ -10639,7 +10628,6 @@ public final class Protocol {
       }
     }
 
-    // optional string model = 6;
     public static final int MODEL_FIELD_NUMBER = 6;
     private java.lang.Object model_;
     /**
@@ -10694,7 +10682,6 @@ public final class Protocol {
       }
     }
 
-    // optional .jesgoo.protocol.Size screen_size = 7;
     public static final int SCREEN_SIZE_FIELD_NUMBER = 7;
     private jesgoo.protocol.Protocol.Size screenSize_;
     /**
@@ -10728,7 +10715,6 @@ public final class Protocol {
       return screenSize_;
     }
 
-    // optional double screen_density = 8;
     public static final int SCREEN_DENSITY_FIELD_NUMBER = 8;
     private double screenDensity_;
     /**
@@ -10765,7 +10751,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -10953,8 +10940,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.DeviceOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Device)
+        jesgoo.protocol.Protocol.DeviceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Device_descriptor;
@@ -11213,7 +11201,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required .jesgoo.protocol.DeviceType type = 1;
       private jesgoo.protocol.Protocol.DeviceType type_ = jesgoo.protocol.Protocol.DeviceType.UNKNOWN_DEVICE_TYPE;
       /**
        * <code>required .jesgoo.protocol.DeviceType type = 1;</code>
@@ -11265,7 +11252,6 @@ public final class Protocol {
         return this;
       }
 
-      // repeated .jesgoo.protocol.DeviceID ids = 2;
       private java.util.List<jesgoo.protocol.Protocol.DeviceID> ids_ =
         java.util.Collections.emptyList();
       private void ensureIdsIsMutable() {
@@ -11447,7 +11433,8 @@ public final class Protocol {
           java.lang.Iterable<? extends jesgoo.protocol.Protocol.DeviceID> values) {
         if (idsBuilder_ == null) {
           ensureIdsIsMutable();
-          super.addAll(values, ids_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, ids_);
           onChanged();
         } else {
           idsBuilder_.addAllMessages(values);
@@ -11577,7 +11564,6 @@ public final class Protocol {
         return idsBuilder_;
       }
 
-      // required .jesgoo.protocol.OSType os_type = 3;
       private jesgoo.protocol.Protocol.OSType osType_ = jesgoo.protocol.Protocol.OSType.UNKNOWN_OS_TYPE;
       /**
        * <code>required .jesgoo.protocol.OSType os_type = 3;</code>
@@ -11629,7 +11615,6 @@ public final class Protocol {
         return this;
       }
 
-      // required .jesgoo.protocol.Version os_version = 4;
       private jesgoo.protocol.Protocol.Version osVersion_ = jesgoo.protocol.Protocol.Version.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder> osVersionBuilder_;
@@ -11774,7 +11759,7 @@ public final class Protocol {
         if (osVersionBuilder_ == null) {
           osVersionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder>(
-                  osVersion_,
+                  getOsVersion(),
                   getParentForChildren(),
                   isClean());
           osVersion_ = null;
@@ -11782,7 +11767,6 @@ public final class Protocol {
         return osVersionBuilder_;
       }
 
-      // optional string brand = 5;
       private java.lang.Object brand_ = "";
       /**
        * <code>optional string brand = 5;</code>
@@ -11804,9 +11788,12 @@ public final class Protocol {
       public java.lang.String getBrand() {
         java.lang.Object ref = brand_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          brand_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            brand_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11880,7 +11867,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional string model = 6;
       private java.lang.Object model_ = "";
       /**
        * <code>optional string model = 6;</code>
@@ -11902,9 +11888,12 @@ public final class Protocol {
       public java.lang.String getModel() {
         java.lang.Object ref = model_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          model_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            model_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11978,7 +11967,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional .jesgoo.protocol.Size screen_size = 7;
       private jesgoo.protocol.Protocol.Size screenSize_ = jesgoo.protocol.Protocol.Size.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Size, jesgoo.protocol.Protocol.Size.Builder, jesgoo.protocol.Protocol.SizeOrBuilder> screenSizeBuilder_;
@@ -12123,7 +12111,7 @@ public final class Protocol {
         if (screenSizeBuilder_ == null) {
           screenSizeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Size, jesgoo.protocol.Protocol.Size.Builder, jesgoo.protocol.Protocol.SizeOrBuilder>(
-                  screenSize_,
+                  getScreenSize(),
                   getParentForChildren(),
                   isClean());
           screenSize_ = null;
@@ -12131,7 +12119,6 @@ public final class Protocol {
         return screenSizeBuilder_;
       }
 
-      // optional double screen_density = 8;
       private double screenDensity_ ;
       /**
        * <code>optional double screen_density = 8;</code>
@@ -12191,10 +12178,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Device)
   }
 
-  public interface GeoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface GeoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Geo)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.protocol.GeoType type = 1;
     /**
      * <code>required .jesgoo.protocol.GeoType type = 1;</code>
      *
@@ -12212,7 +12199,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.GeoType getType();
 
-    // required double longitude = 2;
     /**
      * <code>required double longitude = 2;</code>
      *
@@ -12230,7 +12216,6 @@ public final class Protocol {
      */
     double getLongitude();
 
-    // required double latitude = 3;
     /**
      * <code>required double latitude = 3;</code>
      *
@@ -12248,7 +12233,6 @@ public final class Protocol {
      */
     double getLatitude();
 
-    // optional uint32 timestampe = 4;
     /**
      * <code>optional uint32 timestampe = 4;</code>
      *
@@ -12266,7 +12250,6 @@ public final class Protocol {
      */
     int getTimestampe();
 
-    // optional .jesgoo.protocol.GeoSource source = 5;
     /**
      * <code>optional .jesgoo.protocol.GeoSource source = 5;</code>
      *
@@ -12292,8 +12275,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Geo extends
-      com.google.protobuf.GeneratedMessage
-      implements GeoOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Geo)
+      GeoOrBuilder {
     // Use Geo.newBuilder() to construct.
     private Geo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -12416,7 +12400,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required .jesgoo.protocol.GeoType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private jesgoo.protocol.Protocol.GeoType type_;
     /**
@@ -12440,7 +12423,6 @@ public final class Protocol {
       return type_;
     }
 
-    // required double longitude = 2;
     public static final int LONGITUDE_FIELD_NUMBER = 2;
     private double longitude_;
     /**
@@ -12464,7 +12446,6 @@ public final class Protocol {
       return longitude_;
     }
 
-    // required double latitude = 3;
     public static final int LATITUDE_FIELD_NUMBER = 3;
     private double latitude_;
     /**
@@ -12488,7 +12469,6 @@ public final class Protocol {
       return latitude_;
     }
 
-    // optional uint32 timestampe = 4;
     public static final int TIMESTAMPE_FIELD_NUMBER = 4;
     private int timestampe_;
     /**
@@ -12512,7 +12492,6 @@ public final class Protocol {
       return timestampe_;
     }
 
-    // optional .jesgoo.protocol.GeoSource source = 5;
     public static final int SOURCE_FIELD_NUMBER = 5;
     private jesgoo.protocol.Protocol.GeoSource source_;
     /**
@@ -12546,7 +12525,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -12697,8 +12677,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.GeoOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Geo)
+        jesgoo.protocol.Protocol.GeoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Geo_descriptor;
@@ -12859,7 +12840,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required .jesgoo.protocol.GeoType type = 1;
       private jesgoo.protocol.Protocol.GeoType type_ = jesgoo.protocol.Protocol.GeoType.WGS84;
       /**
        * <code>required .jesgoo.protocol.GeoType type = 1;</code>
@@ -12911,7 +12891,6 @@ public final class Protocol {
         return this;
       }
 
-      // required double longitude = 2;
       private double longitude_ ;
       /**
        * <code>required double longitude = 2;</code>
@@ -12960,7 +12939,6 @@ public final class Protocol {
         return this;
       }
 
-      // required double latitude = 3;
       private double latitude_ ;
       /**
        * <code>required double latitude = 3;</code>
@@ -13009,7 +12987,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional uint32 timestampe = 4;
       private int timestampe_ ;
       /**
        * <code>optional uint32 timestampe = 4;</code>
@@ -13058,7 +13035,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional .jesgoo.protocol.GeoSource source = 5;
       private jesgoo.protocol.Protocol.GeoSource source_ = jesgoo.protocol.Protocol.GeoSource.NATIVE;
       /**
        * <code>optional .jesgoo.protocol.GeoSource source = 5;</code>
@@ -13121,10 +13097,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Geo)
   }
 
-  public interface ClientOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface ClientOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Client)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.protocol.ClientType type = 1;
     /**
      * <code>required .jesgoo.protocol.ClientType type = 1;</code>
      *
@@ -13142,7 +13118,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.ClientType getType();
 
-    // required .jesgoo.protocol.Version version = 2;
     /**
      * <code>required .jesgoo.protocol.Version version = 2;</code>
      *
@@ -13176,8 +13151,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Client extends
-      com.google.protobuf.GeneratedMessage
-      implements ClientOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Client)
+      ClientOrBuilder {
     // Use Client.newBuilder() to construct.
     private Client(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -13287,7 +13263,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required .jesgoo.protocol.ClientType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private jesgoo.protocol.Protocol.ClientType type_;
     /**
@@ -13311,7 +13286,6 @@ public final class Protocol {
       return type_;
     }
 
-    // required .jesgoo.protocol.Version version = 2;
     public static final int VERSION_FIELD_NUMBER = 2;
     private jesgoo.protocol.Protocol.Version version_;
     /**
@@ -13352,7 +13326,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -13482,8 +13457,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.ClientOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Client)
+        jesgoo.protocol.Protocol.ClientOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Client_descriptor;
@@ -13626,7 +13602,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required .jesgoo.protocol.ClientType type = 1;
       private jesgoo.protocol.Protocol.ClientType type_ = jesgoo.protocol.Protocol.ClientType.NATIVESDK;
       /**
        * <code>required .jesgoo.protocol.ClientType type = 1;</code>
@@ -13678,7 +13653,6 @@ public final class Protocol {
         return this;
       }
 
-      // required .jesgoo.protocol.Version version = 2;
       private jesgoo.protocol.Protocol.Version version_ = jesgoo.protocol.Protocol.Version.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder> versionBuilder_;
@@ -13823,7 +13797,7 @@ public final class Protocol {
         if (versionBuilder_ == null) {
           versionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder>(
-                  version_,
+                  getVersion(),
                   getParentForChildren(),
                   isClean());
           version_ = null;
@@ -13842,10 +13816,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Client)
   }
 
-  public interface AdSlotOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface AdSlotOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.AdSlot)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required string id = 1;
     /**
      * <code>required string id = 1;</code>
      *
@@ -13872,7 +13846,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getIdBytes();
 
-    // required .jesgoo.protocol.AdSlotType type = 2;
     /**
      * <code>required .jesgoo.protocol.AdSlotType type = 2;</code>
      *
@@ -13890,7 +13863,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.AdSlotType getType();
 
-    // required .jesgoo.protocol.Size size = 3;
     /**
      * <code>required .jesgoo.protocol.Size size = 3;</code>
      *
@@ -13916,7 +13888,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.SizeOrBuilder getSizeOrBuilder();
 
-    // repeated .jesgoo.protocol.AdStyle styles = 4;
     /**
      * <code>repeated .jesgoo.protocol.AdStyle styles = 4;</code>
      *
@@ -13942,7 +13913,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.AdStyle getStyles(int index);
 
-    // optional uint32 capacity = 5 [default = 1];
     /**
      * <code>optional uint32 capacity = 5 [default = 1];</code>
      *
@@ -13960,7 +13930,6 @@ public final class Protocol {
      */
     int getCapacity();
 
-    // repeated uint32 templates = 6;
     /**
      * <code>repeated uint32 templates = 6;</code>
      *
@@ -13986,7 +13955,6 @@ public final class Protocol {
      */
     int getTemplates(int index);
 
-    // repeated .jesgoo.protocol.PromotionType promotions = 7;
     /**
      * <code>repeated .jesgoo.protocol.PromotionType promotions = 7;</code>
      *
@@ -14020,8 +13988,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class AdSlot extends
-      com.google.protobuf.GeneratedMessage
-      implements AdSlotOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.AdSlot)
+      AdSlotOrBuilder {
     // Use AdSlot.newBuilder() to construct.
     private AdSlot(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -14068,8 +14037,9 @@ public final class Protocol {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              id_ = input.readBytes();
+              id_ = bs;
               break;
             }
             case 16: {
@@ -14101,7 +14071,7 @@ public final class Protocol {
               jesgoo.protocol.Protocol.AdStyle value = jesgoo.protocol.Protocol.AdStyle.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(4, rawValue);
-              } else {
+                } else {
                 if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                   styles_ = new java.util.ArrayList<jesgoo.protocol.Protocol.AdStyle>();
                   mutable_bitField0_ |= 0x00000008;
@@ -14118,7 +14088,7 @@ public final class Protocol {
                 jesgoo.protocol.Protocol.AdStyle value = jesgoo.protocol.Protocol.AdStyle.valueOf(rawValue);
                 if (value == null) {
                   unknownFields.mergeVarintField(4, rawValue);
-                } else {
+                  } else {
                   if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                     styles_ = new java.util.ArrayList<jesgoo.protocol.Protocol.AdStyle>();
                     mutable_bitField0_ |= 0x00000008;
@@ -14160,7 +14130,7 @@ public final class Protocol {
               jesgoo.protocol.Protocol.PromotionType value = jesgoo.protocol.Protocol.PromotionType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(7, rawValue);
-              } else {
+                } else {
                 if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
                   promotions_ = new java.util.ArrayList<jesgoo.protocol.Protocol.PromotionType>();
                   mutable_bitField0_ |= 0x00000040;
@@ -14177,7 +14147,7 @@ public final class Protocol {
                 jesgoo.protocol.Protocol.PromotionType value = jesgoo.protocol.Protocol.PromotionType.valueOf(rawValue);
                 if (value == null) {
                   unknownFields.mergeVarintField(7, rawValue);
-                } else {
+                  } else {
                   if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
                     promotions_ = new java.util.ArrayList<jesgoo.protocol.Protocol.PromotionType>();
                     mutable_bitField0_ |= 0x00000040;
@@ -14237,7 +14207,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required string id = 1;
     public static final int ID_FIELD_NUMBER = 1;
     private java.lang.Object id_;
     /**
@@ -14292,7 +14261,6 @@ public final class Protocol {
       }
     }
 
-    // required .jesgoo.protocol.AdSlotType type = 2;
     public static final int TYPE_FIELD_NUMBER = 2;
     private jesgoo.protocol.Protocol.AdSlotType type_;
     /**
@@ -14316,7 +14284,6 @@ public final class Protocol {
       return type_;
     }
 
-    // required .jesgoo.protocol.Size size = 3;
     public static final int SIZE_FIELD_NUMBER = 3;
     private jesgoo.protocol.Protocol.Size size_;
     /**
@@ -14350,7 +14317,6 @@ public final class Protocol {
       return size_;
     }
 
-    // repeated .jesgoo.protocol.AdStyle styles = 4;
     public static final int STYLES_FIELD_NUMBER = 4;
     private java.util.List<jesgoo.protocol.Protocol.AdStyle> styles_;
     /**
@@ -14384,7 +14350,6 @@ public final class Protocol {
       return styles_.get(index);
     }
 
-    // optional uint32 capacity = 5 [default = 1];
     public static final int CAPACITY_FIELD_NUMBER = 5;
     private int capacity_;
     /**
@@ -14408,7 +14373,6 @@ public final class Protocol {
       return capacity_;
     }
 
-    // repeated uint32 templates = 6;
     public static final int TEMPLATES_FIELD_NUMBER = 6;
     private java.util.List<java.lang.Integer> templates_;
     /**
@@ -14443,7 +14407,6 @@ public final class Protocol {
       return templates_.get(index);
     }
 
-    // repeated .jesgoo.protocol.PromotionType promotions = 7;
     public static final int PROMOTIONS_FIELD_NUMBER = 7;
     private java.util.List<jesgoo.protocol.Protocol.PromotionType> promotions_;
     /**
@@ -14489,7 +14452,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasId()) {
         memoizedIsInitialized = 0;
@@ -14673,8 +14637,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.AdSlotOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.AdSlot)
+        jesgoo.protocol.Protocol.AdSlotOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_AdSlot_descriptor;
@@ -14892,7 +14857,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required string id = 1;
       private java.lang.Object id_ = "";
       /**
        * <code>required string id = 1;</code>
@@ -14914,9 +14878,12 @@ public final class Protocol {
       public java.lang.String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          id_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -14990,7 +14957,6 @@ public final class Protocol {
         return this;
       }
 
-      // required .jesgoo.protocol.AdSlotType type = 2;
       private jesgoo.protocol.Protocol.AdSlotType type_ = jesgoo.protocol.Protocol.AdSlotType.BANNER;
       /**
        * <code>required .jesgoo.protocol.AdSlotType type = 2;</code>
@@ -15042,7 +15008,6 @@ public final class Protocol {
         return this;
       }
 
-      // required .jesgoo.protocol.Size size = 3;
       private jesgoo.protocol.Protocol.Size size_ = jesgoo.protocol.Protocol.Size.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Size, jesgoo.protocol.Protocol.Size.Builder, jesgoo.protocol.Protocol.SizeOrBuilder> sizeBuilder_;
@@ -15187,7 +15152,7 @@ public final class Protocol {
         if (sizeBuilder_ == null) {
           sizeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Size, jesgoo.protocol.Protocol.Size.Builder, jesgoo.protocol.Protocol.SizeOrBuilder>(
-                  size_,
+                  getSize(),
                   getParentForChildren(),
                   isClean());
           size_ = null;
@@ -15195,7 +15160,6 @@ public final class Protocol {
         return sizeBuilder_;
       }
 
-      // repeated .jesgoo.protocol.AdStyle styles = 4;
       private java.util.List<jesgoo.protocol.Protocol.AdStyle> styles_ =
         java.util.Collections.emptyList();
       private void ensureStylesIsMutable() {
@@ -15277,7 +15241,8 @@ public final class Protocol {
       public Builder addAllStyles(
           java.lang.Iterable<? extends jesgoo.protocol.Protocol.AdStyle> values) {
         ensureStylesIsMutable();
-        super.addAll(values, styles_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, styles_);
         onChanged();
         return this;
       }
@@ -15295,7 +15260,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional uint32 capacity = 5 [default = 1];
       private int capacity_ = 1;
       /**
        * <code>optional uint32 capacity = 5 [default = 1];</code>
@@ -15344,7 +15308,6 @@ public final class Protocol {
         return this;
       }
 
-      // repeated uint32 templates = 6;
       private java.util.List<java.lang.Integer> templates_ = java.util.Collections.emptyList();
       private void ensureTemplatesIsMutable() {
         if (!((bitField0_ & 0x00000020) == 0x00000020)) {
@@ -15420,7 +15383,8 @@ public final class Protocol {
       public Builder addAllTemplates(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureTemplatesIsMutable();
-        super.addAll(values, templates_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, templates_);
         onChanged();
         return this;
       }
@@ -15438,7 +15402,6 @@ public final class Protocol {
         return this;
       }
 
-      // repeated .jesgoo.protocol.PromotionType promotions = 7;
       private java.util.List<jesgoo.protocol.Protocol.PromotionType> promotions_ =
         java.util.Collections.emptyList();
       private void ensurePromotionsIsMutable() {
@@ -15520,7 +15483,8 @@ public final class Protocol {
       public Builder addAllPromotions(
           java.lang.Iterable<? extends jesgoo.protocol.Protocol.PromotionType> values) {
         ensurePromotionsIsMutable();
-        super.addAll(values, promotions_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, promotions_);
         onChanged();
         return this;
       }
@@ -15549,10 +15513,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.AdSlot)
   }
 
-  public interface DspInfoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface DspInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.DspInfo)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.protocol.Dsp dsp = 1;
     /**
      * <code>required .jesgoo.protocol.Dsp dsp = 1;</code>
      *
@@ -15570,7 +15534,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.Dsp getDsp();
 
-    // optional string media_id = 2;
     /**
      * <code>optional string media_id = 2;</code>
      *
@@ -15597,7 +15560,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getMediaIdBytes();
 
-    // optional string channel_id = 3;
     /**
      * <code>optional string channel_id = 3;</code>
      *
@@ -15632,8 +15594,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class DspInfo extends
-      com.google.protobuf.GeneratedMessage
-      implements DspInfoOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.DspInfo)
+      DspInfoOrBuilder {
     // Use DspInfo.newBuilder() to construct.
     private DspInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -15691,13 +15654,15 @@ public final class Protocol {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              mediaId_ = input.readBytes();
+              mediaId_ = bs;
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              channelId_ = input.readBytes();
+              channelId_ = bs;
               break;
             }
           }
@@ -15740,7 +15705,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required .jesgoo.protocol.Dsp dsp = 1;
     public static final int DSP_FIELD_NUMBER = 1;
     private jesgoo.protocol.Protocol.Dsp dsp_;
     /**
@@ -15764,7 +15728,6 @@ public final class Protocol {
       return dsp_;
     }
 
-    // optional string media_id = 2;
     public static final int MEDIA_ID_FIELD_NUMBER = 2;
     private java.lang.Object mediaId_;
     /**
@@ -15819,7 +15782,6 @@ public final class Protocol {
       }
     }
 
-    // optional string channel_id = 3;
     public static final int CHANNEL_ID_FIELD_NUMBER = 3;
     private java.lang.Object channelId_;
     /**
@@ -15882,7 +15844,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasDsp()) {
         memoizedIsInitialized = 0;
@@ -16011,8 +15974,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.DspInfoOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.DspInfo)
+        jesgoo.protocol.Protocol.DspInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_DspInfo_descriptor;
@@ -16151,7 +16115,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required .jesgoo.protocol.Dsp dsp = 1;
       private jesgoo.protocol.Protocol.Dsp dsp_ = jesgoo.protocol.Protocol.Dsp.JESGOO_DSP;
       /**
        * <code>required .jesgoo.protocol.Dsp dsp = 1;</code>
@@ -16203,7 +16166,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional string media_id = 2;
       private java.lang.Object mediaId_ = "";
       /**
        * <code>optional string media_id = 2;</code>
@@ -16225,9 +16187,12 @@ public final class Protocol {
       public java.lang.String getMediaId() {
         java.lang.Object ref = mediaId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          mediaId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            mediaId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -16301,7 +16266,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional string channel_id = 3;
       private java.lang.Object channelId_ = "";
       /**
        * <code>optional string channel_id = 3;</code>
@@ -16323,9 +16287,12 @@ public final class Protocol {
       public java.lang.String getChannelId() {
         java.lang.Object ref = channelId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          channelId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            channelId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -16410,10 +16377,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.DspInfo)
   }
 
-  public interface EventOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface EventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.protocol.Event.Head head = 1;
     /**
      * <code>required .jesgoo.protocol.Event.Head head = 1;</code>
      *
@@ -16439,7 +16406,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.Event.HeadOrBuilder getHeadOrBuilder();
 
-    // required .jesgoo.protocol.Event.Body body = 2;
     /**
      * <code>required .jesgoo.protocol.Event.Body body = 2;</code>
      *
@@ -16469,8 +16435,9 @@ public final class Protocol {
    * Protobuf type {@code jesgoo.protocol.Event}
    */
   public static final class Event extends
-      com.google.protobuf.GeneratedMessage
-      implements EventOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event)
+      EventOrBuilder {
     // Use Event.newBuilder() to construct.
     private Event(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -16581,10 +16548,10 @@ public final class Protocol {
       return PARSER;
     }
 
-    public interface HeadOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface HeadOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Head)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required .jesgoo.protocol.Event.Head.CryptoType crypto_type = 1;
       /**
        * <code>required .jesgoo.protocol.Event.Head.CryptoType crypto_type = 1;</code>
        */
@@ -16594,7 +16561,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Head.CryptoType getCryptoType();
 
-      // required uint32 crypto_param = 2;
       /**
        * <code>required uint32 crypto_param = 2;</code>
        */
@@ -16608,8 +16574,9 @@ public final class Protocol {
      * Protobuf type {@code jesgoo.protocol.Event.Head}
      */
     public static final class Head extends
-        com.google.protobuf.GeneratedMessage
-        implements HeadOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Head)
+        HeadOrBuilder {
       // Use Head.newBuilder() to construct.
       private Head(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -16784,7 +16751,6 @@ public final class Protocol {
       }
 
       private int bitField0_;
-      // required .jesgoo.protocol.Event.Head.CryptoType crypto_type = 1;
       public static final int CRYPTO_TYPE_FIELD_NUMBER = 1;
       private jesgoo.protocol.Protocol.Event.Head.CryptoType cryptoType_;
       /**
@@ -16800,7 +16766,6 @@ public final class Protocol {
         return cryptoType_;
       }
 
-      // required uint32 crypto_param = 2;
       public static final int CRYPTO_PARAM_FIELD_NUMBER = 2;
       private int cryptoParam_;
       /**
@@ -16823,7 +16788,8 @@ public final class Protocol {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasCryptoType()) {
           memoizedIsInitialized = 0;
@@ -16945,8 +16911,9 @@ public final class Protocol {
        * Protobuf type {@code jesgoo.protocol.Event.Head}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements jesgoo.protocol.Protocol.Event.HeadOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Head)
+          jesgoo.protocol.Protocol.Event.HeadOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Head_descriptor;
@@ -17076,7 +17043,6 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        // required .jesgoo.protocol.Event.Head.CryptoType crypto_type = 1;
         private jesgoo.protocol.Protocol.Event.Head.CryptoType cryptoType_ = jesgoo.protocol.Protocol.Event.Head.CryptoType.JESGOO_BASE64;
         /**
          * <code>required .jesgoo.protocol.Event.Head.CryptoType crypto_type = 1;</code>
@@ -17112,7 +17078,6 @@ public final class Protocol {
           return this;
         }
 
-        // required uint32 crypto_param = 2;
         private int cryptoParam_ ;
         /**
          * <code>required uint32 crypto_param = 2;</code>
@@ -17156,10 +17121,10 @@ public final class Protocol {
       // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Head)
     }
 
-    public interface BodyOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface BodyOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required .jesgoo.protocol.Event.Body.EventType type = 1;
       /**
        * <code>required .jesgoo.protocol.Event.Body.EventType type = 1;</code>
        *
@@ -17177,7 +17142,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Body.EventType getType();
 
-      // optional string search_id = 2;
       /**
        * <code>optional string search_id = 2;</code>
        *
@@ -17204,7 +17168,6 @@ public final class Protocol {
       com.google.protobuf.ByteString
           getSearchIdBytes();
 
-      // optional uint32 search_timestamp = 3;
       /**
        * <code>optional uint32 search_timestamp = 3;</code>
        *
@@ -17222,7 +17185,6 @@ public final class Protocol {
        */
       int getSearchTimestamp();
 
-      // optional uint32 search_ip = 4;
       /**
        * <code>optional uint32 search_ip = 4;</code>
        *
@@ -17240,7 +17202,6 @@ public final class Protocol {
        */
       int getSearchIp();
 
-      // optional uint32 event_timestamp = 5;
       /**
        * <code>optional uint32 event_timestamp = 5;</code>
        *
@@ -17258,7 +17219,6 @@ public final class Protocol {
        */
       int getEventTimestamp();
 
-      // optional uint32 event_ip = 6;
       /**
        * <code>optional uint32 event_ip = 6;</code>
        *
@@ -17276,7 +17236,6 @@ public final class Protocol {
        */
       int getEventIp();
 
-      // optional .jesgoo.protocol.Event.Body.Media media = 7;
       /**
        * <code>optional .jesgoo.protocol.Event.Body.Media media = 7;</code>
        *
@@ -17302,7 +17261,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Body.MediaOrBuilder getMediaOrBuilder();
 
-      // optional .jesgoo.protocol.Event.Body.Region region = 8;
       /**
        * <code>optional .jesgoo.protocol.Event.Body.Region region = 8;</code>
        *
@@ -17328,7 +17286,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Body.RegionOrBuilder getRegionOrBuilder();
 
-      // optional .jesgoo.protocol.Event.Body.Ad ad = 9;
       /**
        * <code>optional .jesgoo.protocol.Event.Body.Ad ad = 9;</code>
        *
@@ -17354,7 +17311,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Body.AdOrBuilder getAdOrBuilder();
 
-      // optional .jesgoo.protocol.Event.Body.Charge charge = 10;
       /**
        * <code>optional .jesgoo.protocol.Event.Body.Charge charge = 10;</code>
        *
@@ -17380,7 +17336,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Body.ChargeOrBuilder getChargeOrBuilder();
 
-      // optional .jesgoo.protocol.Dsp dsp = 11;
       /**
        * <code>optional .jesgoo.protocol.Dsp dsp = 11;</code>
        *
@@ -17398,7 +17353,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Dsp getDsp();
 
-      // optional .jesgoo.protocol.Event.Body.Action action = 12;
       /**
        * <code>optional .jesgoo.protocol.Event.Body.Action action = 12;</code>
        *
@@ -17424,7 +17378,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Body.ActionOrBuilder getActionOrBuilder();
 
-      // repeated .jesgoo.protocol.Event.Body.App apps = 13;
       /**
        * <code>repeated .jesgoo.protocol.Event.Body.App apps = 13;</code>
        *
@@ -17469,7 +17422,6 @@ public final class Protocol {
       jesgoo.protocol.Protocol.Event.Body.AppOrBuilder getAppsOrBuilder(
           int index);
 
-      // optional .jesgoo.protocol.DspInfo dsp_info = 14;
       /**
        * <code>optional .jesgoo.protocol.DspInfo dsp_info = 14;</code>
        *
@@ -17495,7 +17447,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.DspInfoOrBuilder getDspInfoOrBuilder();
 
-      // repeated string exptags = 15;
       /**
        * <code>repeated string exptags = 15;</code>
        *
@@ -17503,8 +17454,8 @@ public final class Protocol {
        * 实验标记
        * </pre>
        */
-      java.util.List<java.lang.String>
-      getExptagsList();
+      com.google.protobuf.ProtocolStringList
+          getExptagsList();
       /**
        * <code>repeated string exptags = 15;</code>
        *
@@ -17531,7 +17482,6 @@ public final class Protocol {
       com.google.protobuf.ByteString
           getExptagsBytes(int index);
 
-      // optional string cookie = 16;
       /**
        * <code>optional string cookie = 16;</code>
        *
@@ -17558,7 +17508,6 @@ public final class Protocol {
       com.google.protobuf.ByteString
           getCookieBytes();
 
-      // optional .jesgoo.protocol.Event.Body.Device device = 17;
       /**
        * <code>optional .jesgoo.protocol.Event.Body.Device device = 17;</code>
        *
@@ -17584,7 +17533,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Body.DeviceOrBuilder getDeviceOrBuilder();
 
-      // optional .jesgoo.protocol.Event.Body.Client client = 18;
       /**
        * <code>optional .jesgoo.protocol.Event.Body.Client client = 18;</code>
        *
@@ -17610,7 +17558,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Body.ClientOrBuilder getClientOrBuilder();
 
-      // optional .jesgoo.protocol.Event.Body.Antispam antispam = 19;
       /**
        * <code>optional .jesgoo.protocol.Event.Body.Antispam antispam = 19;</code>
        *
@@ -17636,7 +17583,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Event.Body.AntispamOrBuilder getAntispamOrBuilder();
 
-      // optional bool debug = 100;
       /**
        * <code>optional bool debug = 100;</code>
        *
@@ -17654,7 +17600,6 @@ public final class Protocol {
        */
       boolean getDebug();
 
-      // optional uint64 event_id = 101;
       /**
        * <code>optional uint64 event_id = 101;</code>
        *
@@ -17676,8 +17621,9 @@ public final class Protocol {
      * Protobuf type {@code jesgoo.protocol.Event.Body}
      */
     public static final class Body extends
-        com.google.protobuf.GeneratedMessage
-        implements BodyOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body)
+        BodyOrBuilder {
       // Use Body.newBuilder() to construct.
       private Body(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -17735,8 +17681,9 @@ public final class Protocol {
                 break;
               }
               case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000002;
-                searchId_ = input.readBytes();
+                searchId_ = bs;
                 break;
               }
               case 24: {
@@ -17857,16 +17804,18 @@ public final class Protocol {
                 break;
               }
               case 122: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
                   exptags_ = new com.google.protobuf.LazyStringArrayList();
                   mutable_bitField0_ |= 0x00004000;
                 }
-                exptags_.add(input.readBytes());
+                exptags_.add(bs);
                 break;
               }
               case 130: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00002000;
-                cookie_ = input.readBytes();
+                cookie_ = bs;
                 break;
               }
               case 138: {
@@ -17930,7 +17879,7 @@ public final class Protocol {
             apps_ = java.util.Collections.unmodifiableList(apps_);
           }
           if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
-            exptags_ = new com.google.protobuf.UnmodifiableLazyStringList(exptags_);
+            exptags_ = exptags_.getUnmodifiableView();
           }
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
@@ -19302,10 +19251,10 @@ public final class Protocol {
         // @@protoc_insertion_point(enum_scope:jesgoo.protocol.Event.Body.ClientType)
       }
 
-      public interface RegionOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface RegionOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.Region)
+          com.google.protobuf.MessageOrBuilder {
 
-        // required uint32 country = 1;
         /**
          * <code>required uint32 country = 1;</code>
          *
@@ -19323,7 +19272,6 @@ public final class Protocol {
          */
         int getCountry();
 
-        // required uint32 province = 2;
         /**
          * <code>required uint32 province = 2;</code>
          *
@@ -19341,7 +19289,6 @@ public final class Protocol {
          */
         int getProvince();
 
-        // required uint32 city = 3;
         /**
          * <code>required uint32 city = 3;</code>
          *
@@ -19367,8 +19314,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Region extends
-          com.google.protobuf.GeneratedMessage
-          implements RegionOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.Region)
+          RegionOrBuilder {
         // Use Region.newBuilder() to construct.
         private Region(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -19469,7 +19417,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // required uint32 country = 1;
         public static final int COUNTRY_FIELD_NUMBER = 1;
         private int country_;
         /**
@@ -19493,7 +19440,6 @@ public final class Protocol {
           return country_;
         }
 
-        // required uint32 province = 2;
         public static final int PROVINCE_FIELD_NUMBER = 2;
         private int province_;
         /**
@@ -19517,7 +19463,6 @@ public final class Protocol {
           return province_;
         }
 
-        // required uint32 city = 3;
         public static final int CITY_FIELD_NUMBER = 3;
         private int city_;
         /**
@@ -19549,7 +19494,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           if (!hasCountry()) {
             memoizedIsInitialized = 0;
@@ -19686,8 +19632,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.RegionOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.Region)
+            jesgoo.protocol.Protocol.Event.Body.RegionOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_Region_descriptor;
@@ -19830,7 +19777,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // required uint32 country = 1;
           private int country_ ;
           /**
            * <code>required uint32 country = 1;</code>
@@ -19879,7 +19825,6 @@ public final class Protocol {
             return this;
           }
 
-          // required uint32 province = 2;
           private int province_ ;
           /**
            * <code>required uint32 province = 2;</code>
@@ -19928,7 +19873,6 @@ public final class Protocol {
             return this;
           }
 
-          // required uint32 city = 3;
           private int city_ ;
           /**
            * <code>required uint32 city = 3;</code>
@@ -19988,10 +19932,10 @@ public final class Protocol {
         // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Body.Region)
       }
 
-      public interface DeviceIdOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface DeviceIdOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.DeviceId)
+          com.google.protobuf.MessageOrBuilder {
 
-        // required .jesgoo.protocol.Event.Body.DeviceIdType type = 1;
         /**
          * <code>required .jesgoo.protocol.Event.Body.DeviceIdType type = 1;</code>
          *
@@ -20009,7 +19953,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.Event.Body.DeviceIdType getType();
 
-        // required string id = 2;
         /**
          * <code>required string id = 2;</code>
          *
@@ -20036,7 +19979,6 @@ public final class Protocol {
         com.google.protobuf.ByteString
             getIdBytes();
 
-        // optional bool original = 3;
         /**
          * <code>optional bool original = 3;</code>
          *
@@ -20062,8 +20004,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class DeviceId extends
-          com.google.protobuf.GeneratedMessage
-          implements DeviceIdOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.DeviceId)
+          DeviceIdOrBuilder {
         // Use DeviceId.newBuilder() to construct.
         private DeviceId(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -20121,8 +20064,9 @@ public final class Protocol {
                   break;
                 }
                 case 18: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000002;
-                  id_ = input.readBytes();
+                  id_ = bs;
                   break;
                 }
                 case 24: {
@@ -20170,7 +20114,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // required .jesgoo.protocol.Event.Body.DeviceIdType type = 1;
         public static final int TYPE_FIELD_NUMBER = 1;
         private jesgoo.protocol.Protocol.Event.Body.DeviceIdType type_;
         /**
@@ -20194,7 +20137,6 @@ public final class Protocol {
           return type_;
         }
 
-        // required string id = 2;
         public static final int ID_FIELD_NUMBER = 2;
         private java.lang.Object id_;
         /**
@@ -20249,7 +20191,6 @@ public final class Protocol {
           }
         }
 
-        // optional bool original = 3;
         public static final int ORIGINAL_FIELD_NUMBER = 3;
         private boolean original_;
         /**
@@ -20281,7 +20222,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           if (!hasType()) {
             memoizedIsInitialized = 0;
@@ -20414,8 +20356,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.DeviceIdOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.DeviceId)
+            jesgoo.protocol.Protocol.Event.Body.DeviceIdOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_DeviceId_descriptor;
@@ -20556,7 +20499,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // required .jesgoo.protocol.Event.Body.DeviceIdType type = 1;
           private jesgoo.protocol.Protocol.Event.Body.DeviceIdType type_ = jesgoo.protocol.Protocol.Event.Body.DeviceIdType.DEVID_UNKNOWN;
           /**
            * <code>required .jesgoo.protocol.Event.Body.DeviceIdType type = 1;</code>
@@ -20608,7 +20550,6 @@ public final class Protocol {
             return this;
           }
 
-          // required string id = 2;
           private java.lang.Object id_ = "";
           /**
            * <code>required string id = 2;</code>
@@ -20630,9 +20571,12 @@ public final class Protocol {
           public java.lang.String getId() {
             java.lang.Object ref = id_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              id_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                id_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -20706,7 +20650,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional bool original = 3;
           private boolean original_ ;
           /**
            * <code>optional bool original = 3;</code>
@@ -20766,10 +20709,10 @@ public final class Protocol {
         // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Body.DeviceId)
       }
 
-      public interface DeviceOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface DeviceOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.Device)
+          com.google.protobuf.MessageOrBuilder {
 
-        // optional .jesgoo.protocol.OSType os = 1;
         /**
          * <code>optional .jesgoo.protocol.OSType os = 1;</code>
          *
@@ -20787,7 +20730,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.OSType getOs();
 
-        // optional .jesgoo.protocol.Version osversion = 2;
         /**
          * <code>optional .jesgoo.protocol.Version osversion = 2;</code>
          *
@@ -20813,7 +20755,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.VersionOrBuilder getOsversionOrBuilder();
 
-        // repeated .jesgoo.protocol.Event.Body.DeviceId ids = 3;
         /**
          * <code>repeated .jesgoo.protocol.Event.Body.DeviceId ids = 3;</code>
          *
@@ -20858,7 +20799,6 @@ public final class Protocol {
         jesgoo.protocol.Protocol.Event.Body.DeviceIdOrBuilder getIdsOrBuilder(
             int index);
 
-        // optional string brand = 4;
         /**
          * <code>optional string brand = 4;</code>
          *
@@ -20885,7 +20825,6 @@ public final class Protocol {
         com.google.protobuf.ByteString
             getBrandBytes();
 
-        // optional string model = 5;
         /**
          * <code>optional string model = 5;</code>
          *
@@ -20912,7 +20851,6 @@ public final class Protocol {
         com.google.protobuf.ByteString
             getModelBytes();
 
-        // optional bytes useragent = 6;
         /**
          * <code>optional bytes useragent = 6;</code>
          *
@@ -20930,7 +20868,6 @@ public final class Protocol {
          */
         com.google.protobuf.ByteString getUseragent();
 
-        // optional .jesgoo.protocol.Event.Body.BrowserType browser = 7;
         /**
          * <code>optional .jesgoo.protocol.Event.Body.BrowserType browser = 7;</code>
          *
@@ -20948,7 +20885,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.Event.Body.BrowserType getBrowser();
 
-        // optional string uid = 8;
         /**
          * <code>optional string uid = 8;</code>
          *
@@ -20983,8 +20919,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Device extends
-          com.google.protobuf.GeneratedMessage
-          implements DeviceOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.Device)
+          DeviceOrBuilder {
         // Use Device.newBuilder() to construct.
         private Device(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -21063,13 +21000,15 @@ public final class Protocol {
                   break;
                 }
                 case 34: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000004;
-                  brand_ = input.readBytes();
+                  brand_ = bs;
                   break;
                 }
                 case 42: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000008;
-                  model_ = input.readBytes();
+                  model_ = bs;
                   break;
                 }
                 case 50: {
@@ -21089,8 +21028,9 @@ public final class Protocol {
                   break;
                 }
                 case 66: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000040;
-                  uid_ = input.readBytes();
+                  uid_ = bs;
                   break;
                 }
               }
@@ -21136,7 +21076,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // optional .jesgoo.protocol.OSType os = 1;
         public static final int OS_FIELD_NUMBER = 1;
         private jesgoo.protocol.Protocol.OSType os_;
         /**
@@ -21160,7 +21099,6 @@ public final class Protocol {
           return os_;
         }
 
-        // optional .jesgoo.protocol.Version osversion = 2;
         public static final int OSVERSION_FIELD_NUMBER = 2;
         private jesgoo.protocol.Protocol.Version osversion_;
         /**
@@ -21194,7 +21132,6 @@ public final class Protocol {
           return osversion_;
         }
 
-        // repeated .jesgoo.protocol.Event.Body.DeviceId ids = 3;
         public static final int IDS_FIELD_NUMBER = 3;
         private java.util.List<jesgoo.protocol.Protocol.Event.Body.DeviceId> ids_;
         /**
@@ -21250,7 +21187,6 @@ public final class Protocol {
           return ids_.get(index);
         }
 
-        // optional string brand = 4;
         public static final int BRAND_FIELD_NUMBER = 4;
         private java.lang.Object brand_;
         /**
@@ -21305,7 +21241,6 @@ public final class Protocol {
           }
         }
 
-        // optional string model = 5;
         public static final int MODEL_FIELD_NUMBER = 5;
         private java.lang.Object model_;
         /**
@@ -21360,7 +21295,6 @@ public final class Protocol {
           }
         }
 
-        // optional bytes useragent = 6;
         public static final int USERAGENT_FIELD_NUMBER = 6;
         private com.google.protobuf.ByteString useragent_;
         /**
@@ -21384,7 +21318,6 @@ public final class Protocol {
           return useragent_;
         }
 
-        // optional .jesgoo.protocol.Event.Body.BrowserType browser = 7;
         public static final int BROWSER_FIELD_NUMBER = 7;
         private jesgoo.protocol.Protocol.Event.Body.BrowserType browser_;
         /**
@@ -21408,7 +21341,6 @@ public final class Protocol {
           return browser_;
         }
 
-        // optional string uid = 8;
         public static final int UID_FIELD_NUMBER = 8;
         private java.lang.Object uid_;
         /**
@@ -21476,7 +21408,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           if (hasOsversion()) {
             if (!getOsversion().isInitialized()) {
@@ -21648,8 +21581,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.DeviceOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.Device)
+            jesgoo.protocol.Protocol.Event.Body.DeviceOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_Device_descriptor;
@@ -21885,7 +21819,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // optional .jesgoo.protocol.OSType os = 1;
           private jesgoo.protocol.Protocol.OSType os_ = jesgoo.protocol.Protocol.OSType.UNKNOWN_OS_TYPE;
           /**
            * <code>optional .jesgoo.protocol.OSType os = 1;</code>
@@ -21937,7 +21870,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Version osversion = 2;
           private jesgoo.protocol.Protocol.Version osversion_ = jesgoo.protocol.Protocol.Version.getDefaultInstance();
           private com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder> osversionBuilder_;
@@ -22082,7 +22014,7 @@ public final class Protocol {
             if (osversionBuilder_ == null) {
               osversionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                   jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder>(
-                      osversion_,
+                      getOsversion(),
                       getParentForChildren(),
                       isClean());
               osversion_ = null;
@@ -22090,7 +22022,6 @@ public final class Protocol {
             return osversionBuilder_;
           }
 
-          // repeated .jesgoo.protocol.Event.Body.DeviceId ids = 3;
           private java.util.List<jesgoo.protocol.Protocol.Event.Body.DeviceId> ids_ =
             java.util.Collections.emptyList();
           private void ensureIdsIsMutable() {
@@ -22272,7 +22203,8 @@ public final class Protocol {
               java.lang.Iterable<? extends jesgoo.protocol.Protocol.Event.Body.DeviceId> values) {
             if (idsBuilder_ == null) {
               ensureIdsIsMutable();
-              super.addAll(values, ids_);
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                  values, ids_);
               onChanged();
             } else {
               idsBuilder_.addAllMessages(values);
@@ -22402,7 +22334,6 @@ public final class Protocol {
             return idsBuilder_;
           }
 
-          // optional string brand = 4;
           private java.lang.Object brand_ = "";
           /**
            * <code>optional string brand = 4;</code>
@@ -22424,9 +22355,12 @@ public final class Protocol {
           public java.lang.String getBrand() {
             java.lang.Object ref = brand_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              brand_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                brand_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -22500,7 +22434,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional string model = 5;
           private java.lang.Object model_ = "";
           /**
            * <code>optional string model = 5;</code>
@@ -22522,9 +22455,12 @@ public final class Protocol {
           public java.lang.String getModel() {
             java.lang.Object ref = model_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              model_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                model_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -22598,7 +22534,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional bytes useragent = 6;
           private com.google.protobuf.ByteString useragent_ = com.google.protobuf.ByteString.EMPTY;
           /**
            * <code>optional bytes useragent = 6;</code>
@@ -22650,7 +22585,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Event.Body.BrowserType browser = 7;
           private jesgoo.protocol.Protocol.Event.Body.BrowserType browser_ = jesgoo.protocol.Protocol.Event.Body.BrowserType.UnknownBrowser;
           /**
            * <code>optional .jesgoo.protocol.Event.Body.BrowserType browser = 7;</code>
@@ -22702,7 +22636,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional string uid = 8;
           private java.lang.Object uid_ = "";
           /**
            * <code>optional string uid = 8;</code>
@@ -22724,9 +22657,12 @@ public final class Protocol {
           public java.lang.String getUid() {
             java.lang.Object ref = uid_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              uid_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                uid_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -22811,10 +22747,10 @@ public final class Protocol {
         // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Body.Device)
       }
 
-      public interface MediaOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface MediaOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.Media)
+          com.google.protobuf.MessageOrBuilder {
 
-        // required string media_id = 1;
         /**
          * <code>required string media_id = 1;</code>
          *
@@ -22841,7 +22777,6 @@ public final class Protocol {
         com.google.protobuf.ByteString
             getMediaIdBytes();
 
-        // optional string channel_id = 2;
         /**
          * <code>optional string channel_id = 2;</code>
          *
@@ -22868,7 +22803,6 @@ public final class Protocol {
         com.google.protobuf.ByteString
             getChannelIdBytes();
 
-        // optional string package_name = 3;
         /**
          * <code>optional string package_name = 3;</code>
          *
@@ -22895,7 +22829,6 @@ public final class Protocol {
         com.google.protobuf.ByteString
             getPackageNameBytes();
 
-        // optional .jesgoo.protocol.Version version = 4;
         /**
          * <code>optional .jesgoo.protocol.Version version = 4;</code>
          *
@@ -22921,7 +22854,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.VersionOrBuilder getVersionOrBuilder();
 
-        // optional string adslot_id = 5;
         /**
          * <code>optional string adslot_id = 5;</code>
          *
@@ -22948,7 +22880,6 @@ public final class Protocol {
         com.google.protobuf.ByteString
             getAdslotIdBytes();
 
-        // optional .jesgoo.protocol.Event.Body.AdslotType adslot_type = 6;
         /**
          * <code>optional .jesgoo.protocol.Event.Body.AdslotType adslot_type = 6;</code>
          *
@@ -22974,8 +22905,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Media extends
-          com.google.protobuf.GeneratedMessage
-          implements MediaOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.Media)
+          MediaOrBuilder {
         // Use Media.newBuilder() to construct.
         private Media(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -23022,18 +22954,21 @@ public final class Protocol {
                   break;
                 }
                 case 10: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000001;
-                  mediaId_ = input.readBytes();
+                  mediaId_ = bs;
                   break;
                 }
                 case 18: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000002;
-                  channelId_ = input.readBytes();
+                  channelId_ = bs;
                   break;
                 }
                 case 26: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000004;
-                  packageName_ = input.readBytes();
+                  packageName_ = bs;
                   break;
                 }
                 case 34: {
@@ -23050,8 +22985,9 @@ public final class Protocol {
                   break;
                 }
                 case 42: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000010;
-                  adslotId_ = input.readBytes();
+                  adslotId_ = bs;
                   break;
                 }
                 case 48: {
@@ -23105,7 +23041,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // required string media_id = 1;
         public static final int MEDIA_ID_FIELD_NUMBER = 1;
         private java.lang.Object mediaId_;
         /**
@@ -23160,7 +23095,6 @@ public final class Protocol {
           }
         }
 
-        // optional string channel_id = 2;
         public static final int CHANNEL_ID_FIELD_NUMBER = 2;
         private java.lang.Object channelId_;
         /**
@@ -23215,7 +23149,6 @@ public final class Protocol {
           }
         }
 
-        // optional string package_name = 3;
         public static final int PACKAGE_NAME_FIELD_NUMBER = 3;
         private java.lang.Object packageName_;
         /**
@@ -23270,7 +23203,6 @@ public final class Protocol {
           }
         }
 
-        // optional .jesgoo.protocol.Version version = 4;
         public static final int VERSION_FIELD_NUMBER = 4;
         private jesgoo.protocol.Protocol.Version version_;
         /**
@@ -23304,7 +23236,6 @@ public final class Protocol {
           return version_;
         }
 
-        // optional string adslot_id = 5;
         public static final int ADSLOT_ID_FIELD_NUMBER = 5;
         private java.lang.Object adslotId_;
         /**
@@ -23359,7 +23290,6 @@ public final class Protocol {
           }
         }
 
-        // optional .jesgoo.protocol.Event.Body.AdslotType adslot_type = 6;
         public static final int ADSLOT_TYPE_FIELD_NUMBER = 6;
         private jesgoo.protocol.Protocol.Event.Body.AdslotType adslotType_;
         /**
@@ -23394,7 +23324,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           if (!hasMediaId()) {
             memoizedIsInitialized = 0;
@@ -23550,8 +23481,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.MediaOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.Media)
+            jesgoo.protocol.Protocol.Event.Body.MediaOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_Media_descriptor;
@@ -23736,7 +23668,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // required string media_id = 1;
           private java.lang.Object mediaId_ = "";
           /**
            * <code>required string media_id = 1;</code>
@@ -23758,9 +23689,12 @@ public final class Protocol {
           public java.lang.String getMediaId() {
             java.lang.Object ref = mediaId_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              mediaId_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                mediaId_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -23834,7 +23768,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional string channel_id = 2;
           private java.lang.Object channelId_ = "";
           /**
            * <code>optional string channel_id = 2;</code>
@@ -23856,9 +23789,12 @@ public final class Protocol {
           public java.lang.String getChannelId() {
             java.lang.Object ref = channelId_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              channelId_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                channelId_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -23932,7 +23868,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional string package_name = 3;
           private java.lang.Object packageName_ = "";
           /**
            * <code>optional string package_name = 3;</code>
@@ -23954,9 +23889,12 @@ public final class Protocol {
           public java.lang.String getPackageName() {
             java.lang.Object ref = packageName_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              packageName_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                packageName_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -24030,7 +23968,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Version version = 4;
           private jesgoo.protocol.Protocol.Version version_ = jesgoo.protocol.Protocol.Version.getDefaultInstance();
           private com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder> versionBuilder_;
@@ -24175,7 +24112,7 @@ public final class Protocol {
             if (versionBuilder_ == null) {
               versionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                   jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder>(
-                      version_,
+                      getVersion(),
                       getParentForChildren(),
                       isClean());
               version_ = null;
@@ -24183,7 +24120,6 @@ public final class Protocol {
             return versionBuilder_;
           }
 
-          // optional string adslot_id = 5;
           private java.lang.Object adslotId_ = "";
           /**
            * <code>optional string adslot_id = 5;</code>
@@ -24205,9 +24141,12 @@ public final class Protocol {
           public java.lang.String getAdslotId() {
             java.lang.Object ref = adslotId_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              adslotId_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                adslotId_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -24281,7 +24220,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Event.Body.AdslotType adslot_type = 6;
           private jesgoo.protocol.Protocol.Event.Body.AdslotType adslotType_ = jesgoo.protocol.Protocol.Event.Body.AdslotType.BANNER;
           /**
            * <code>optional .jesgoo.protocol.Event.Body.AdslotType adslot_type = 6;</code>
@@ -24344,10 +24282,10 @@ public final class Protocol {
         // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Body.Media)
       }
 
-      public interface AdOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface AdOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.Ad)
+          com.google.protobuf.MessageOrBuilder {
 
-        // optional uint32 user_id = 1;
         /**
          * <code>optional uint32 user_id = 1;</code>
          *
@@ -24365,7 +24303,6 @@ public final class Protocol {
          */
         int getUserId();
 
-        // optional uint32 plan_id = 2;
         /**
          * <code>optional uint32 plan_id = 2;</code>
          *
@@ -24383,7 +24320,6 @@ public final class Protocol {
          */
         int getPlanId();
 
-        // optional uint32 group_id = 3;
         /**
          * <code>optional uint32 group_id = 3;</code>
          *
@@ -24401,7 +24337,6 @@ public final class Protocol {
          */
         int getGroupId();
 
-        // optional uint32 product_id = 4;
         /**
          * <code>optional uint32 product_id = 4;</code>
          *
@@ -24419,7 +24354,6 @@ public final class Protocol {
          */
         int getProductId();
 
-        // optional uint32 unit_id = 5;
         /**
          * <code>optional uint32 unit_id = 5;</code>
          *
@@ -24437,7 +24371,6 @@ public final class Protocol {
          */
         int getUnitId();
 
-        // optional uint32 template_id = 6;
         /**
          * <code>optional uint32 template_id = 6;</code>
          *
@@ -24455,7 +24388,6 @@ public final class Protocol {
          */
         int getTemplateId();
 
-        // optional .jesgoo.protocol.Event.Body.AdType type = 7;
         /**
          * <code>optional .jesgoo.protocol.Event.Body.AdType type = 7;</code>
          *
@@ -24473,7 +24405,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.Event.Body.AdType getType();
 
-        // optional .jesgoo.protocol.Event.Body.InteractionType interaction = 8;
         /**
          * <code>optional .jesgoo.protocol.Event.Body.InteractionType interaction = 8;</code>
          *
@@ -24491,7 +24422,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.Event.Body.InteractionType getInteraction();
 
-        // optional uint32 score = 9;
         /**
          * <code>optional uint32 score = 9;</code>
          *
@@ -24517,8 +24447,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Ad extends
-          com.google.protobuf.GeneratedMessage
-          implements AdOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.Ad)
+          AdOrBuilder {
         // Use Ad.newBuilder() to construct.
         private Ad(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -24661,7 +24592,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // optional uint32 user_id = 1;
         public static final int USER_ID_FIELD_NUMBER = 1;
         private int userId_;
         /**
@@ -24685,7 +24615,6 @@ public final class Protocol {
           return userId_;
         }
 
-        // optional uint32 plan_id = 2;
         public static final int PLAN_ID_FIELD_NUMBER = 2;
         private int planId_;
         /**
@@ -24709,7 +24638,6 @@ public final class Protocol {
           return planId_;
         }
 
-        // optional uint32 group_id = 3;
         public static final int GROUP_ID_FIELD_NUMBER = 3;
         private int groupId_;
         /**
@@ -24733,7 +24661,6 @@ public final class Protocol {
           return groupId_;
         }
 
-        // optional uint32 product_id = 4;
         public static final int PRODUCT_ID_FIELD_NUMBER = 4;
         private int productId_;
         /**
@@ -24757,7 +24684,6 @@ public final class Protocol {
           return productId_;
         }
 
-        // optional uint32 unit_id = 5;
         public static final int UNIT_ID_FIELD_NUMBER = 5;
         private int unitId_;
         /**
@@ -24781,7 +24707,6 @@ public final class Protocol {
           return unitId_;
         }
 
-        // optional uint32 template_id = 6;
         public static final int TEMPLATE_ID_FIELD_NUMBER = 6;
         private int templateId_;
         /**
@@ -24805,7 +24730,6 @@ public final class Protocol {
           return templateId_;
         }
 
-        // optional .jesgoo.protocol.Event.Body.AdType type = 7;
         public static final int TYPE_FIELD_NUMBER = 7;
         private jesgoo.protocol.Protocol.Event.Body.AdType type_;
         /**
@@ -24829,7 +24753,6 @@ public final class Protocol {
           return type_;
         }
 
-        // optional .jesgoo.protocol.Event.Body.InteractionType interaction = 8;
         public static final int INTERACTION_FIELD_NUMBER = 8;
         private jesgoo.protocol.Protocol.Event.Body.InteractionType interaction_;
         /**
@@ -24853,7 +24776,6 @@ public final class Protocol {
           return interaction_;
         }
 
-        // optional uint32 score = 9;
         public static final int SCORE_FIELD_NUMBER = 9;
         private int score_;
         /**
@@ -24891,7 +24813,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           memoizedIsInitialized = 1;
           return true;
@@ -25058,8 +24981,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.AdOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.Ad)
+            jesgoo.protocol.Protocol.Event.Body.AdOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_Ad_descriptor;
@@ -25244,7 +25168,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // optional uint32 user_id = 1;
           private int userId_ ;
           /**
            * <code>optional uint32 user_id = 1;</code>
@@ -25293,7 +25216,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 plan_id = 2;
           private int planId_ ;
           /**
            * <code>optional uint32 plan_id = 2;</code>
@@ -25342,7 +25264,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 group_id = 3;
           private int groupId_ ;
           /**
            * <code>optional uint32 group_id = 3;</code>
@@ -25391,7 +25312,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 product_id = 4;
           private int productId_ ;
           /**
            * <code>optional uint32 product_id = 4;</code>
@@ -25440,7 +25360,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 unit_id = 5;
           private int unitId_ ;
           /**
            * <code>optional uint32 unit_id = 5;</code>
@@ -25489,7 +25408,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 template_id = 6;
           private int templateId_ ;
           /**
            * <code>optional uint32 template_id = 6;</code>
@@ -25538,7 +25456,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Event.Body.AdType type = 7;
           private jesgoo.protocol.Protocol.Event.Body.AdType type_ = jesgoo.protocol.Protocol.Event.Body.AdType.TEXT;
           /**
            * <code>optional .jesgoo.protocol.Event.Body.AdType type = 7;</code>
@@ -25590,7 +25507,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Event.Body.InteractionType interaction = 8;
           private jesgoo.protocol.Protocol.Event.Body.InteractionType interaction_ = jesgoo.protocol.Protocol.Event.Body.InteractionType.NO_INTERACT;
           /**
            * <code>optional .jesgoo.protocol.Event.Body.InteractionType interaction = 8;</code>
@@ -25642,7 +25558,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 score = 9;
           private int score_ ;
           /**
            * <code>optional uint32 score = 9;</code>
@@ -25702,10 +25617,10 @@ public final class Protocol {
         // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Body.Ad)
       }
 
-      public interface AntispamOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface AntispamOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.Antispam)
+          com.google.protobuf.MessageOrBuilder {
 
-        // required uint32 score = 1;
         /**
          * <code>required uint32 score = 1;</code>
          *
@@ -25723,7 +25638,6 @@ public final class Protocol {
          */
         int getScore();
 
-        // repeated .jesgoo.protocol.AntispamRule rules = 2;
         /**
          * <code>repeated .jesgoo.protocol.AntispamRule rules = 2;</code>
          *
@@ -25749,7 +25663,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.AntispamRule getRules(int index);
 
-        // optional .jesgoo.protocol.Event.Body.Antispam.Flags flags = 3;
         /**
          * <code>optional .jesgoo.protocol.Event.Body.Antispam.Flags flags = 3;</code>
          *
@@ -25783,8 +25696,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Antispam extends
-          com.google.protobuf.GeneratedMessage
-          implements AntispamOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.Antispam)
+          AntispamOrBuilder {
         // Use Antispam.newBuilder() to construct.
         private Antispam(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -25840,7 +25754,7 @@ public final class Protocol {
                   jesgoo.protocol.Protocol.AntispamRule value = jesgoo.protocol.Protocol.AntispamRule.valueOf(rawValue);
                   if (value == null) {
                     unknownFields.mergeVarintField(2, rawValue);
-                  } else {
+                    } else {
                     if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                       rules_ = new java.util.ArrayList<jesgoo.protocol.Protocol.AntispamRule>();
                       mutable_bitField0_ |= 0x00000002;
@@ -25857,7 +25771,7 @@ public final class Protocol {
                     jesgoo.protocol.Protocol.AntispamRule value = jesgoo.protocol.Protocol.AntispamRule.valueOf(rawValue);
                     if (value == null) {
                       unknownFields.mergeVarintField(2, rawValue);
-                    } else {
+                      } else {
                       if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                         rules_ = new java.util.ArrayList<jesgoo.protocol.Protocol.AntispamRule>();
                         mutable_bitField0_ |= 0x00000002;
@@ -25923,10 +25837,10 @@ public final class Protocol {
           return PARSER;
         }
 
-        public interface FlagsOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+        public interface FlagsOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.Antispam.Flags)
+            com.google.protobuf.MessageOrBuilder {
 
-          // optional bool search_click_count_hit_cache = 1;
           /**
            * <code>optional bool search_click_count_hit_cache = 1;</code>
            */
@@ -25936,7 +25850,6 @@ public final class Protocol {
            */
           boolean getSearchClickCountHitCache();
 
-          // optional uint32 search_click_count = 2;
           /**
            * <code>optional uint32 search_click_count = 2;</code>
            */
@@ -25946,7 +25859,6 @@ public final class Protocol {
            */
           int getSearchClickCount();
 
-          // optional bool device_click_count_hit_cache = 3;
           /**
            * <code>optional bool device_click_count_hit_cache = 3;</code>
            */
@@ -25956,7 +25868,6 @@ public final class Protocol {
            */
           boolean getDeviceClickCountHitCache();
 
-          // optional uint32 device_click_count = 4;
           /**
            * <code>optional uint32 device_click_count = 4;</code>
            */
@@ -25970,8 +25881,9 @@ public final class Protocol {
          * Protobuf type {@code jesgoo.protocol.Event.Body.Antispam.Flags}
          */
         public static final class Flags extends
-            com.google.protobuf.GeneratedMessage
-            implements FlagsOrBuilder {
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.Antispam.Flags)
+            FlagsOrBuilder {
           // Use Flags.newBuilder() to construct.
           private Flags(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
@@ -26077,7 +25989,6 @@ public final class Protocol {
           }
 
           private int bitField0_;
-          // optional bool search_click_count_hit_cache = 1;
           public static final int SEARCH_CLICK_COUNT_HIT_CACHE_FIELD_NUMBER = 1;
           private boolean searchClickCountHitCache_;
           /**
@@ -26093,7 +26004,6 @@ public final class Protocol {
             return searchClickCountHitCache_;
           }
 
-          // optional uint32 search_click_count = 2;
           public static final int SEARCH_CLICK_COUNT_FIELD_NUMBER = 2;
           private int searchClickCount_;
           /**
@@ -26109,7 +26019,6 @@ public final class Protocol {
             return searchClickCount_;
           }
 
-          // optional bool device_click_count_hit_cache = 3;
           public static final int DEVICE_CLICK_COUNT_HIT_CACHE_FIELD_NUMBER = 3;
           private boolean deviceClickCountHitCache_;
           /**
@@ -26125,7 +26034,6 @@ public final class Protocol {
             return deviceClickCountHitCache_;
           }
 
-          // optional uint32 device_click_count = 4;
           public static final int DEVICE_CLICK_COUNT_FIELD_NUMBER = 4;
           private int deviceClickCount_;
           /**
@@ -26150,7 +26058,8 @@ public final class Protocol {
           private byte memoizedIsInitialized = -1;
           public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -26278,8 +26187,9 @@ public final class Protocol {
            * Protobuf type {@code jesgoo.protocol.Event.Body.Antispam.Flags}
            */
           public static final class Builder extends
-              com.google.protobuf.GeneratedMessage.Builder<Builder>
-             implements jesgoo.protocol.Protocol.Event.Body.Antispam.FlagsOrBuilder {
+              com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+              // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.Antispam.Flags)
+              jesgoo.protocol.Protocol.Event.Body.Antispam.FlagsOrBuilder {
             public static final com.google.protobuf.Descriptors.Descriptor
                 getDescriptor() {
               return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_Antispam_Flags_descriptor;
@@ -26419,7 +26329,6 @@ public final class Protocol {
             }
             private int bitField0_;
 
-            // optional bool search_click_count_hit_cache = 1;
             private boolean searchClickCountHitCache_ ;
             /**
              * <code>optional bool search_click_count_hit_cache = 1;</code>
@@ -26452,7 +26361,6 @@ public final class Protocol {
               return this;
             }
 
-            // optional uint32 search_click_count = 2;
             private int searchClickCount_ ;
             /**
              * <code>optional uint32 search_click_count = 2;</code>
@@ -26485,7 +26393,6 @@ public final class Protocol {
               return this;
             }
 
-            // optional bool device_click_count_hit_cache = 3;
             private boolean deviceClickCountHitCache_ ;
             /**
              * <code>optional bool device_click_count_hit_cache = 3;</code>
@@ -26518,7 +26425,6 @@ public final class Protocol {
               return this;
             }
 
-            // optional uint32 device_click_count = 4;
             private int deviceClickCount_ ;
             /**
              * <code>optional uint32 device_click_count = 4;</code>
@@ -26563,7 +26469,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // required uint32 score = 1;
         public static final int SCORE_FIELD_NUMBER = 1;
         private int score_;
         /**
@@ -26587,7 +26492,6 @@ public final class Protocol {
           return score_;
         }
 
-        // repeated .jesgoo.protocol.AntispamRule rules = 2;
         public static final int RULES_FIELD_NUMBER = 2;
         private java.util.List<jesgoo.protocol.Protocol.AntispamRule> rules_;
         /**
@@ -26621,7 +26525,6 @@ public final class Protocol {
           return rules_.get(index);
         }
 
-        // optional .jesgoo.protocol.Event.Body.Antispam.Flags flags = 3;
         public static final int FLAGS_FIELD_NUMBER = 3;
         private jesgoo.protocol.Protocol.Event.Body.Antispam.Flags flags_;
         /**
@@ -26663,7 +26566,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           if (!hasScore()) {
             memoizedIsInitialized = 0;
@@ -26797,8 +26701,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.AntispamOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.Antispam)
+            jesgoo.protocol.Protocol.Event.Body.AntispamOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_Antispam_descriptor;
@@ -26950,7 +26855,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // required uint32 score = 1;
           private int score_ ;
           /**
            * <code>required uint32 score = 1;</code>
@@ -26999,7 +26903,6 @@ public final class Protocol {
             return this;
           }
 
-          // repeated .jesgoo.protocol.AntispamRule rules = 2;
           private java.util.List<jesgoo.protocol.Protocol.AntispamRule> rules_ =
             java.util.Collections.emptyList();
           private void ensureRulesIsMutable() {
@@ -27081,7 +26984,8 @@ public final class Protocol {
           public Builder addAllRules(
               java.lang.Iterable<? extends jesgoo.protocol.Protocol.AntispamRule> values) {
             ensureRulesIsMutable();
-            super.addAll(values, rules_);
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, rules_);
             onChanged();
             return this;
           }
@@ -27099,7 +27003,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Event.Body.Antispam.Flags flags = 3;
           private jesgoo.protocol.Protocol.Event.Body.Antispam.Flags flags_ = jesgoo.protocol.Protocol.Event.Body.Antispam.Flags.getDefaultInstance();
           private com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Event.Body.Antispam.Flags, jesgoo.protocol.Protocol.Event.Body.Antispam.Flags.Builder, jesgoo.protocol.Protocol.Event.Body.Antispam.FlagsOrBuilder> flagsBuilder_;
@@ -27244,7 +27147,7 @@ public final class Protocol {
             if (flagsBuilder_ == null) {
               flagsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                   jesgoo.protocol.Protocol.Event.Body.Antispam.Flags, jesgoo.protocol.Protocol.Event.Body.Antispam.Flags.Builder, jesgoo.protocol.Protocol.Event.Body.Antispam.FlagsOrBuilder>(
-                      flags_,
+                      getFlags(),
                       getParentForChildren(),
                       isClean());
               flags_ = null;
@@ -27263,10 +27166,10 @@ public final class Protocol {
         // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Body.Antispam)
       }
 
-      public interface ChargeOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface ChargeOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.Charge)
+          com.google.protobuf.MessageOrBuilder {
 
-        // required .jesgoo.protocol.ChargeType type = 1;
         /**
          * <code>required .jesgoo.protocol.ChargeType type = 1;</code>
          *
@@ -27284,7 +27187,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.ChargeType getType();
 
-        // required uint32 price = 2;
         /**
          * <code>required uint32 price = 2;</code>
          *
@@ -27302,7 +27204,6 @@ public final class Protocol {
          */
         int getPrice();
 
-        // optional bool success = 3;
         /**
          * <code>optional bool success = 3;</code>
          *
@@ -27320,7 +27221,6 @@ public final class Protocol {
          */
         boolean getSuccess();
 
-        // optional .jesgoo.protocol.Event.Body.EventType trigger_event_type = 4;
         /**
          * <code>optional .jesgoo.protocol.Event.Body.EventType trigger_event_type = 4;</code>
          *
@@ -27338,7 +27238,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.Event.Body.EventType getTriggerEventType();
 
-        // optional bool over_budget = 5;
         /**
          * <code>optional bool over_budget = 5;</code>
          *
@@ -27356,7 +27255,6 @@ public final class Protocol {
          */
         boolean getOverBudget();
 
-        // optional bool over_deficit = 6;
         /**
          * <code>optional bool over_deficit = 6;</code>
          *
@@ -27374,7 +27272,6 @@ public final class Protocol {
          */
         boolean getOverDeficit();
 
-        // optional uint32 error = 7;
         /**
          * <code>optional uint32 error = 7;</code>
          *
@@ -27392,7 +27289,6 @@ public final class Protocol {
          */
         int getError();
 
-        // optional uint32 message_offset = 8;
         /**
          * <code>optional uint32 message_offset = 8;</code>
          *
@@ -27418,8 +27314,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Charge extends
-          com.google.protobuf.GeneratedMessage
-          implements ChargeOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.Charge)
+          ChargeOrBuilder {
         // Use Charge.newBuilder() to construct.
         private Charge(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -27557,7 +27454,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // required .jesgoo.protocol.ChargeType type = 1;
         public static final int TYPE_FIELD_NUMBER = 1;
         private jesgoo.protocol.Protocol.ChargeType type_;
         /**
@@ -27581,7 +27477,6 @@ public final class Protocol {
           return type_;
         }
 
-        // required uint32 price = 2;
         public static final int PRICE_FIELD_NUMBER = 2;
         private int price_;
         /**
@@ -27605,7 +27500,6 @@ public final class Protocol {
           return price_;
         }
 
-        // optional bool success = 3;
         public static final int SUCCESS_FIELD_NUMBER = 3;
         private boolean success_;
         /**
@@ -27629,7 +27523,6 @@ public final class Protocol {
           return success_;
         }
 
-        // optional .jesgoo.protocol.Event.Body.EventType trigger_event_type = 4;
         public static final int TRIGGER_EVENT_TYPE_FIELD_NUMBER = 4;
         private jesgoo.protocol.Protocol.Event.Body.EventType triggerEventType_;
         /**
@@ -27653,7 +27546,6 @@ public final class Protocol {
           return triggerEventType_;
         }
 
-        // optional bool over_budget = 5;
         public static final int OVER_BUDGET_FIELD_NUMBER = 5;
         private boolean overBudget_;
         /**
@@ -27677,7 +27569,6 @@ public final class Protocol {
           return overBudget_;
         }
 
-        // optional bool over_deficit = 6;
         public static final int OVER_DEFICIT_FIELD_NUMBER = 6;
         private boolean overDeficit_;
         /**
@@ -27701,7 +27592,6 @@ public final class Protocol {
           return overDeficit_;
         }
 
-        // optional uint32 error = 7;
         public static final int ERROR_FIELD_NUMBER = 7;
         private int error_;
         /**
@@ -27725,7 +27615,6 @@ public final class Protocol {
           return error_;
         }
 
-        // optional uint32 message_offset = 8;
         public static final int MESSAGE_OFFSET_FIELD_NUMBER = 8;
         private int messageOffset_;
         /**
@@ -27762,7 +27651,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           if (!hasType()) {
             memoizedIsInitialized = 0;
@@ -27930,8 +27820,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.ChargeOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.Charge)
+            jesgoo.protocol.Protocol.Event.Body.ChargeOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_Charge_descriptor;
@@ -28115,7 +28006,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // required .jesgoo.protocol.ChargeType type = 1;
           private jesgoo.protocol.Protocol.ChargeType type_ = jesgoo.protocol.Protocol.ChargeType.FREE;
           /**
            * <code>required .jesgoo.protocol.ChargeType type = 1;</code>
@@ -28167,7 +28057,6 @@ public final class Protocol {
             return this;
           }
 
-          // required uint32 price = 2;
           private int price_ ;
           /**
            * <code>required uint32 price = 2;</code>
@@ -28216,7 +28105,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional bool success = 3;
           private boolean success_ ;
           /**
            * <code>optional bool success = 3;</code>
@@ -28265,7 +28153,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Event.Body.EventType trigger_event_type = 4;
           private jesgoo.protocol.Protocol.Event.Body.EventType triggerEventType_ = jesgoo.protocol.Protocol.Event.Body.EventType.CLICK;
           /**
            * <code>optional .jesgoo.protocol.Event.Body.EventType trigger_event_type = 4;</code>
@@ -28317,7 +28204,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional bool over_budget = 5;
           private boolean overBudget_ ;
           /**
            * <code>optional bool over_budget = 5;</code>
@@ -28366,7 +28252,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional bool over_deficit = 6;
           private boolean overDeficit_ ;
           /**
            * <code>optional bool over_deficit = 6;</code>
@@ -28415,7 +28300,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 error = 7;
           private int error_ ;
           /**
            * <code>optional uint32 error = 7;</code>
@@ -28464,7 +28348,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 message_offset = 8;
           private int messageOffset_ ;
           /**
            * <code>optional uint32 message_offset = 8;</code>
@@ -28524,10 +28407,10 @@ public final class Protocol {
         // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Body.Charge)
       }
 
-      public interface ActionOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface ActionOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.Action)
+          com.google.protobuf.MessageOrBuilder {
 
-        // optional string target_url = 1;
         /**
          * <code>optional string target_url = 1;</code>
          *
@@ -28554,7 +28437,6 @@ public final class Protocol {
         com.google.protobuf.ByteString
             getTargetUrlBytes();
 
-        // optional .jesgoo.protocol.Event.Body.RedirectType redirect_type = 2;
         /**
          * <code>optional .jesgoo.protocol.Event.Body.RedirectType redirect_type = 2;</code>
          *
@@ -28580,8 +28462,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Action extends
-          com.google.protobuf.GeneratedMessage
-          implements ActionOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.Action)
+          ActionOrBuilder {
         // Use Action.newBuilder() to construct.
         private Action(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -28628,8 +28511,9 @@ public final class Protocol {
                   break;
                 }
                 case 10: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000001;
-                  targetUrl_ = input.readBytes();
+                  targetUrl_ = bs;
                   break;
                 }
                 case 16: {
@@ -28683,7 +28567,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // optional string target_url = 1;
         public static final int TARGET_URL_FIELD_NUMBER = 1;
         private java.lang.Object targetUrl_;
         /**
@@ -28738,7 +28621,6 @@ public final class Protocol {
           }
         }
 
-        // optional .jesgoo.protocol.Event.Body.RedirectType redirect_type = 2;
         public static final int REDIRECT_TYPE_FIELD_NUMBER = 2;
         private jesgoo.protocol.Protocol.Event.Body.RedirectType redirectType_;
         /**
@@ -28769,7 +28651,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           memoizedIsInitialized = 1;
           return true;
@@ -28887,8 +28770,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.ActionOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.Action)
+            jesgoo.protocol.Protocol.Event.Body.ActionOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_Action_descriptor;
@@ -29012,7 +28896,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // optional string target_url = 1;
           private java.lang.Object targetUrl_ = "";
           /**
            * <code>optional string target_url = 1;</code>
@@ -29034,9 +28917,12 @@ public final class Protocol {
           public java.lang.String getTargetUrl() {
             java.lang.Object ref = targetUrl_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              targetUrl_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                targetUrl_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -29110,7 +28996,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Event.Body.RedirectType redirect_type = 2;
           private jesgoo.protocol.Protocol.Event.Body.RedirectType redirectType_ = jesgoo.protocol.Protocol.Event.Body.RedirectType.HTTP_FOUND;
           /**
            * <code>optional .jesgoo.protocol.Event.Body.RedirectType redirect_type = 2;</code>
@@ -29173,10 +29058,10 @@ public final class Protocol {
         // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Body.Action)
       }
 
-      public interface AppOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface AppOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.App)
+          com.google.protobuf.MessageOrBuilder {
 
-        // required string package_name = 1;
         /**
          * <code>required string package_name = 1;</code>
          *
@@ -29203,7 +29088,6 @@ public final class Protocol {
         com.google.protobuf.ByteString
             getPackageNameBytes();
 
-        // optional uint32 install_time = 2;
         /**
          * <code>optional uint32 install_time = 2;</code>
          *
@@ -29221,7 +29105,6 @@ public final class Protocol {
          */
         int getInstallTime();
 
-        // optional uint32 update_time = 3;
         /**
          * <code>optional uint32 update_time = 3;</code>
          *
@@ -29239,7 +29122,6 @@ public final class Protocol {
          */
         int getUpdateTime();
 
-        // optional uint32 last_running_time = 4;
         /**
          * <code>optional uint32 last_running_time = 4;</code>
          *
@@ -29257,7 +29139,6 @@ public final class Protocol {
          */
         int getLastRunningTime();
 
-        // optional .jesgoo.protocol.Version version = 5;
         /**
          * <code>optional .jesgoo.protocol.Version version = 5;</code>
          *
@@ -29291,8 +29172,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class App extends
-          com.google.protobuf.GeneratedMessage
-          implements AppOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.App)
+          AppOrBuilder {
         // Use App.newBuilder() to construct.
         private App(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -29339,8 +29221,9 @@ public final class Protocol {
                   break;
                 }
                 case 10: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
                   bitField0_ |= 0x00000001;
-                  packageName_ = input.readBytes();
+                  packageName_ = bs;
                   break;
                 }
                 case 16: {
@@ -29411,7 +29294,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // required string package_name = 1;
         public static final int PACKAGE_NAME_FIELD_NUMBER = 1;
         private java.lang.Object packageName_;
         /**
@@ -29466,7 +29348,6 @@ public final class Protocol {
           }
         }
 
-        // optional uint32 install_time = 2;
         public static final int INSTALL_TIME_FIELD_NUMBER = 2;
         private int installTime_;
         /**
@@ -29490,7 +29371,6 @@ public final class Protocol {
           return installTime_;
         }
 
-        // optional uint32 update_time = 3;
         public static final int UPDATE_TIME_FIELD_NUMBER = 3;
         private int updateTime_;
         /**
@@ -29514,7 +29394,6 @@ public final class Protocol {
           return updateTime_;
         }
 
-        // optional uint32 last_running_time = 4;
         public static final int LAST_RUNNING_TIME_FIELD_NUMBER = 4;
         private int lastRunningTime_;
         /**
@@ -29538,7 +29417,6 @@ public final class Protocol {
           return lastRunningTime_;
         }
 
-        // optional .jesgoo.protocol.Version version = 5;
         public static final int VERSION_FIELD_NUMBER = 5;
         private jesgoo.protocol.Protocol.Version version_;
         /**
@@ -29582,7 +29460,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           if (!hasPackageName()) {
             memoizedIsInitialized = 0;
@@ -29731,8 +29610,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.AppOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.App)
+            jesgoo.protocol.Protocol.Event.Body.AppOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_App_descriptor;
@@ -29902,7 +29782,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // required string package_name = 1;
           private java.lang.Object packageName_ = "";
           /**
            * <code>required string package_name = 1;</code>
@@ -29924,9 +29803,12 @@ public final class Protocol {
           public java.lang.String getPackageName() {
             java.lang.Object ref = packageName_;
             if (!(ref instanceof java.lang.String)) {
-              java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                  .toStringUtf8();
-              packageName_ = s;
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (bs.isValidUtf8()) {
+                packageName_ = s;
+              }
               return s;
             } else {
               return (java.lang.String) ref;
@@ -30000,7 +29882,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 install_time = 2;
           private int installTime_ ;
           /**
            * <code>optional uint32 install_time = 2;</code>
@@ -30049,7 +29930,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 update_time = 3;
           private int updateTime_ ;
           /**
            * <code>optional uint32 update_time = 3;</code>
@@ -30098,7 +29978,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional uint32 last_running_time = 4;
           private int lastRunningTime_ ;
           /**
            * <code>optional uint32 last_running_time = 4;</code>
@@ -30147,7 +30026,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Version version = 5;
           private jesgoo.protocol.Protocol.Version version_ = jesgoo.protocol.Protocol.Version.getDefaultInstance();
           private com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder> versionBuilder_;
@@ -30292,7 +30170,7 @@ public final class Protocol {
             if (versionBuilder_ == null) {
               versionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                   jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder>(
-                      version_,
+                      getVersion(),
                       getParentForChildren(),
                       isClean());
               version_ = null;
@@ -30311,10 +30189,10 @@ public final class Protocol {
         // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event.Body.App)
       }
 
-      public interface ClientOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      public interface ClientOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Event.Body.Client)
+          com.google.protobuf.MessageOrBuilder {
 
-        // required .jesgoo.protocol.Event.Body.ClientType type = 1;
         /**
          * <code>required .jesgoo.protocol.Event.Body.ClientType type = 1;</code>
          *
@@ -30332,7 +30210,6 @@ public final class Protocol {
          */
         jesgoo.protocol.Protocol.Event.Body.ClientType getType();
 
-        // optional .jesgoo.protocol.Version version = 2;
         /**
          * <code>optional .jesgoo.protocol.Version version = 2;</code>
          *
@@ -30366,8 +30243,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Client extends
-          com.google.protobuf.GeneratedMessage
-          implements ClientOrBuilder {
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:jesgoo.protocol.Event.Body.Client)
+          ClientOrBuilder {
         // Use Client.newBuilder() to construct.
         private Client(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
@@ -30477,7 +30355,6 @@ public final class Protocol {
         }
 
         private int bitField0_;
-        // required .jesgoo.protocol.Event.Body.ClientType type = 1;
         public static final int TYPE_FIELD_NUMBER = 1;
         private jesgoo.protocol.Protocol.Event.Body.ClientType type_;
         /**
@@ -30501,7 +30378,6 @@ public final class Protocol {
           return type_;
         }
 
-        // optional .jesgoo.protocol.Version version = 2;
         public static final int VERSION_FIELD_NUMBER = 2;
         private jesgoo.protocol.Protocol.Version version_;
         /**
@@ -30542,7 +30418,8 @@ public final class Protocol {
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
 
           if (!hasType()) {
             memoizedIsInitialized = 0;
@@ -30670,8 +30547,9 @@ public final class Protocol {
          * </pre>
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements jesgoo.protocol.Protocol.Event.Body.ClientOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body.Client)
+            jesgoo.protocol.Protocol.Event.Body.ClientOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor
               getDescriptor() {
             return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_Client_descriptor;
@@ -30812,7 +30690,6 @@ public final class Protocol {
           }
           private int bitField0_;
 
-          // required .jesgoo.protocol.Event.Body.ClientType type = 1;
           private jesgoo.protocol.Protocol.Event.Body.ClientType type_ = jesgoo.protocol.Protocol.Event.Body.ClientType.NATIVESDK;
           /**
            * <code>required .jesgoo.protocol.Event.Body.ClientType type = 1;</code>
@@ -30864,7 +30741,6 @@ public final class Protocol {
             return this;
           }
 
-          // optional .jesgoo.protocol.Version version = 2;
           private jesgoo.protocol.Protocol.Version version_ = jesgoo.protocol.Protocol.Version.getDefaultInstance();
           private com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder> versionBuilder_;
@@ -31009,7 +30885,7 @@ public final class Protocol {
             if (versionBuilder_ == null) {
               versionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                   jesgoo.protocol.Protocol.Version, jesgoo.protocol.Protocol.Version.Builder, jesgoo.protocol.Protocol.VersionOrBuilder>(
-                      version_,
+                      getVersion(),
                       getParentForChildren(),
                       isClean());
               version_ = null;
@@ -31029,7 +30905,6 @@ public final class Protocol {
       }
 
       private int bitField0_;
-      // required .jesgoo.protocol.Event.Body.EventType type = 1;
       public static final int TYPE_FIELD_NUMBER = 1;
       private jesgoo.protocol.Protocol.Event.Body.EventType type_;
       /**
@@ -31053,7 +30928,6 @@ public final class Protocol {
         return type_;
       }
 
-      // optional string search_id = 2;
       public static final int SEARCH_ID_FIELD_NUMBER = 2;
       private java.lang.Object searchId_;
       /**
@@ -31108,7 +30982,6 @@ public final class Protocol {
         }
       }
 
-      // optional uint32 search_timestamp = 3;
       public static final int SEARCH_TIMESTAMP_FIELD_NUMBER = 3;
       private int searchTimestamp_;
       /**
@@ -31132,7 +31005,6 @@ public final class Protocol {
         return searchTimestamp_;
       }
 
-      // optional uint32 search_ip = 4;
       public static final int SEARCH_IP_FIELD_NUMBER = 4;
       private int searchIp_;
       /**
@@ -31156,7 +31028,6 @@ public final class Protocol {
         return searchIp_;
       }
 
-      // optional uint32 event_timestamp = 5;
       public static final int EVENT_TIMESTAMP_FIELD_NUMBER = 5;
       private int eventTimestamp_;
       /**
@@ -31180,7 +31051,6 @@ public final class Protocol {
         return eventTimestamp_;
       }
 
-      // optional uint32 event_ip = 6;
       public static final int EVENT_IP_FIELD_NUMBER = 6;
       private int eventIp_;
       /**
@@ -31204,7 +31074,6 @@ public final class Protocol {
         return eventIp_;
       }
 
-      // optional .jesgoo.protocol.Event.Body.Media media = 7;
       public static final int MEDIA_FIELD_NUMBER = 7;
       private jesgoo.protocol.Protocol.Event.Body.Media media_;
       /**
@@ -31238,7 +31107,6 @@ public final class Protocol {
         return media_;
       }
 
-      // optional .jesgoo.protocol.Event.Body.Region region = 8;
       public static final int REGION_FIELD_NUMBER = 8;
       private jesgoo.protocol.Protocol.Event.Body.Region region_;
       /**
@@ -31272,7 +31140,6 @@ public final class Protocol {
         return region_;
       }
 
-      // optional .jesgoo.protocol.Event.Body.Ad ad = 9;
       public static final int AD_FIELD_NUMBER = 9;
       private jesgoo.protocol.Protocol.Event.Body.Ad ad_;
       /**
@@ -31306,7 +31173,6 @@ public final class Protocol {
         return ad_;
       }
 
-      // optional .jesgoo.protocol.Event.Body.Charge charge = 10;
       public static final int CHARGE_FIELD_NUMBER = 10;
       private jesgoo.protocol.Protocol.Event.Body.Charge charge_;
       /**
@@ -31340,7 +31206,6 @@ public final class Protocol {
         return charge_;
       }
 
-      // optional .jesgoo.protocol.Dsp dsp = 11;
       public static final int DSP_FIELD_NUMBER = 11;
       private jesgoo.protocol.Protocol.Dsp dsp_;
       /**
@@ -31364,7 +31229,6 @@ public final class Protocol {
         return dsp_;
       }
 
-      // optional .jesgoo.protocol.Event.Body.Action action = 12;
       public static final int ACTION_FIELD_NUMBER = 12;
       private jesgoo.protocol.Protocol.Event.Body.Action action_;
       /**
@@ -31398,7 +31262,6 @@ public final class Protocol {
         return action_;
       }
 
-      // repeated .jesgoo.protocol.Event.Body.App apps = 13;
       public static final int APPS_FIELD_NUMBER = 13;
       private java.util.List<jesgoo.protocol.Protocol.Event.Body.App> apps_;
       /**
@@ -31454,7 +31317,6 @@ public final class Protocol {
         return apps_.get(index);
       }
 
-      // optional .jesgoo.protocol.DspInfo dsp_info = 14;
       public static final int DSP_INFO_FIELD_NUMBER = 14;
       private jesgoo.protocol.Protocol.DspInfo dspInfo_;
       /**
@@ -31488,7 +31350,6 @@ public final class Protocol {
         return dspInfo_;
       }
 
-      // repeated string exptags = 15;
       public static final int EXPTAGS_FIELD_NUMBER = 15;
       private com.google.protobuf.LazyStringList exptags_;
       /**
@@ -31498,7 +31359,7 @@ public final class Protocol {
        * 实验标记
        * </pre>
        */
-      public java.util.List<java.lang.String>
+      public com.google.protobuf.ProtocolStringList
           getExptagsList() {
         return exptags_;
       }
@@ -31534,7 +31395,6 @@ public final class Protocol {
         return exptags_.getByteString(index);
       }
 
-      // optional string cookie = 16;
       public static final int COOKIE_FIELD_NUMBER = 16;
       private java.lang.Object cookie_;
       /**
@@ -31589,7 +31449,6 @@ public final class Protocol {
         }
       }
 
-      // optional .jesgoo.protocol.Event.Body.Device device = 17;
       public static final int DEVICE_FIELD_NUMBER = 17;
       private jesgoo.protocol.Protocol.Event.Body.Device device_;
       /**
@@ -31623,7 +31482,6 @@ public final class Protocol {
         return device_;
       }
 
-      // optional .jesgoo.protocol.Event.Body.Client client = 18;
       public static final int CLIENT_FIELD_NUMBER = 18;
       private jesgoo.protocol.Protocol.Event.Body.Client client_;
       /**
@@ -31657,7 +31515,6 @@ public final class Protocol {
         return client_;
       }
 
-      // optional .jesgoo.protocol.Event.Body.Antispam antispam = 19;
       public static final int ANTISPAM_FIELD_NUMBER = 19;
       private jesgoo.protocol.Protocol.Event.Body.Antispam antispam_;
       /**
@@ -31691,7 +31548,6 @@ public final class Protocol {
         return antispam_;
       }
 
-      // optional bool debug = 100;
       public static final int DEBUG_FIELD_NUMBER = 100;
       private boolean debug_;
       /**
@@ -31715,7 +31571,6 @@ public final class Protocol {
         return debug_;
       }
 
-      // optional uint64 event_id = 101;
       public static final int EVENT_ID_FIELD_NUMBER = 101;
       private long eventId_;
       /**
@@ -31765,7 +31620,8 @@ public final class Protocol {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasType()) {
           memoizedIsInitialized = 0;
@@ -32069,8 +31925,9 @@ public final class Protocol {
        * Protobuf type {@code jesgoo.protocol.Event.Body}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements jesgoo.protocol.Protocol.Event.BodyOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event.Body)
+          jesgoo.protocol.Protocol.Event.BodyOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_Body_descriptor;
@@ -32309,8 +32166,7 @@ public final class Protocol {
             result.dspInfo_ = dspInfoBuilder_.build();
           }
           if (((bitField0_ & 0x00004000) == 0x00004000)) {
-            exptags_ = new com.google.protobuf.UnmodifiableLazyStringList(
-                exptags_);
+            exptags_ = exptags_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00004000);
           }
           result.exptags_ = exptags_;
@@ -32542,7 +32398,6 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        // required .jesgoo.protocol.Event.Body.EventType type = 1;
         private jesgoo.protocol.Protocol.Event.Body.EventType type_ = jesgoo.protocol.Protocol.Event.Body.EventType.CLICK;
         /**
          * <code>required .jesgoo.protocol.Event.Body.EventType type = 1;</code>
@@ -32594,7 +32449,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional string search_id = 2;
         private java.lang.Object searchId_ = "";
         /**
          * <code>optional string search_id = 2;</code>
@@ -32616,9 +32470,12 @@ public final class Protocol {
         public java.lang.String getSearchId() {
           java.lang.Object ref = searchId_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            searchId_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              searchId_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -32692,7 +32549,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional uint32 search_timestamp = 3;
         private int searchTimestamp_ ;
         /**
          * <code>optional uint32 search_timestamp = 3;</code>
@@ -32741,7 +32597,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional uint32 search_ip = 4;
         private int searchIp_ ;
         /**
          * <code>optional uint32 search_ip = 4;</code>
@@ -32790,7 +32645,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional uint32 event_timestamp = 5;
         private int eventTimestamp_ ;
         /**
          * <code>optional uint32 event_timestamp = 5;</code>
@@ -32839,7 +32693,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional uint32 event_ip = 6;
         private int eventIp_ ;
         /**
          * <code>optional uint32 event_ip = 6;</code>
@@ -32888,7 +32741,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional .jesgoo.protocol.Event.Body.Media media = 7;
         private jesgoo.protocol.Protocol.Event.Body.Media media_ = jesgoo.protocol.Protocol.Event.Body.Media.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.Event.Body.Media, jesgoo.protocol.Protocol.Event.Body.Media.Builder, jesgoo.protocol.Protocol.Event.Body.MediaOrBuilder> mediaBuilder_;
@@ -33033,7 +32885,7 @@ public final class Protocol {
           if (mediaBuilder_ == null) {
             mediaBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.Event.Body.Media, jesgoo.protocol.Protocol.Event.Body.Media.Builder, jesgoo.protocol.Protocol.Event.Body.MediaOrBuilder>(
-                    media_,
+                    getMedia(),
                     getParentForChildren(),
                     isClean());
             media_ = null;
@@ -33041,7 +32893,6 @@ public final class Protocol {
           return mediaBuilder_;
         }
 
-        // optional .jesgoo.protocol.Event.Body.Region region = 8;
         private jesgoo.protocol.Protocol.Event.Body.Region region_ = jesgoo.protocol.Protocol.Event.Body.Region.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.Event.Body.Region, jesgoo.protocol.Protocol.Event.Body.Region.Builder, jesgoo.protocol.Protocol.Event.Body.RegionOrBuilder> regionBuilder_;
@@ -33186,7 +33037,7 @@ public final class Protocol {
           if (regionBuilder_ == null) {
             regionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.Event.Body.Region, jesgoo.protocol.Protocol.Event.Body.Region.Builder, jesgoo.protocol.Protocol.Event.Body.RegionOrBuilder>(
-                    region_,
+                    getRegion(),
                     getParentForChildren(),
                     isClean());
             region_ = null;
@@ -33194,7 +33045,6 @@ public final class Protocol {
           return regionBuilder_;
         }
 
-        // optional .jesgoo.protocol.Event.Body.Ad ad = 9;
         private jesgoo.protocol.Protocol.Event.Body.Ad ad_ = jesgoo.protocol.Protocol.Event.Body.Ad.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.Event.Body.Ad, jesgoo.protocol.Protocol.Event.Body.Ad.Builder, jesgoo.protocol.Protocol.Event.Body.AdOrBuilder> adBuilder_;
@@ -33339,7 +33189,7 @@ public final class Protocol {
           if (adBuilder_ == null) {
             adBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.Event.Body.Ad, jesgoo.protocol.Protocol.Event.Body.Ad.Builder, jesgoo.protocol.Protocol.Event.Body.AdOrBuilder>(
-                    ad_,
+                    getAd(),
                     getParentForChildren(),
                     isClean());
             ad_ = null;
@@ -33347,7 +33197,6 @@ public final class Protocol {
           return adBuilder_;
         }
 
-        // optional .jesgoo.protocol.Event.Body.Charge charge = 10;
         private jesgoo.protocol.Protocol.Event.Body.Charge charge_ = jesgoo.protocol.Protocol.Event.Body.Charge.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.Event.Body.Charge, jesgoo.protocol.Protocol.Event.Body.Charge.Builder, jesgoo.protocol.Protocol.Event.Body.ChargeOrBuilder> chargeBuilder_;
@@ -33492,7 +33341,7 @@ public final class Protocol {
           if (chargeBuilder_ == null) {
             chargeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.Event.Body.Charge, jesgoo.protocol.Protocol.Event.Body.Charge.Builder, jesgoo.protocol.Protocol.Event.Body.ChargeOrBuilder>(
-                    charge_,
+                    getCharge(),
                     getParentForChildren(),
                     isClean());
             charge_ = null;
@@ -33500,7 +33349,6 @@ public final class Protocol {
           return chargeBuilder_;
         }
 
-        // optional .jesgoo.protocol.Dsp dsp = 11;
         private jesgoo.protocol.Protocol.Dsp dsp_ = jesgoo.protocol.Protocol.Dsp.JESGOO_DSP;
         /**
          * <code>optional .jesgoo.protocol.Dsp dsp = 11;</code>
@@ -33552,7 +33400,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional .jesgoo.protocol.Event.Body.Action action = 12;
         private jesgoo.protocol.Protocol.Event.Body.Action action_ = jesgoo.protocol.Protocol.Event.Body.Action.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.Event.Body.Action, jesgoo.protocol.Protocol.Event.Body.Action.Builder, jesgoo.protocol.Protocol.Event.Body.ActionOrBuilder> actionBuilder_;
@@ -33697,7 +33544,7 @@ public final class Protocol {
           if (actionBuilder_ == null) {
             actionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.Event.Body.Action, jesgoo.protocol.Protocol.Event.Body.Action.Builder, jesgoo.protocol.Protocol.Event.Body.ActionOrBuilder>(
-                    action_,
+                    getAction(),
                     getParentForChildren(),
                     isClean());
             action_ = null;
@@ -33705,7 +33552,6 @@ public final class Protocol {
           return actionBuilder_;
         }
 
-        // repeated .jesgoo.protocol.Event.Body.App apps = 13;
         private java.util.List<jesgoo.protocol.Protocol.Event.Body.App> apps_ =
           java.util.Collections.emptyList();
         private void ensureAppsIsMutable() {
@@ -33887,7 +33733,8 @@ public final class Protocol {
             java.lang.Iterable<? extends jesgoo.protocol.Protocol.Event.Body.App> values) {
           if (appsBuilder_ == null) {
             ensureAppsIsMutable();
-            super.addAll(values, apps_);
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, apps_);
             onChanged();
           } else {
             appsBuilder_.addAllMessages(values);
@@ -34017,7 +33864,6 @@ public final class Protocol {
           return appsBuilder_;
         }
 
-        // optional .jesgoo.protocol.DspInfo dsp_info = 14;
         private jesgoo.protocol.Protocol.DspInfo dspInfo_ = jesgoo.protocol.Protocol.DspInfo.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.DspInfo, jesgoo.protocol.Protocol.DspInfo.Builder, jesgoo.protocol.Protocol.DspInfoOrBuilder> dspInfoBuilder_;
@@ -34162,7 +34008,7 @@ public final class Protocol {
           if (dspInfoBuilder_ == null) {
             dspInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.DspInfo, jesgoo.protocol.Protocol.DspInfo.Builder, jesgoo.protocol.Protocol.DspInfoOrBuilder>(
-                    dspInfo_,
+                    getDspInfo(),
                     getParentForChildren(),
                     isClean());
             dspInfo_ = null;
@@ -34170,7 +34016,6 @@ public final class Protocol {
           return dspInfoBuilder_;
         }
 
-        // repeated string exptags = 15;
         private com.google.protobuf.LazyStringList exptags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         private void ensureExptagsIsMutable() {
           if (!((bitField0_ & 0x00004000) == 0x00004000)) {
@@ -34185,9 +34030,9 @@ public final class Protocol {
          * 实验标记
          * </pre>
          */
-        public java.util.List<java.lang.String>
+        public com.google.protobuf.ProtocolStringList
             getExptagsList() {
-          return java.util.Collections.unmodifiableList(exptags_);
+          return exptags_.getUnmodifiableView();
         }
         /**
          * <code>repeated string exptags = 15;</code>
@@ -34264,7 +34109,8 @@ public final class Protocol {
         public Builder addAllExptags(
             java.lang.Iterable<java.lang.String> values) {
           ensureExptagsIsMutable();
-          super.addAll(values, exptags_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, exptags_);
           onChanged();
           return this;
         }
@@ -34299,7 +34145,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional string cookie = 16;
         private java.lang.Object cookie_ = "";
         /**
          * <code>optional string cookie = 16;</code>
@@ -34321,9 +34166,12 @@ public final class Protocol {
         public java.lang.String getCookie() {
           java.lang.Object ref = cookie_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            cookie_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              cookie_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -34397,7 +34245,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional .jesgoo.protocol.Event.Body.Device device = 17;
         private jesgoo.protocol.Protocol.Event.Body.Device device_ = jesgoo.protocol.Protocol.Event.Body.Device.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.Event.Body.Device, jesgoo.protocol.Protocol.Event.Body.Device.Builder, jesgoo.protocol.Protocol.Event.Body.DeviceOrBuilder> deviceBuilder_;
@@ -34542,7 +34389,7 @@ public final class Protocol {
           if (deviceBuilder_ == null) {
             deviceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.Event.Body.Device, jesgoo.protocol.Protocol.Event.Body.Device.Builder, jesgoo.protocol.Protocol.Event.Body.DeviceOrBuilder>(
-                    device_,
+                    getDevice(),
                     getParentForChildren(),
                     isClean());
             device_ = null;
@@ -34550,7 +34397,6 @@ public final class Protocol {
           return deviceBuilder_;
         }
 
-        // optional .jesgoo.protocol.Event.Body.Client client = 18;
         private jesgoo.protocol.Protocol.Event.Body.Client client_ = jesgoo.protocol.Protocol.Event.Body.Client.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.Event.Body.Client, jesgoo.protocol.Protocol.Event.Body.Client.Builder, jesgoo.protocol.Protocol.Event.Body.ClientOrBuilder> clientBuilder_;
@@ -34695,7 +34541,7 @@ public final class Protocol {
           if (clientBuilder_ == null) {
             clientBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.Event.Body.Client, jesgoo.protocol.Protocol.Event.Body.Client.Builder, jesgoo.protocol.Protocol.Event.Body.ClientOrBuilder>(
-                    client_,
+                    getClient(),
                     getParentForChildren(),
                     isClean());
             client_ = null;
@@ -34703,7 +34549,6 @@ public final class Protocol {
           return clientBuilder_;
         }
 
-        // optional .jesgoo.protocol.Event.Body.Antispam antispam = 19;
         private jesgoo.protocol.Protocol.Event.Body.Antispam antispam_ = jesgoo.protocol.Protocol.Event.Body.Antispam.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.Event.Body.Antispam, jesgoo.protocol.Protocol.Event.Body.Antispam.Builder, jesgoo.protocol.Protocol.Event.Body.AntispamOrBuilder> antispamBuilder_;
@@ -34848,7 +34693,7 @@ public final class Protocol {
           if (antispamBuilder_ == null) {
             antispamBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.Event.Body.Antispam, jesgoo.protocol.Protocol.Event.Body.Antispam.Builder, jesgoo.protocol.Protocol.Event.Body.AntispamOrBuilder>(
-                    antispam_,
+                    getAntispam(),
                     getParentForChildren(),
                     isClean());
             antispam_ = null;
@@ -34856,7 +34701,6 @@ public final class Protocol {
           return antispamBuilder_;
         }
 
-        // optional bool debug = 100;
         private boolean debug_ ;
         /**
          * <code>optional bool debug = 100;</code>
@@ -34905,7 +34749,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional uint64 event_id = 101;
         private long eventId_ ;
         /**
          * <code>optional uint64 event_id = 101;</code>
@@ -34966,7 +34809,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required .jesgoo.protocol.Event.Head head = 1;
     public static final int HEAD_FIELD_NUMBER = 1;
     private jesgoo.protocol.Protocol.Event.Head head_;
     /**
@@ -35000,7 +34842,6 @@ public final class Protocol {
       return head_;
     }
 
-    // required .jesgoo.protocol.Event.Body body = 2;
     public static final int BODY_FIELD_NUMBER = 2;
     private jesgoo.protocol.Protocol.Event.Body body_;
     /**
@@ -35041,7 +34882,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasHead()) {
         memoizedIsInitialized = 0;
@@ -35171,8 +35013,9 @@ public final class Protocol {
      * Protobuf type {@code jesgoo.protocol.Event}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.EventOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Event)
+        jesgoo.protocol.Protocol.EventOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Event_descriptor;
@@ -35328,7 +35171,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required .jesgoo.protocol.Event.Head head = 1;
       private jesgoo.protocol.Protocol.Event.Head head_ = jesgoo.protocol.Protocol.Event.Head.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Event.Head, jesgoo.protocol.Protocol.Event.Head.Builder, jesgoo.protocol.Protocol.Event.HeadOrBuilder> headBuilder_;
@@ -35473,7 +35315,7 @@ public final class Protocol {
         if (headBuilder_ == null) {
           headBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Event.Head, jesgoo.protocol.Protocol.Event.Head.Builder, jesgoo.protocol.Protocol.Event.HeadOrBuilder>(
-                  head_,
+                  getHead(),
                   getParentForChildren(),
                   isClean());
           head_ = null;
@@ -35481,7 +35323,6 @@ public final class Protocol {
         return headBuilder_;
       }
 
-      // required .jesgoo.protocol.Event.Body body = 2;
       private jesgoo.protocol.Protocol.Event.Body body_ = jesgoo.protocol.Protocol.Event.Body.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Event.Body, jesgoo.protocol.Protocol.Event.Body.Builder, jesgoo.protocol.Protocol.Event.BodyOrBuilder> bodyBuilder_;
@@ -35626,7 +35467,7 @@ public final class Protocol {
         if (bodyBuilder_ == null) {
           bodyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Event.Body, jesgoo.protocol.Protocol.Event.Body.Builder, jesgoo.protocol.Protocol.Event.BodyOrBuilder>(
-                  body_,
+                  getBody(),
                   getParentForChildren(),
                   isClean());
           body_ = null;
@@ -35645,10 +35486,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Event)
   }
 
-  public interface MaterialOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface MaterialOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Material)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required uint32 id = 1;
     /**
      * <code>required uint32 id = 1;</code>
      *
@@ -35666,7 +35507,6 @@ public final class Protocol {
      */
     int getId();
 
-    // required .jesgoo.protocol.AdStyle type = 2;
     /**
      * <code>required .jesgoo.protocol.AdStyle type = 2;</code>
      *
@@ -35684,7 +35524,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.AdStyle getType();
 
-    // optional string title = 3;
     /**
      * <code>optional string title = 3;</code>
      *
@@ -35711,7 +35550,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getTitleBytes();
 
-    // optional string description = 4;
     /**
      * <code>optional string description = 4;</code>
      *
@@ -35738,7 +35576,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
-    // optional .jesgoo.protocol.Material.Image image = 5;
     /**
      * <code>optional .jesgoo.protocol.Material.Image image = 5;</code>
      *
@@ -35764,7 +35601,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.Material.ImageOrBuilder getImageOrBuilder();
 
-    // optional string target_url = 6;
     /**
      * <code>optional string target_url = 6;</code>
      *
@@ -35791,7 +35627,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getTargetUrlBytes();
 
-    // optional string show_url = 7;
     /**
      * <code>optional string show_url = 7;</code>
      *
@@ -35818,7 +35653,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getShowUrlBytes();
 
-    // optional .jesgoo.protocol.Material.App app = 8;
     /**
      * <code>optional .jesgoo.protocol.Material.App app = 8;</code>
      *
@@ -35844,7 +35678,6 @@ public final class Protocol {
      */
     jesgoo.protocol.Protocol.Material.AppOrBuilder getAppOrBuilder();
 
-    // optional string long_description = 9;
     /**
      * <code>optional string long_description = 9;</code>
      *
@@ -35871,7 +35704,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getLongDescriptionBytes();
 
-    // optional .jesgoo.protocol.PromotionType promotion_type = 10;
     /**
      * <code>optional .jesgoo.protocol.PromotionType promotion_type = 10;</code>
      *
@@ -35897,8 +35729,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class Material extends
-      com.google.protobuf.GeneratedMessage
-      implements MaterialOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.Material)
+      MaterialOrBuilder {
     // Use Material.newBuilder() to construct.
     private Material(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -35961,13 +35794,15 @@ public final class Protocol {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              title_ = input.readBytes();
+              title_ = bs;
               break;
             }
             case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              description_ = input.readBytes();
+              description_ = bs;
               break;
             }
             case 42: {
@@ -35984,13 +35819,15 @@ public final class Protocol {
               break;
             }
             case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
-              targetUrl_ = input.readBytes();
+              targetUrl_ = bs;
               break;
             }
             case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000040;
-              showUrl_ = input.readBytes();
+              showUrl_ = bs;
               break;
             }
             case 66: {
@@ -36007,8 +35844,9 @@ public final class Protocol {
               break;
             }
             case 74: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000100;
-              longDescription_ = input.readBytes();
+              longDescription_ = bs;
               break;
             }
             case 80: {
@@ -36061,10 +35899,10 @@ public final class Protocol {
       return PARSER;
     }
 
-    public interface ImageOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface ImageOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Material.Image)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required string url = 1;
       /**
        * <code>required string url = 1;</code>
        *
@@ -36091,7 +35929,6 @@ public final class Protocol {
       com.google.protobuf.ByteString
           getUrlBytes();
 
-      // optional uint32 width = 2;
       /**
        * <code>optional uint32 width = 2;</code>
        *
@@ -36109,7 +35946,6 @@ public final class Protocol {
        */
       int getWidth();
 
-      // optional uint32 height = 3;
       /**
        * <code>optional uint32 height = 3;</code>
        *
@@ -36135,8 +35971,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Image extends
-        com.google.protobuf.GeneratedMessage
-        implements ImageOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:jesgoo.protocol.Material.Image)
+        ImageOrBuilder {
       // Use Image.newBuilder() to construct.
       private Image(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -36183,8 +36020,9 @@ public final class Protocol {
                 break;
               }
               case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
-                url_ = input.readBytes();
+                url_ = bs;
                 break;
               }
               case 16: {
@@ -36237,7 +36075,6 @@ public final class Protocol {
       }
 
       private int bitField0_;
-      // required string url = 1;
       public static final int URL_FIELD_NUMBER = 1;
       private java.lang.Object url_;
       /**
@@ -36292,7 +36129,6 @@ public final class Protocol {
         }
       }
 
-      // optional uint32 width = 2;
       public static final int WIDTH_FIELD_NUMBER = 2;
       private int width_;
       /**
@@ -36316,7 +36152,6 @@ public final class Protocol {
         return width_;
       }
 
-      // optional uint32 height = 3;
       public static final int HEIGHT_FIELD_NUMBER = 3;
       private int height_;
       /**
@@ -36348,7 +36183,8 @@ public final class Protocol {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasUrl()) {
           memoizedIsInitialized = 0;
@@ -36477,8 +36313,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements jesgoo.protocol.Protocol.Material.ImageOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Material.Image)
+          jesgoo.protocol.Protocol.Material.ImageOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Material_Image_descriptor;
@@ -36615,7 +36452,6 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        // required string url = 1;
         private java.lang.Object url_ = "";
         /**
          * <code>required string url = 1;</code>
@@ -36637,9 +36473,12 @@ public final class Protocol {
         public java.lang.String getUrl() {
           java.lang.Object ref = url_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            url_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              url_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -36713,7 +36552,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional uint32 width = 2;
         private int width_ ;
         /**
          * <code>optional uint32 width = 2;</code>
@@ -36762,7 +36600,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional uint32 height = 3;
         private int height_ ;
         /**
          * <code>optional uint32 height = 3;</code>
@@ -36822,10 +36659,10 @@ public final class Protocol {
       // @@protoc_insertion_point(class_scope:jesgoo.protocol.Material.Image)
     }
 
-    public interface AppOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface AppOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:jesgoo.protocol.Material.App)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required string name = 1;
       /**
        * <code>required string name = 1;</code>
        *
@@ -36852,7 +36689,6 @@ public final class Protocol {
       com.google.protobuf.ByteString
           getNameBytes();
 
-      // required string package_name = 2;
       /**
        * <code>required string package_name = 2;</code>
        *
@@ -36879,7 +36715,6 @@ public final class Protocol {
       com.google.protobuf.ByteString
           getPackageNameBytes();
 
-      // required .jesgoo.protocol.Material.Image logo = 3;
       /**
        * <code>required .jesgoo.protocol.Material.Image logo = 3;</code>
        *
@@ -36905,7 +36740,6 @@ public final class Protocol {
        */
       jesgoo.protocol.Protocol.Material.ImageOrBuilder getLogoOrBuilder();
 
-      // optional uint32 package_size = 4;
       /**
        * <code>optional uint32 package_size = 4;</code>
        *
@@ -36923,7 +36757,6 @@ public final class Protocol {
        */
       int getPackageSize();
 
-      // optional string version = 5;
       /**
        * <code>optional string version = 5;</code>
        *
@@ -36958,8 +36791,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class App extends
-        com.google.protobuf.GeneratedMessage
-        implements AppOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:jesgoo.protocol.Material.App)
+        AppOrBuilder {
       // Use App.newBuilder() to construct.
       private App(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -37006,13 +36840,15 @@ public final class Protocol {
                 break;
               }
               case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
-                name_ = input.readBytes();
+                name_ = bs;
                 break;
               }
               case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000002;
-                packageName_ = input.readBytes();
+                packageName_ = bs;
                 break;
               }
               case 26: {
@@ -37034,8 +36870,9 @@ public final class Protocol {
                 break;
               }
               case 42: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000010;
-                version_ = input.readBytes();
+                version_ = bs;
                 break;
               }
             }
@@ -37078,7 +36915,6 @@ public final class Protocol {
       }
 
       private int bitField0_;
-      // required string name = 1;
       public static final int NAME_FIELD_NUMBER = 1;
       private java.lang.Object name_;
       /**
@@ -37133,7 +36969,6 @@ public final class Protocol {
         }
       }
 
-      // required string package_name = 2;
       public static final int PACKAGE_NAME_FIELD_NUMBER = 2;
       private java.lang.Object packageName_;
       /**
@@ -37188,7 +37023,6 @@ public final class Protocol {
         }
       }
 
-      // required .jesgoo.protocol.Material.Image logo = 3;
       public static final int LOGO_FIELD_NUMBER = 3;
       private jesgoo.protocol.Protocol.Material.Image logo_;
       /**
@@ -37222,7 +37056,6 @@ public final class Protocol {
         return logo_;
       }
 
-      // optional uint32 package_size = 4;
       public static final int PACKAGE_SIZE_FIELD_NUMBER = 4;
       private int packageSize_;
       /**
@@ -37246,7 +37079,6 @@ public final class Protocol {
         return packageSize_;
       }
 
-      // optional string version = 5;
       public static final int VERSION_FIELD_NUMBER = 5;
       private java.lang.Object version_;
       /**
@@ -37311,7 +37143,8 @@ public final class Protocol {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasName()) {
           memoizedIsInitialized = 0;
@@ -37466,8 +37299,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements jesgoo.protocol.Protocol.Material.AppOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Material.App)
+          jesgoo.protocol.Protocol.Material.AppOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Material_App_descriptor;
@@ -37647,7 +37481,6 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        // required string name = 1;
         private java.lang.Object name_ = "";
         /**
          * <code>required string name = 1;</code>
@@ -37669,9 +37502,12 @@ public final class Protocol {
         public java.lang.String getName() {
           java.lang.Object ref = name_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            name_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              name_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -37745,7 +37581,6 @@ public final class Protocol {
           return this;
         }
 
-        // required string package_name = 2;
         private java.lang.Object packageName_ = "";
         /**
          * <code>required string package_name = 2;</code>
@@ -37767,9 +37602,12 @@ public final class Protocol {
         public java.lang.String getPackageName() {
           java.lang.Object ref = packageName_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            packageName_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              packageName_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -37843,7 +37681,6 @@ public final class Protocol {
           return this;
         }
 
-        // required .jesgoo.protocol.Material.Image logo = 3;
         private jesgoo.protocol.Protocol.Material.Image logo_ = jesgoo.protocol.Protocol.Material.Image.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             jesgoo.protocol.Protocol.Material.Image, jesgoo.protocol.Protocol.Material.Image.Builder, jesgoo.protocol.Protocol.Material.ImageOrBuilder> logoBuilder_;
@@ -37988,7 +37825,7 @@ public final class Protocol {
           if (logoBuilder_ == null) {
             logoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 jesgoo.protocol.Protocol.Material.Image, jesgoo.protocol.Protocol.Material.Image.Builder, jesgoo.protocol.Protocol.Material.ImageOrBuilder>(
-                    logo_,
+                    getLogo(),
                     getParentForChildren(),
                     isClean());
             logo_ = null;
@@ -37996,7 +37833,6 @@ public final class Protocol {
           return logoBuilder_;
         }
 
-        // optional uint32 package_size = 4;
         private int packageSize_ ;
         /**
          * <code>optional uint32 package_size = 4;</code>
@@ -38045,7 +37881,6 @@ public final class Protocol {
           return this;
         }
 
-        // optional string version = 5;
         private java.lang.Object version_ = "";
         /**
          * <code>optional string version = 5;</code>
@@ -38067,9 +37902,12 @@ public final class Protocol {
         public java.lang.String getVersion() {
           java.lang.Object ref = version_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            version_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              version_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -38155,7 +37993,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required uint32 id = 1;
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
     /**
@@ -38179,7 +38016,6 @@ public final class Protocol {
       return id_;
     }
 
-    // required .jesgoo.protocol.AdStyle type = 2;
     public static final int TYPE_FIELD_NUMBER = 2;
     private jesgoo.protocol.Protocol.AdStyle type_;
     /**
@@ -38203,7 +38039,6 @@ public final class Protocol {
       return type_;
     }
 
-    // optional string title = 3;
     public static final int TITLE_FIELD_NUMBER = 3;
     private java.lang.Object title_;
     /**
@@ -38258,7 +38093,6 @@ public final class Protocol {
       }
     }
 
-    // optional string description = 4;
     public static final int DESCRIPTION_FIELD_NUMBER = 4;
     private java.lang.Object description_;
     /**
@@ -38313,7 +38147,6 @@ public final class Protocol {
       }
     }
 
-    // optional .jesgoo.protocol.Material.Image image = 5;
     public static final int IMAGE_FIELD_NUMBER = 5;
     private jesgoo.protocol.Protocol.Material.Image image_;
     /**
@@ -38347,7 +38180,6 @@ public final class Protocol {
       return image_;
     }
 
-    // optional string target_url = 6;
     public static final int TARGET_URL_FIELD_NUMBER = 6;
     private java.lang.Object targetUrl_;
     /**
@@ -38402,7 +38234,6 @@ public final class Protocol {
       }
     }
 
-    // optional string show_url = 7;
     public static final int SHOW_URL_FIELD_NUMBER = 7;
     private java.lang.Object showUrl_;
     /**
@@ -38457,7 +38288,6 @@ public final class Protocol {
       }
     }
 
-    // optional .jesgoo.protocol.Material.App app = 8;
     public static final int APP_FIELD_NUMBER = 8;
     private jesgoo.protocol.Protocol.Material.App app_;
     /**
@@ -38491,7 +38321,6 @@ public final class Protocol {
       return app_;
     }
 
-    // optional string long_description = 9;
     public static final int LONG_DESCRIPTION_FIELD_NUMBER = 9;
     private java.lang.Object longDescription_;
     /**
@@ -38546,7 +38375,6 @@ public final class Protocol {
       }
     }
 
-    // optional .jesgoo.protocol.PromotionType promotion_type = 10;
     public static final int PROMOTION_TYPE_FIELD_NUMBER = 10;
     private jesgoo.protocol.Protocol.PromotionType promotionType_;
     /**
@@ -38585,7 +38413,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasId()) {
         memoizedIsInitialized = 0;
@@ -38779,8 +38608,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.MaterialOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.Material)
+        jesgoo.protocol.Protocol.MaterialOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_Material_descriptor;
@@ -39022,7 +38852,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required uint32 id = 1;
       private int id_ ;
       /**
        * <code>required uint32 id = 1;</code>
@@ -39071,7 +38900,6 @@ public final class Protocol {
         return this;
       }
 
-      // required .jesgoo.protocol.AdStyle type = 2;
       private jesgoo.protocol.Protocol.AdStyle type_ = jesgoo.protocol.Protocol.AdStyle.TEXT;
       /**
        * <code>required .jesgoo.protocol.AdStyle type = 2;</code>
@@ -39123,7 +38951,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional string title = 3;
       private java.lang.Object title_ = "";
       /**
        * <code>optional string title = 3;</code>
@@ -39145,9 +38972,12 @@ public final class Protocol {
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          title_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            title_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -39221,7 +39051,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional string description = 4;
       private java.lang.Object description_ = "";
       /**
        * <code>optional string description = 4;</code>
@@ -39243,9 +39072,12 @@ public final class Protocol {
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          description_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            description_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -39319,7 +39151,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional .jesgoo.protocol.Material.Image image = 5;
       private jesgoo.protocol.Protocol.Material.Image image_ = jesgoo.protocol.Protocol.Material.Image.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Material.Image, jesgoo.protocol.Protocol.Material.Image.Builder, jesgoo.protocol.Protocol.Material.ImageOrBuilder> imageBuilder_;
@@ -39464,7 +39295,7 @@ public final class Protocol {
         if (imageBuilder_ == null) {
           imageBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Material.Image, jesgoo.protocol.Protocol.Material.Image.Builder, jesgoo.protocol.Protocol.Material.ImageOrBuilder>(
-                  image_,
+                  getImage(),
                   getParentForChildren(),
                   isClean());
           image_ = null;
@@ -39472,7 +39303,6 @@ public final class Protocol {
         return imageBuilder_;
       }
 
-      // optional string target_url = 6;
       private java.lang.Object targetUrl_ = "";
       /**
        * <code>optional string target_url = 6;</code>
@@ -39494,9 +39324,12 @@ public final class Protocol {
       public java.lang.String getTargetUrl() {
         java.lang.Object ref = targetUrl_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          targetUrl_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            targetUrl_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -39570,7 +39403,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional string show_url = 7;
       private java.lang.Object showUrl_ = "";
       /**
        * <code>optional string show_url = 7;</code>
@@ -39592,9 +39424,12 @@ public final class Protocol {
       public java.lang.String getShowUrl() {
         java.lang.Object ref = showUrl_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          showUrl_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            showUrl_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -39668,7 +39503,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional .jesgoo.protocol.Material.App app = 8;
       private jesgoo.protocol.Protocol.Material.App app_ = jesgoo.protocol.Protocol.Material.App.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.protocol.Protocol.Material.App, jesgoo.protocol.Protocol.Material.App.Builder, jesgoo.protocol.Protocol.Material.AppOrBuilder> appBuilder_;
@@ -39813,7 +39647,7 @@ public final class Protocol {
         if (appBuilder_ == null) {
           appBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.protocol.Protocol.Material.App, jesgoo.protocol.Protocol.Material.App.Builder, jesgoo.protocol.Protocol.Material.AppOrBuilder>(
-                  app_,
+                  getApp(),
                   getParentForChildren(),
                   isClean());
           app_ = null;
@@ -39821,7 +39655,6 @@ public final class Protocol {
         return appBuilder_;
       }
 
-      // optional string long_description = 9;
       private java.lang.Object longDescription_ = "";
       /**
        * <code>optional string long_description = 9;</code>
@@ -39843,9 +39676,12 @@ public final class Protocol {
       public java.lang.String getLongDescription() {
         java.lang.Object ref = longDescription_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          longDescription_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            longDescription_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -39919,7 +39755,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional .jesgoo.protocol.PromotionType promotion_type = 10;
       private jesgoo.protocol.Protocol.PromotionType promotionType_ = jesgoo.protocol.Protocol.PromotionType.NOACTION;
       /**
        * <code>optional .jesgoo.protocol.PromotionType promotion_type = 10;</code>
@@ -39982,10 +39817,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.Material)
   }
 
-  public interface OfferWallUserDataOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface OfferWallUserDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.OfferWallUserData)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required string user_id = 1;
     /**
      * <code>required string user_id = 1;</code>
      *
@@ -40012,7 +39847,6 @@ public final class Protocol {
     com.google.protobuf.ByteString
         getUserIdBytes();
 
-    // repeated .jesgoo.protocol.OfferWallUserData.AppAccount accounts = 2;
     /**
      * <code>repeated .jesgoo.protocol.OfferWallUserData.AppAccount accounts = 2;</code>
      *
@@ -40057,7 +39891,6 @@ public final class Protocol {
     jesgoo.protocol.Protocol.OfferWallUserData.AppAccountOrBuilder getAccountsOrBuilder(
         int index);
 
-    // repeated .jesgoo.protocol.OfferWallUserData.DoneJob done_jobs = 3;
     /**
      * <code>repeated .jesgoo.protocol.OfferWallUserData.DoneJob done_jobs = 3;</code>
      *
@@ -40110,8 +39943,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class OfferWallUserData extends
-      com.google.protobuf.GeneratedMessage
-      implements OfferWallUserDataOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.OfferWallUserData)
+      OfferWallUserDataOrBuilder {
     // Use OfferWallUserData.newBuilder() to construct.
     private OfferWallUserData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -40158,8 +39992,9 @@ public final class Protocol {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              userId_ = input.readBytes();
+              userId_ = bs;
               break;
             }
             case 18: {
@@ -40223,10 +40058,10 @@ public final class Protocol {
       return PARSER;
     }
 
-    public interface AppAccountOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface AppAccountOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:jesgoo.protocol.OfferWallUserData.AppAccount)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required string app_id = 1;
       /**
        * <code>required string app_id = 1;</code>
        *
@@ -40253,7 +40088,6 @@ public final class Protocol {
       com.google.protobuf.ByteString
           getAppIdBytes();
 
-      // required uint32 points = 2;
       /**
        * <code>required uint32 points = 2;</code>
        *
@@ -40279,8 +40113,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class AppAccount extends
-        com.google.protobuf.GeneratedMessage
-        implements AppAccountOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:jesgoo.protocol.OfferWallUserData.AppAccount)
+        AppAccountOrBuilder {
       // Use AppAccount.newBuilder() to construct.
       private AppAccount(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -40327,8 +40162,9 @@ public final class Protocol {
                 break;
               }
               case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
-                appId_ = input.readBytes();
+                appId_ = bs;
                 break;
               }
               case 16: {
@@ -40376,7 +40212,6 @@ public final class Protocol {
       }
 
       private int bitField0_;
-      // required string app_id = 1;
       public static final int APP_ID_FIELD_NUMBER = 1;
       private java.lang.Object appId_;
       /**
@@ -40431,7 +40266,6 @@ public final class Protocol {
         }
       }
 
-      // required uint32 points = 2;
       public static final int POINTS_FIELD_NUMBER = 2;
       private int points_;
       /**
@@ -40462,7 +40296,8 @@ public final class Protocol {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasAppId()) {
           memoizedIsInitialized = 0;
@@ -40588,8 +40423,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements jesgoo.protocol.Protocol.OfferWallUserData.AppAccountOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:jesgoo.protocol.OfferWallUserData.AppAccount)
+          jesgoo.protocol.Protocol.OfferWallUserData.AppAccountOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_OfferWallUserData_AppAccount_descriptor;
@@ -40721,7 +40557,6 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        // required string app_id = 1;
         private java.lang.Object appId_ = "";
         /**
          * <code>required string app_id = 1;</code>
@@ -40743,9 +40578,12 @@ public final class Protocol {
         public java.lang.String getAppId() {
           java.lang.Object ref = appId_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            appId_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              appId_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -40819,7 +40657,6 @@ public final class Protocol {
           return this;
         }
 
-        // required uint32 points = 2;
         private int points_ ;
         /**
          * <code>required uint32 points = 2;</code>
@@ -40879,10 +40716,10 @@ public final class Protocol {
       // @@protoc_insertion_point(class_scope:jesgoo.protocol.OfferWallUserData.AppAccount)
     }
 
-    public interface DoneJobOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface DoneJobOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:jesgoo.protocol.OfferWallUserData.DoneJob)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required uint64 id = 1;
       /**
        * <code>required uint64 id = 1;</code>
        *
@@ -40900,7 +40737,6 @@ public final class Protocol {
        */
       long getId();
 
-      // required uint32 timestamp = 2;
       /**
        * <code>required uint32 timestamp = 2;</code>
        *
@@ -40926,8 +40762,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class DoneJob extends
-        com.google.protobuf.GeneratedMessage
-        implements DoneJobOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:jesgoo.protocol.OfferWallUserData.DoneJob)
+        DoneJobOrBuilder {
       // Use DoneJob.newBuilder() to construct.
       private DoneJob(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -41023,7 +40860,6 @@ public final class Protocol {
       }
 
       private int bitField0_;
-      // required uint64 id = 1;
       public static final int ID_FIELD_NUMBER = 1;
       private long id_;
       /**
@@ -41047,7 +40883,6 @@ public final class Protocol {
         return id_;
       }
 
-      // required uint32 timestamp = 2;
       public static final int TIMESTAMP_FIELD_NUMBER = 2;
       private int timestamp_;
       /**
@@ -41078,7 +40913,8 @@ public final class Protocol {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasId()) {
           memoizedIsInitialized = 0;
@@ -41204,8 +41040,9 @@ public final class Protocol {
        * </pre>
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements jesgoo.protocol.Protocol.OfferWallUserData.DoneJobOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:jesgoo.protocol.OfferWallUserData.DoneJob)
+          jesgoo.protocol.Protocol.OfferWallUserData.DoneJobOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_OfferWallUserData_DoneJob_descriptor;
@@ -41335,7 +41172,6 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        // required uint64 id = 1;
         private long id_ ;
         /**
          * <code>required uint64 id = 1;</code>
@@ -41384,7 +41220,6 @@ public final class Protocol {
           return this;
         }
 
-        // required uint32 timestamp = 2;
         private int timestamp_ ;
         /**
          * <code>required uint32 timestamp = 2;</code>
@@ -41445,7 +41280,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required string user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private java.lang.Object userId_;
     /**
@@ -41500,7 +41334,6 @@ public final class Protocol {
       }
     }
 
-    // repeated .jesgoo.protocol.OfferWallUserData.AppAccount accounts = 2;
     public static final int ACCOUNTS_FIELD_NUMBER = 2;
     private java.util.List<jesgoo.protocol.Protocol.OfferWallUserData.AppAccount> accounts_;
     /**
@@ -41556,7 +41389,6 @@ public final class Protocol {
       return accounts_.get(index);
     }
 
-    // repeated .jesgoo.protocol.OfferWallUserData.DoneJob done_jobs = 3;
     public static final int DONE_JOBS_FIELD_NUMBER = 3;
     private java.util.List<jesgoo.protocol.Protocol.OfferWallUserData.DoneJob> doneJobs_;
     /**
@@ -41620,7 +41452,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -41761,8 +41594,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.OfferWallUserDataOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.OfferWallUserData)
+        jesgoo.protocol.Protocol.OfferWallUserDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_OfferWallUserData_descriptor;
@@ -41977,7 +41811,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required string user_id = 1;
       private java.lang.Object userId_ = "";
       /**
        * <code>required string user_id = 1;</code>
@@ -41999,9 +41832,12 @@ public final class Protocol {
       public java.lang.String getUserId() {
         java.lang.Object ref = userId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          userId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -42075,7 +41911,6 @@ public final class Protocol {
         return this;
       }
 
-      // repeated .jesgoo.protocol.OfferWallUserData.AppAccount accounts = 2;
       private java.util.List<jesgoo.protocol.Protocol.OfferWallUserData.AppAccount> accounts_ =
         java.util.Collections.emptyList();
       private void ensureAccountsIsMutable() {
@@ -42257,7 +42092,8 @@ public final class Protocol {
           java.lang.Iterable<? extends jesgoo.protocol.Protocol.OfferWallUserData.AppAccount> values) {
         if (accountsBuilder_ == null) {
           ensureAccountsIsMutable();
-          super.addAll(values, accounts_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, accounts_);
           onChanged();
         } else {
           accountsBuilder_.addAllMessages(values);
@@ -42387,7 +42223,6 @@ public final class Protocol {
         return accountsBuilder_;
       }
 
-      // repeated .jesgoo.protocol.OfferWallUserData.DoneJob done_jobs = 3;
       private java.util.List<jesgoo.protocol.Protocol.OfferWallUserData.DoneJob> doneJobs_ =
         java.util.Collections.emptyList();
       private void ensureDoneJobsIsMutable() {
@@ -42569,7 +42404,8 @@ public final class Protocol {
           java.lang.Iterable<? extends jesgoo.protocol.Protocol.OfferWallUserData.DoneJob> values) {
         if (doneJobsBuilder_ == null) {
           ensureDoneJobsIsMutable();
-          super.addAll(values, doneJobs_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, doneJobs_);
           onChanged();
         } else {
           doneJobsBuilder_.addAllMessages(values);
@@ -42710,10 +42546,10 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.OfferWallUserData)
   }
 
-  public interface LockerUProfileOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface LockerUProfileOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.protocol.LockerUProfile)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required uint32 timestamp = 1;
     /**
      * <code>required uint32 timestamp = 1;</code>
      *
@@ -42731,7 +42567,6 @@ public final class Protocol {
      */
     int getTimestamp();
 
-    // optional uint32 count = 2;
     /**
      * <code>optional uint32 count = 2;</code>
      *
@@ -42757,8 +42592,9 @@ public final class Protocol {
    * </pre>
    */
   public static final class LockerUProfile extends
-      com.google.protobuf.GeneratedMessage
-      implements LockerUProfileOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.protocol.LockerUProfile)
+      LockerUProfileOrBuilder {
     // Use LockerUProfile.newBuilder() to construct.
     private LockerUProfile(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -42854,7 +42690,6 @@ public final class Protocol {
     }
 
     private int bitField0_;
-    // required uint32 timestamp = 1;
     public static final int TIMESTAMP_FIELD_NUMBER = 1;
     private int timestamp_;
     /**
@@ -42878,7 +42713,6 @@ public final class Protocol {
       return timestamp_;
     }
 
-    // optional uint32 count = 2;
     public static final int COUNT_FIELD_NUMBER = 2;
     private int count_;
     /**
@@ -42909,7 +42743,8 @@ public final class Protocol {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasTimestamp()) {
         memoizedIsInitialized = 0;
@@ -43031,8 +42866,9 @@ public final class Protocol {
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.protocol.Protocol.LockerUProfileOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.protocol.LockerUProfile)
+        jesgoo.protocol.Protocol.LockerUProfileOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.protocol.Protocol.internal_static_jesgoo_protocol_LockerUProfile_descriptor;
@@ -43158,7 +42994,6 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      // required uint32 timestamp = 1;
       private int timestamp_ ;
       /**
        * <code>required uint32 timestamp = 1;</code>
@@ -43207,7 +43042,6 @@ public final class Protocol {
         return this;
       }
 
-      // optional uint32 count = 2;
       private int count_ ;
       /**
        * <code>optional uint32 count = 2;</code>
@@ -43267,177 +43101,177 @@ public final class Protocol {
     // @@protoc_insertion_point(class_scope:jesgoo.protocol.LockerUProfile)
   }
 
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Version_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Version_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Size_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Size_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_App_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_App_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Site_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Site_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Browser_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Browser_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Media_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Media_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_WiFi_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_WiFi_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Network_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Network_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_DeviceID_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_DeviceID_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Device_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Device_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Geo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Geo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Client_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Client_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_AdSlot_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_AdSlot_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_DspInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_DspInfo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Head_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Head_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_Region_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_Region_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_DeviceId_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_DeviceId_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_Device_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_Device_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_Media_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_Media_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_Ad_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_Ad_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_Antispam_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_Antispam_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_Antispam_Flags_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_Antispam_Flags_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_Charge_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_Charge_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_Action_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_Action_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_App_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_App_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Event_Body_Client_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Event_Body_Client_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Material_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Material_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Material_Image_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Material_Image_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_Material_App_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_Material_App_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_OfferWallUserData_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_OfferWallUserData_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_OfferWallUserData_AppAccount_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_OfferWallUserData_AppAccount_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_OfferWallUserData_DoneJob_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_protocol_OfferWallUserData_DoneJob_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_protocol_LockerUProfile_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -43621,237 +43455,238 @@ public final class Protocol {
       "tType\022\r\n\tNATIVESDK\020\001\022\t\n\005JSSDK\020\002\022\013\n\007OPENA" +
       "PI\020\003*\"\n\tGeoSource\022\n\n\006NATIVE\020\001\022\t\n\005BAIDU\020\002" +
       "*1\n\nChargeType\022\010\n\004FREE\020\000\022\007\n\003CPC\020\001\022\007\n\003CPM",
-      "\020\002\022\007\n\003CPA\020\003*[\n\003Dsp\022\016\n\nJESGOO_DSP\020\001\022\r\n\tBA" +
+      "\020\002\022\007\n\003CPA\020\003*z\n\003Dsp\022\016\n\nJESGOO_DSP\020\001\022\r\n\tBA" +
       "IDU_DSP\020\002\022\017\n\013TENCENT_DSP\020\003\022\014\n\010TANX_DSP\020\004" +
-      "\022\n\n\006CY_DSP\020\005\022\n\n\006XF_DSP\020\006*\302\001\n\014AntispamRul" +
-      "e\022\021\n\rDUP_SEARCH_ID\020\001\022\021\n\rOUT_TIME_SPAN\020\002\022" +
-      "\014\n\010DUP_USER\020\003\022\021\n\rNEW_USER_RATE\020\004\022\022\n\016INVA" +
-      "LID_COOKIE\020\005\022\022\n\016INVALID_REGION\020\006\022\016\n\nNEW_" +
-      "COOKIE\020\007\022\r\n\tNO_COOKIE\020\010\022\022\n\016NO_DEVICE_INF" +
-      "O\020\t\022\020\n\014NO_DEVICE_ID\020\n"
+      "\022\n\n\006CY_DSP\020\005\022\n\n\006XF_DSP\020\006\022\016\n\nBIDDER_DSP\020\007" +
+      "\022\r\n\tYOUKU_DSP\020\010*\302\001\n\014AntispamRule\022\021\n\rDUP_" +
+      "SEARCH_ID\020\001\022\021\n\rOUT_TIME_SPAN\020\002\022\014\n\010DUP_US" +
+      "ER\020\003\022\021\n\rNEW_USER_RATE\020\004\022\022\n\016INVALID_COOKI" +
+      "E\020\005\022\022\n\016INVALID_REGION\020\006\022\016\n\nNEW_COOKIE\020\007\022" +
+      "\r\n\tNO_COOKIE\020\010\022\022\n\016NO_DEVICE_INFO\020\t\022\020\n\014NO" +
+      "_DEVICE_ID\020\n"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_jesgoo_protocol_Version_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_jesgoo_protocol_Version_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Version_descriptor,
-              new java.lang.String[] { "Major", "Minor", "Micro", "Build", });
-          internal_static_jesgoo_protocol_Size_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_jesgoo_protocol_Size_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Size_descriptor,
-              new java.lang.String[] { "Width", "Height", });
-          internal_static_jesgoo_protocol_App_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-          internal_static_jesgoo_protocol_App_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_App_descriptor,
-              new java.lang.String[] { "PackageName", "Categories", });
-          internal_static_jesgoo_protocol_Site_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_jesgoo_protocol_Site_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Site_descriptor,
-              new java.lang.String[] { "Domain", "Categories", "Url", });
-          internal_static_jesgoo_protocol_Browser_descriptor =
-            getDescriptor().getMessageTypes().get(4);
-          internal_static_jesgoo_protocol_Browser_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Browser_descriptor,
-              new java.lang.String[] { "UserAgent", });
-          internal_static_jesgoo_protocol_Media_descriptor =
-            getDescriptor().getMessageTypes().get(5);
-          internal_static_jesgoo_protocol_Media_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Media_descriptor,
-              new java.lang.String[] { "Id", "ChannelId", "Type", "App", "Site", "Browser", });
-          internal_static_jesgoo_protocol_WiFi_descriptor =
-            getDescriptor().getMessageTypes().get(6);
-          internal_static_jesgoo_protocol_WiFi_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_WiFi_descriptor,
-              new java.lang.String[] { "Mac", "Rssi", });
-          internal_static_jesgoo_protocol_Network_descriptor =
-            getDescriptor().getMessageTypes().get(7);
-          internal_static_jesgoo_protocol_Network_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Network_descriptor,
-              new java.lang.String[] { "Ip", "Type", "CellularOperator", "CellularId", "Wifis", });
-          internal_static_jesgoo_protocol_DeviceID_descriptor =
-            getDescriptor().getMessageTypes().get(8);
-          internal_static_jesgoo_protocol_DeviceID_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_DeviceID_descriptor,
-              new java.lang.String[] { "Type", "Id", "Compact", "Md5", });
-          internal_static_jesgoo_protocol_Device_descriptor =
-            getDescriptor().getMessageTypes().get(9);
-          internal_static_jesgoo_protocol_Device_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Device_descriptor,
-              new java.lang.String[] { "Type", "Ids", "OsType", "OsVersion", "Brand", "Model", "ScreenSize", "ScreenDensity", });
-          internal_static_jesgoo_protocol_Geo_descriptor =
-            getDescriptor().getMessageTypes().get(10);
-          internal_static_jesgoo_protocol_Geo_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Geo_descriptor,
-              new java.lang.String[] { "Type", "Longitude", "Latitude", "Timestampe", "Source", });
-          internal_static_jesgoo_protocol_Client_descriptor =
-            getDescriptor().getMessageTypes().get(11);
-          internal_static_jesgoo_protocol_Client_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Client_descriptor,
-              new java.lang.String[] { "Type", "Version", });
-          internal_static_jesgoo_protocol_AdSlot_descriptor =
-            getDescriptor().getMessageTypes().get(12);
-          internal_static_jesgoo_protocol_AdSlot_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_AdSlot_descriptor,
-              new java.lang.String[] { "Id", "Type", "Size", "Styles", "Capacity", "Templates", "Promotions", });
-          internal_static_jesgoo_protocol_DspInfo_descriptor =
-            getDescriptor().getMessageTypes().get(13);
-          internal_static_jesgoo_protocol_DspInfo_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_DspInfo_descriptor,
-              new java.lang.String[] { "Dsp", "MediaId", "ChannelId", });
-          internal_static_jesgoo_protocol_Event_descriptor =
-            getDescriptor().getMessageTypes().get(14);
-          internal_static_jesgoo_protocol_Event_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_descriptor,
-              new java.lang.String[] { "Head", "Body", });
-          internal_static_jesgoo_protocol_Event_Head_descriptor =
-            internal_static_jesgoo_protocol_Event_descriptor.getNestedTypes().get(0);
-          internal_static_jesgoo_protocol_Event_Head_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Head_descriptor,
-              new java.lang.String[] { "CryptoType", "CryptoParam", });
-          internal_static_jesgoo_protocol_Event_Body_descriptor =
-            internal_static_jesgoo_protocol_Event_descriptor.getNestedTypes().get(1);
-          internal_static_jesgoo_protocol_Event_Body_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_descriptor,
-              new java.lang.String[] { "Type", "SearchId", "SearchTimestamp", "SearchIp", "EventTimestamp", "EventIp", "Media", "Region", "Ad", "Charge", "Dsp", "Action", "Apps", "DspInfo", "Exptags", "Cookie", "Device", "Client", "Antispam", "Debug", "EventId", });
-          internal_static_jesgoo_protocol_Event_Body_Region_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(0);
-          internal_static_jesgoo_protocol_Event_Body_Region_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_Region_descriptor,
-              new java.lang.String[] { "Country", "Province", "City", });
-          internal_static_jesgoo_protocol_Event_Body_DeviceId_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(1);
-          internal_static_jesgoo_protocol_Event_Body_DeviceId_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_DeviceId_descriptor,
-              new java.lang.String[] { "Type", "Id", "Original", });
-          internal_static_jesgoo_protocol_Event_Body_Device_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(2);
-          internal_static_jesgoo_protocol_Event_Body_Device_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_Device_descriptor,
-              new java.lang.String[] { "Os", "Osversion", "Ids", "Brand", "Model", "Useragent", "Browser", "Uid", });
-          internal_static_jesgoo_protocol_Event_Body_Media_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(3);
-          internal_static_jesgoo_protocol_Event_Body_Media_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_Media_descriptor,
-              new java.lang.String[] { "MediaId", "ChannelId", "PackageName", "Version", "AdslotId", "AdslotType", });
-          internal_static_jesgoo_protocol_Event_Body_Ad_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(4);
-          internal_static_jesgoo_protocol_Event_Body_Ad_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_Ad_descriptor,
-              new java.lang.String[] { "UserId", "PlanId", "GroupId", "ProductId", "UnitId", "TemplateId", "Type", "Interaction", "Score", });
-          internal_static_jesgoo_protocol_Event_Body_Antispam_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(5);
-          internal_static_jesgoo_protocol_Event_Body_Antispam_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_Antispam_descriptor,
-              new java.lang.String[] { "Score", "Rules", "Flags", });
-          internal_static_jesgoo_protocol_Event_Body_Antispam_Flags_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_Antispam_descriptor.getNestedTypes().get(0);
-          internal_static_jesgoo_protocol_Event_Body_Antispam_Flags_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_Antispam_Flags_descriptor,
-              new java.lang.String[] { "SearchClickCountHitCache", "SearchClickCount", "DeviceClickCountHitCache", "DeviceClickCount", });
-          internal_static_jesgoo_protocol_Event_Body_Charge_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(6);
-          internal_static_jesgoo_protocol_Event_Body_Charge_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_Charge_descriptor,
-              new java.lang.String[] { "Type", "Price", "Success", "TriggerEventType", "OverBudget", "OverDeficit", "Error", "MessageOffset", });
-          internal_static_jesgoo_protocol_Event_Body_Action_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(7);
-          internal_static_jesgoo_protocol_Event_Body_Action_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_Action_descriptor,
-              new java.lang.String[] { "TargetUrl", "RedirectType", });
-          internal_static_jesgoo_protocol_Event_Body_App_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(8);
-          internal_static_jesgoo_protocol_Event_Body_App_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_App_descriptor,
-              new java.lang.String[] { "PackageName", "InstallTime", "UpdateTime", "LastRunningTime", "Version", });
-          internal_static_jesgoo_protocol_Event_Body_Client_descriptor =
-            internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(9);
-          internal_static_jesgoo_protocol_Event_Body_Client_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Event_Body_Client_descriptor,
-              new java.lang.String[] { "Type", "Version", });
-          internal_static_jesgoo_protocol_Material_descriptor =
-            getDescriptor().getMessageTypes().get(15);
-          internal_static_jesgoo_protocol_Material_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Material_descriptor,
-              new java.lang.String[] { "Id", "Type", "Title", "Description", "Image", "TargetUrl", "ShowUrl", "App", "LongDescription", "PromotionType", });
-          internal_static_jesgoo_protocol_Material_Image_descriptor =
-            internal_static_jesgoo_protocol_Material_descriptor.getNestedTypes().get(0);
-          internal_static_jesgoo_protocol_Material_Image_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Material_Image_descriptor,
-              new java.lang.String[] { "Url", "Width", "Height", });
-          internal_static_jesgoo_protocol_Material_App_descriptor =
-            internal_static_jesgoo_protocol_Material_descriptor.getNestedTypes().get(1);
-          internal_static_jesgoo_protocol_Material_App_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_Material_App_descriptor,
-              new java.lang.String[] { "Name", "PackageName", "Logo", "PackageSize", "Version", });
-          internal_static_jesgoo_protocol_OfferWallUserData_descriptor =
-            getDescriptor().getMessageTypes().get(16);
-          internal_static_jesgoo_protocol_OfferWallUserData_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_OfferWallUserData_descriptor,
-              new java.lang.String[] { "UserId", "Accounts", "DoneJobs", });
-          internal_static_jesgoo_protocol_OfferWallUserData_AppAccount_descriptor =
-            internal_static_jesgoo_protocol_OfferWallUserData_descriptor.getNestedTypes().get(0);
-          internal_static_jesgoo_protocol_OfferWallUserData_AppAccount_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_OfferWallUserData_AppAccount_descriptor,
-              new java.lang.String[] { "AppId", "Points", });
-          internal_static_jesgoo_protocol_OfferWallUserData_DoneJob_descriptor =
-            internal_static_jesgoo_protocol_OfferWallUserData_descriptor.getNestedTypes().get(1);
-          internal_static_jesgoo_protocol_OfferWallUserData_DoneJob_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_OfferWallUserData_DoneJob_descriptor,
-              new java.lang.String[] { "Id", "Timestamp", });
-          internal_static_jesgoo_protocol_LockerUProfile_descriptor =
-            getDescriptor().getMessageTypes().get(17);
-          internal_static_jesgoo_protocol_LockerUProfile_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_protocol_LockerUProfile_descriptor,
-              new java.lang.String[] { "Timestamp", "Count", });
-          return null;
-        }
-      };
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_jesgoo_protocol_Version_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_jesgoo_protocol_Version_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Version_descriptor,
+        new java.lang.String[] { "Major", "Minor", "Micro", "Build", });
+    internal_static_jesgoo_protocol_Size_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_jesgoo_protocol_Size_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Size_descriptor,
+        new java.lang.String[] { "Width", "Height", });
+    internal_static_jesgoo_protocol_App_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_jesgoo_protocol_App_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_App_descriptor,
+        new java.lang.String[] { "PackageName", "Categories", });
+    internal_static_jesgoo_protocol_Site_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_jesgoo_protocol_Site_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Site_descriptor,
+        new java.lang.String[] { "Domain", "Categories", "Url", });
+    internal_static_jesgoo_protocol_Browser_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_jesgoo_protocol_Browser_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Browser_descriptor,
+        new java.lang.String[] { "UserAgent", });
+    internal_static_jesgoo_protocol_Media_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_jesgoo_protocol_Media_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Media_descriptor,
+        new java.lang.String[] { "Id", "ChannelId", "Type", "App", "Site", "Browser", });
+    internal_static_jesgoo_protocol_WiFi_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_jesgoo_protocol_WiFi_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_WiFi_descriptor,
+        new java.lang.String[] { "Mac", "Rssi", });
+    internal_static_jesgoo_protocol_Network_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_jesgoo_protocol_Network_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Network_descriptor,
+        new java.lang.String[] { "Ip", "Type", "CellularOperator", "CellularId", "Wifis", });
+    internal_static_jesgoo_protocol_DeviceID_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_jesgoo_protocol_DeviceID_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_DeviceID_descriptor,
+        new java.lang.String[] { "Type", "Id", "Compact", "Md5", });
+    internal_static_jesgoo_protocol_Device_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_jesgoo_protocol_Device_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Device_descriptor,
+        new java.lang.String[] { "Type", "Ids", "OsType", "OsVersion", "Brand", "Model", "ScreenSize", "ScreenDensity", });
+    internal_static_jesgoo_protocol_Geo_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_jesgoo_protocol_Geo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Geo_descriptor,
+        new java.lang.String[] { "Type", "Longitude", "Latitude", "Timestampe", "Source", });
+    internal_static_jesgoo_protocol_Client_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_jesgoo_protocol_Client_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Client_descriptor,
+        new java.lang.String[] { "Type", "Version", });
+    internal_static_jesgoo_protocol_AdSlot_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_jesgoo_protocol_AdSlot_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_AdSlot_descriptor,
+        new java.lang.String[] { "Id", "Type", "Size", "Styles", "Capacity", "Templates", "Promotions", });
+    internal_static_jesgoo_protocol_DspInfo_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_jesgoo_protocol_DspInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_DspInfo_descriptor,
+        new java.lang.String[] { "Dsp", "MediaId", "ChannelId", });
+    internal_static_jesgoo_protocol_Event_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_jesgoo_protocol_Event_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_descriptor,
+        new java.lang.String[] { "Head", "Body", });
+    internal_static_jesgoo_protocol_Event_Head_descriptor =
+      internal_static_jesgoo_protocol_Event_descriptor.getNestedTypes().get(0);
+    internal_static_jesgoo_protocol_Event_Head_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Head_descriptor,
+        new java.lang.String[] { "CryptoType", "CryptoParam", });
+    internal_static_jesgoo_protocol_Event_Body_descriptor =
+      internal_static_jesgoo_protocol_Event_descriptor.getNestedTypes().get(1);
+    internal_static_jesgoo_protocol_Event_Body_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_descriptor,
+        new java.lang.String[] { "Type", "SearchId", "SearchTimestamp", "SearchIp", "EventTimestamp", "EventIp", "Media", "Region", "Ad", "Charge", "Dsp", "Action", "Apps", "DspInfo", "Exptags", "Cookie", "Device", "Client", "Antispam", "Debug", "EventId", });
+    internal_static_jesgoo_protocol_Event_Body_Region_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(0);
+    internal_static_jesgoo_protocol_Event_Body_Region_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_Region_descriptor,
+        new java.lang.String[] { "Country", "Province", "City", });
+    internal_static_jesgoo_protocol_Event_Body_DeviceId_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(1);
+    internal_static_jesgoo_protocol_Event_Body_DeviceId_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_DeviceId_descriptor,
+        new java.lang.String[] { "Type", "Id", "Original", });
+    internal_static_jesgoo_protocol_Event_Body_Device_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(2);
+    internal_static_jesgoo_protocol_Event_Body_Device_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_Device_descriptor,
+        new java.lang.String[] { "Os", "Osversion", "Ids", "Brand", "Model", "Useragent", "Browser", "Uid", });
+    internal_static_jesgoo_protocol_Event_Body_Media_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(3);
+    internal_static_jesgoo_protocol_Event_Body_Media_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_Media_descriptor,
+        new java.lang.String[] { "MediaId", "ChannelId", "PackageName", "Version", "AdslotId", "AdslotType", });
+    internal_static_jesgoo_protocol_Event_Body_Ad_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(4);
+    internal_static_jesgoo_protocol_Event_Body_Ad_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_Ad_descriptor,
+        new java.lang.String[] { "UserId", "PlanId", "GroupId", "ProductId", "UnitId", "TemplateId", "Type", "Interaction", "Score", });
+    internal_static_jesgoo_protocol_Event_Body_Antispam_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(5);
+    internal_static_jesgoo_protocol_Event_Body_Antispam_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_Antispam_descriptor,
+        new java.lang.String[] { "Score", "Rules", "Flags", });
+    internal_static_jesgoo_protocol_Event_Body_Antispam_Flags_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_Antispam_descriptor.getNestedTypes().get(0);
+    internal_static_jesgoo_protocol_Event_Body_Antispam_Flags_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_Antispam_Flags_descriptor,
+        new java.lang.String[] { "SearchClickCountHitCache", "SearchClickCount", "DeviceClickCountHitCache", "DeviceClickCount", });
+    internal_static_jesgoo_protocol_Event_Body_Charge_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(6);
+    internal_static_jesgoo_protocol_Event_Body_Charge_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_Charge_descriptor,
+        new java.lang.String[] { "Type", "Price", "Success", "TriggerEventType", "OverBudget", "OverDeficit", "Error", "MessageOffset", });
+    internal_static_jesgoo_protocol_Event_Body_Action_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(7);
+    internal_static_jesgoo_protocol_Event_Body_Action_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_Action_descriptor,
+        new java.lang.String[] { "TargetUrl", "RedirectType", });
+    internal_static_jesgoo_protocol_Event_Body_App_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(8);
+    internal_static_jesgoo_protocol_Event_Body_App_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_App_descriptor,
+        new java.lang.String[] { "PackageName", "InstallTime", "UpdateTime", "LastRunningTime", "Version", });
+    internal_static_jesgoo_protocol_Event_Body_Client_descriptor =
+      internal_static_jesgoo_protocol_Event_Body_descriptor.getNestedTypes().get(9);
+    internal_static_jesgoo_protocol_Event_Body_Client_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Event_Body_Client_descriptor,
+        new java.lang.String[] { "Type", "Version", });
+    internal_static_jesgoo_protocol_Material_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_jesgoo_protocol_Material_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Material_descriptor,
+        new java.lang.String[] { "Id", "Type", "Title", "Description", "Image", "TargetUrl", "ShowUrl", "App", "LongDescription", "PromotionType", });
+    internal_static_jesgoo_protocol_Material_Image_descriptor =
+      internal_static_jesgoo_protocol_Material_descriptor.getNestedTypes().get(0);
+    internal_static_jesgoo_protocol_Material_Image_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Material_Image_descriptor,
+        new java.lang.String[] { "Url", "Width", "Height", });
+    internal_static_jesgoo_protocol_Material_App_descriptor =
+      internal_static_jesgoo_protocol_Material_descriptor.getNestedTypes().get(1);
+    internal_static_jesgoo_protocol_Material_App_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_Material_App_descriptor,
+        new java.lang.String[] { "Name", "PackageName", "Logo", "PackageSize", "Version", });
+    internal_static_jesgoo_protocol_OfferWallUserData_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_jesgoo_protocol_OfferWallUserData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_OfferWallUserData_descriptor,
+        new java.lang.String[] { "UserId", "Accounts", "DoneJobs", });
+    internal_static_jesgoo_protocol_OfferWallUserData_AppAccount_descriptor =
+      internal_static_jesgoo_protocol_OfferWallUserData_descriptor.getNestedTypes().get(0);
+    internal_static_jesgoo_protocol_OfferWallUserData_AppAccount_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_OfferWallUserData_AppAccount_descriptor,
+        new java.lang.String[] { "AppId", "Points", });
+    internal_static_jesgoo_protocol_OfferWallUserData_DoneJob_descriptor =
+      internal_static_jesgoo_protocol_OfferWallUserData_descriptor.getNestedTypes().get(1);
+    internal_static_jesgoo_protocol_OfferWallUserData_DoneJob_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_OfferWallUserData_DoneJob_descriptor,
+        new java.lang.String[] { "Id", "Timestamp", });
+    internal_static_jesgoo_protocol_LockerUProfile_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_jesgoo_protocol_LockerUProfile_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_protocol_LockerUProfile_descriptor,
+        new java.lang.String[] { "Timestamp", "Count", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

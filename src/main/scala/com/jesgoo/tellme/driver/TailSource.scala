@@ -27,7 +27,6 @@ class TailSource(file: String, nexts: Array[ActorRef]) extends Actor {
     case START =>
       if (it == null) {
         init()
-        Thread.sleep(2000)
       } else {
         try {
           tmpstr = it.next
@@ -39,6 +38,7 @@ class TailSource(file: String, nexts: Array[ActorRef]) extends Actor {
           case e: Exception =>
             e.printStackTrace()
             it = null
+            Thread.sleep(2000)
         }
       }
       self ! START

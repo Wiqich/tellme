@@ -862,6 +862,14 @@ public final class Uilog {
      * <code>XF = 6;</code>
      */
     XF(5, 6),
+    /**
+     * <code>BIDDER = 7;</code>
+     */
+    BIDDER(6, 7),
+    /**
+     * <code>YOUKU = 8;</code>
+     */
+    YOUKU(7, 8),
     ;
 
     /**
@@ -888,6 +896,14 @@ public final class Uilog {
      * <code>XF = 6;</code>
      */
     public static final int XF_VALUE = 6;
+    /**
+     * <code>BIDDER = 7;</code>
+     */
+    public static final int BIDDER_VALUE = 7;
+    /**
+     * <code>YOUKU = 8;</code>
+     */
+    public static final int YOUKU_VALUE = 8;
 
 
     public final int getNumber() { return value; }
@@ -900,6 +916,8 @@ public final class Uilog {
         case 4: return TANX;
         case 5: return CY;
         case 6: return XF;
+        case 7: return BIDDER;
+        case 8: return YOUKU;
         default: return null;
       }
     }
@@ -1160,10 +1178,10 @@ public final class Uilog {
     // @@protoc_insertion_point(enum_scope:jesgoo.uilog.ClientType)
   }
 
-  public interface AppInfoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface AppInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.AppInfo)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional string packagename = 1;
     /**
      * <code>optional string packagename = 1;</code>
      */
@@ -1182,8 +1200,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.AppInfo}
    */
   public static final class AppInfo extends
-      com.google.protobuf.GeneratedMessage
-      implements AppInfoOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.AppInfo)
+      AppInfoOrBuilder {
     // Use AppInfo.newBuilder() to construct.
     private AppInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -1230,8 +1249,9 @@ public final class Uilog {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              packagename_ = input.readBytes();
+              packagename_ = bs;
               break;
             }
           }
@@ -1274,7 +1294,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // optional string packagename = 1;
     public static final int PACKAGENAME_FIELD_NUMBER = 1;
     private java.lang.Object packagename_;
     /**
@@ -1323,7 +1342,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -1430,8 +1450,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.AppInfo}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.AppInfoOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.AppInfo)
+        jesgoo.uilog.Uilog.AppInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_AppInfo_descriptor;
@@ -1546,7 +1567,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // optional string packagename = 1;
       private java.lang.Object packagename_ = "";
       /**
        * <code>optional string packagename = 1;</code>
@@ -1560,9 +1580,12 @@ public final class Uilog {
       public java.lang.String getPackagename() {
         java.lang.Object ref = packagename_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          packagename_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            packagename_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1631,10 +1654,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.AppInfo)
   }
 
-  public interface SiteInfoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface SiteInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.SiteInfo)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional string domain = 1;
     /**
      * <code>optional string domain = 1;</code>
      */
@@ -1649,7 +1672,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getDomainBytes();
 
-    // optional string urls = 2;
     /**
      * <code>optional string urls = 2;</code>
      */
@@ -1668,8 +1690,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.SiteInfo}
    */
   public static final class SiteInfo extends
-      com.google.protobuf.GeneratedMessage
-      implements SiteInfoOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.SiteInfo)
+      SiteInfoOrBuilder {
     // Use SiteInfo.newBuilder() to construct.
     private SiteInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -1716,13 +1739,15 @@ public final class Uilog {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              domain_ = input.readBytes();
+              domain_ = bs;
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              urls_ = input.readBytes();
+              urls_ = bs;
               break;
             }
           }
@@ -1765,7 +1790,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // optional string domain = 1;
     public static final int DOMAIN_FIELD_NUMBER = 1;
     private java.lang.Object domain_;
     /**
@@ -1808,7 +1832,6 @@ public final class Uilog {
       }
     }
 
-    // optional string urls = 2;
     public static final int URLS_FIELD_NUMBER = 2;
     private java.lang.Object urls_;
     /**
@@ -1858,7 +1881,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -1972,8 +1996,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.SiteInfo}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.SiteInfoOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.SiteInfo)
+        jesgoo.uilog.Uilog.SiteInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_SiteInfo_descriptor;
@@ -2099,7 +2124,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // optional string domain = 1;
       private java.lang.Object domain_ = "";
       /**
        * <code>optional string domain = 1;</code>
@@ -2113,9 +2137,12 @@ public final class Uilog {
       public java.lang.String getDomain() {
         java.lang.Object ref = domain_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          domain_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            domain_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2173,7 +2200,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string urls = 2;
       private java.lang.Object urls_ = "";
       /**
        * <code>optional string urls = 2;</code>
@@ -2187,9 +2213,12 @@ public final class Uilog {
       public java.lang.String getUrls() {
         java.lang.Object ref = urls_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          urls_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            urls_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2258,10 +2287,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.SiteInfo)
   }
 
-  public interface SizeOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface SizeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.Size)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required uint32 height = 1;
     /**
      * <code>required uint32 height = 1;</code>
      */
@@ -2271,7 +2300,6 @@ public final class Uilog {
      */
     int getHeight();
 
-    // required uint32 width = 2;
     /**
      * <code>required uint32 width = 2;</code>
      */
@@ -2285,8 +2313,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.Size}
    */
   public static final class Size extends
-      com.google.protobuf.GeneratedMessage
-      implements SizeOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.Size)
+      SizeOrBuilder {
     // Use Size.newBuilder() to construct.
     private Size(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -2382,7 +2411,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required uint32 height = 1;
     public static final int HEIGHT_FIELD_NUMBER = 1;
     private int height_;
     /**
@@ -2398,7 +2426,6 @@ public final class Uilog {
       return height_;
     }
 
-    // required uint32 width = 2;
     public static final int WIDTH_FIELD_NUMBER = 2;
     private int width_;
     /**
@@ -2421,7 +2448,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasHeight()) {
         memoizedIsInitialized = 0;
@@ -2543,8 +2571,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.Size}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.SizeOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.Size)
+        jesgoo.uilog.Uilog.SizeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_Size_descriptor;
@@ -2674,7 +2703,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required uint32 height = 1;
       private int height_ ;
       /**
        * <code>required uint32 height = 1;</code>
@@ -2707,7 +2735,6 @@ public final class Uilog {
         return this;
       }
 
-      // required uint32 width = 2;
       private int width_ ;
       /**
        * <code>required uint32 width = 2;</code>
@@ -2751,10 +2778,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.Size)
   }
 
-  public interface MediaOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface MediaOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.Media)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.uilog.MediaType type = 1;
     /**
      * <code>required .jesgoo.uilog.MediaType type = 1;</code>
      */
@@ -2764,7 +2791,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.MediaType getType();
 
-    // required string appsid = 2;
     /**
      * <code>required string appsid = 2;</code>
      */
@@ -2779,7 +2805,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getAppsidBytes();
 
-    // optional string channelid = 3;
     /**
      * <code>optional string channelid = 3;</code>
      */
@@ -2794,7 +2819,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getChannelidBytes();
 
-    // optional .jesgoo.uilog.AppInfo app = 4;
     /**
      * <code>optional .jesgoo.uilog.AppInfo app = 4;</code>
      */
@@ -2808,7 +2832,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.AppInfoOrBuilder getAppOrBuilder();
 
-    // optional .jesgoo.uilog.SiteInfo site = 5;
     /**
      * <code>optional .jesgoo.uilog.SiteInfo site = 5;</code>
      */
@@ -2822,7 +2845,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.SiteInfoOrBuilder getSiteOrBuilder();
 
-    // optional uint32 category = 6;
     /**
      * <code>optional uint32 category = 6;</code>
      */
@@ -2836,8 +2858,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.Media}
    */
   public static final class Media extends
-      com.google.protobuf.GeneratedMessage
-      implements MediaOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.Media)
+      MediaOrBuilder {
     // Use Media.newBuilder() to construct.
     private Media(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -2895,13 +2918,15 @@ public final class Uilog {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              appsid_ = input.readBytes();
+              appsid_ = bs;
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              channelid_ = input.readBytes();
+              channelid_ = bs;
               break;
             }
             case 34: {
@@ -2975,7 +3000,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required .jesgoo.uilog.MediaType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private jesgoo.uilog.Uilog.MediaType type_;
     /**
@@ -2991,7 +3015,6 @@ public final class Uilog {
       return type_;
     }
 
-    // required string appsid = 2;
     public static final int APPSID_FIELD_NUMBER = 2;
     private java.lang.Object appsid_;
     /**
@@ -3034,7 +3057,6 @@ public final class Uilog {
       }
     }
 
-    // optional string channelid = 3;
     public static final int CHANNELID_FIELD_NUMBER = 3;
     private java.lang.Object channelid_;
     /**
@@ -3077,7 +3099,6 @@ public final class Uilog {
       }
     }
 
-    // optional .jesgoo.uilog.AppInfo app = 4;
     public static final int APP_FIELD_NUMBER = 4;
     private jesgoo.uilog.Uilog.AppInfo app_;
     /**
@@ -3099,7 +3120,6 @@ public final class Uilog {
       return app_;
     }
 
-    // optional .jesgoo.uilog.SiteInfo site = 5;
     public static final int SITE_FIELD_NUMBER = 5;
     private jesgoo.uilog.Uilog.SiteInfo site_;
     /**
@@ -3121,7 +3141,6 @@ public final class Uilog {
       return site_;
     }
 
-    // optional uint32 category = 6;
     public static final int CATEGORY_FIELD_NUMBER = 6;
     private int category_;
     /**
@@ -3148,7 +3167,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -3298,8 +3318,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.Media}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.MediaOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.Media)
+        jesgoo.uilog.Uilog.MediaOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_Media_descriptor;
@@ -3487,7 +3508,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required .jesgoo.uilog.MediaType type = 1;
       private jesgoo.uilog.Uilog.MediaType type_ = jesgoo.uilog.Uilog.MediaType.UNKNOWN;
       /**
        * <code>required .jesgoo.uilog.MediaType type = 1;</code>
@@ -3523,7 +3543,6 @@ public final class Uilog {
         return this;
       }
 
-      // required string appsid = 2;
       private java.lang.Object appsid_ = "";
       /**
        * <code>required string appsid = 2;</code>
@@ -3537,9 +3556,12 @@ public final class Uilog {
       public java.lang.String getAppsid() {
         java.lang.Object ref = appsid_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          appsid_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            appsid_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3597,7 +3619,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string channelid = 3;
       private java.lang.Object channelid_ = "";
       /**
        * <code>optional string channelid = 3;</code>
@@ -3611,9 +3632,12 @@ public final class Uilog {
       public java.lang.String getChannelid() {
         java.lang.Object ref = channelid_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          channelid_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            channelid_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3671,7 +3695,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional .jesgoo.uilog.AppInfo app = 4;
       private jesgoo.uilog.Uilog.AppInfo app_ = jesgoo.uilog.Uilog.AppInfo.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.AppInfo, jesgoo.uilog.Uilog.AppInfo.Builder, jesgoo.uilog.Uilog.AppInfoOrBuilder> appBuilder_;
@@ -3780,7 +3803,7 @@ public final class Uilog {
         if (appBuilder_ == null) {
           appBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.AppInfo, jesgoo.uilog.Uilog.AppInfo.Builder, jesgoo.uilog.Uilog.AppInfoOrBuilder>(
-                  app_,
+                  getApp(),
                   getParentForChildren(),
                   isClean());
           app_ = null;
@@ -3788,7 +3811,6 @@ public final class Uilog {
         return appBuilder_;
       }
 
-      // optional .jesgoo.uilog.SiteInfo site = 5;
       private jesgoo.uilog.Uilog.SiteInfo site_ = jesgoo.uilog.Uilog.SiteInfo.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.SiteInfo, jesgoo.uilog.Uilog.SiteInfo.Builder, jesgoo.uilog.Uilog.SiteInfoOrBuilder> siteBuilder_;
@@ -3897,7 +3919,7 @@ public final class Uilog {
         if (siteBuilder_ == null) {
           siteBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.SiteInfo, jesgoo.uilog.Uilog.SiteInfo.Builder, jesgoo.uilog.Uilog.SiteInfoOrBuilder>(
-                  site_,
+                  getSite(),
                   getParentForChildren(),
                   isClean());
           site_ = null;
@@ -3905,7 +3927,6 @@ public final class Uilog {
         return siteBuilder_;
       }
 
-      // optional uint32 category = 6;
       private int category_ ;
       /**
        * <code>optional uint32 category = 6;</code>
@@ -3949,10 +3970,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.Media)
   }
 
-  public interface AdslotOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface AdslotOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.Adslot)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required string id = 1;
     /**
      * <code>required string id = 1;</code>
      */
@@ -3967,7 +3988,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getIdBytes();
 
-    // required .jesgoo.uilog.AdslotType type = 2;
     /**
      * <code>required .jesgoo.uilog.AdslotType type = 2;</code>
      */
@@ -3977,7 +3997,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.AdslotType getType();
 
-    // required .jesgoo.uilog.Size size = 3;
     /**
      * <code>required .jesgoo.uilog.Size size = 3;</code>
      */
@@ -3991,7 +4010,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.SizeOrBuilder getSizeOrBuilder();
 
-    // required uint32 capacity = 4;
     /**
      * <code>required uint32 capacity = 4;</code>
      *
@@ -4009,7 +4027,6 @@ public final class Uilog {
      */
     int getCapacity();
 
-    // optional uint64 inittime = 5;
     /**
      * <code>optional uint64 inittime = 5;</code>
      *
@@ -4031,8 +4048,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.Adslot}
    */
   public static final class Adslot extends
-      com.google.protobuf.GeneratedMessage
-      implements AdslotOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.Adslot)
+      AdslotOrBuilder {
     // Use Adslot.newBuilder() to construct.
     private Adslot(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -4079,8 +4097,9 @@ public final class Uilog {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              id_ = input.readBytes();
+              id_ = bs;
               break;
             }
             case 16: {
@@ -4157,7 +4176,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required string id = 1;
     public static final int ID_FIELD_NUMBER = 1;
     private java.lang.Object id_;
     /**
@@ -4200,7 +4218,6 @@ public final class Uilog {
       }
     }
 
-    // required .jesgoo.uilog.AdslotType type = 2;
     public static final int TYPE_FIELD_NUMBER = 2;
     private jesgoo.uilog.Uilog.AdslotType type_;
     /**
@@ -4216,7 +4233,6 @@ public final class Uilog {
       return type_;
     }
 
-    // required .jesgoo.uilog.Size size = 3;
     public static final int SIZE_FIELD_NUMBER = 3;
     private jesgoo.uilog.Uilog.Size size_;
     /**
@@ -4238,7 +4254,6 @@ public final class Uilog {
       return size_;
     }
 
-    // required uint32 capacity = 4;
     public static final int CAPACITY_FIELD_NUMBER = 4;
     private int capacity_;
     /**
@@ -4262,7 +4277,6 @@ public final class Uilog {
       return capacity_;
     }
 
-    // optional uint64 inittime = 5;
     public static final int INITTIME_FIELD_NUMBER = 5;
     private long inittime_;
     /**
@@ -4296,7 +4310,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasId()) {
         memoizedIsInitialized = 0;
@@ -4451,8 +4466,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.Adslot}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.AdslotOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.Adslot)
+        jesgoo.uilog.Uilog.AdslotOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_Adslot_descriptor;
@@ -4632,7 +4648,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required string id = 1;
       private java.lang.Object id_ = "";
       /**
        * <code>required string id = 1;</code>
@@ -4646,9 +4661,12 @@ public final class Uilog {
       public java.lang.String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          id_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4706,7 +4724,6 @@ public final class Uilog {
         return this;
       }
 
-      // required .jesgoo.uilog.AdslotType type = 2;
       private jesgoo.uilog.Uilog.AdslotType type_ = jesgoo.uilog.Uilog.AdslotType.BANNER;
       /**
        * <code>required .jesgoo.uilog.AdslotType type = 2;</code>
@@ -4742,7 +4759,6 @@ public final class Uilog {
         return this;
       }
 
-      // required .jesgoo.uilog.Size size = 3;
       private jesgoo.uilog.Uilog.Size size_ = jesgoo.uilog.Uilog.Size.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.Size, jesgoo.uilog.Uilog.Size.Builder, jesgoo.uilog.Uilog.SizeOrBuilder> sizeBuilder_;
@@ -4851,7 +4867,7 @@ public final class Uilog {
         if (sizeBuilder_ == null) {
           sizeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.Size, jesgoo.uilog.Uilog.Size.Builder, jesgoo.uilog.Uilog.SizeOrBuilder>(
-                  size_,
+                  getSize(),
                   getParentForChildren(),
                   isClean());
           size_ = null;
@@ -4859,7 +4875,6 @@ public final class Uilog {
         return sizeBuilder_;
       }
 
-      // required uint32 capacity = 4;
       private int capacity_ ;
       /**
        * <code>required uint32 capacity = 4;</code>
@@ -4908,7 +4923,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint64 inittime = 5;
       private long inittime_ ;
       /**
        * <code>optional uint64 inittime = 5;</code>
@@ -4968,10 +4982,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.Adslot)
   }
 
-  public interface NetworkOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface NetworkOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.Network)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.uilog.NetworkType type = 1;
     /**
      * <code>required .jesgoo.uilog.NetworkType type = 1;</code>
      */
@@ -4981,7 +4995,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.NetworkType getType();
 
-    // required string ip = 2;
     /**
      * <code>required string ip = 2;</code>
      */
@@ -5000,8 +5013,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.Network}
    */
   public static final class Network extends
-      com.google.protobuf.GeneratedMessage
-      implements NetworkOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.Network)
+      NetworkOrBuilder {
     // Use Network.newBuilder() to construct.
     private Network(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -5059,8 +5073,9 @@ public final class Uilog {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              ip_ = input.readBytes();
+              ip_ = bs;
               break;
             }
           }
@@ -5103,7 +5118,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required .jesgoo.uilog.NetworkType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private jesgoo.uilog.Uilog.NetworkType type_;
     /**
@@ -5119,7 +5133,6 @@ public final class Uilog {
       return type_;
     }
 
-    // required string ip = 2;
     public static final int IP_FIELD_NUMBER = 2;
     private java.lang.Object ip_;
     /**
@@ -5169,7 +5182,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -5291,8 +5305,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.Network}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.NetworkOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.Network)
+        jesgoo.uilog.Uilog.NetworkOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_Network_descriptor;
@@ -5424,7 +5439,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required .jesgoo.uilog.NetworkType type = 1;
       private jesgoo.uilog.Uilog.NetworkType type_ = jesgoo.uilog.Uilog.NetworkType.NET_UNKNOWN;
       /**
        * <code>required .jesgoo.uilog.NetworkType type = 1;</code>
@@ -5460,7 +5474,6 @@ public final class Uilog {
         return this;
       }
 
-      // required string ip = 2;
       private java.lang.Object ip_ = "";
       /**
        * <code>required string ip = 2;</code>
@@ -5474,9 +5487,12 @@ public final class Uilog {
       public java.lang.String getIp() {
         java.lang.Object ref = ip_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          ip_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            ip_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5545,10 +5561,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.Network)
   }
 
-  public interface VersionOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface VersionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.Version)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required uint32 major = 1;
     /**
      * <code>required uint32 major = 1;</code>
      */
@@ -5558,7 +5574,6 @@ public final class Uilog {
      */
     int getMajor();
 
-    // optional uint32 minor = 2;
     /**
      * <code>optional uint32 minor = 2;</code>
      */
@@ -5568,7 +5583,6 @@ public final class Uilog {
      */
     int getMinor();
 
-    // optional uint32 micro = 3;
     /**
      * <code>optional uint32 micro = 3;</code>
      */
@@ -5578,7 +5592,6 @@ public final class Uilog {
      */
     int getMicro();
 
-    // optional uint32 build = 4;
     /**
      * <code>optional uint32 build = 4;</code>
      */
@@ -5592,8 +5605,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.Version}
    */
   public static final class Version extends
-      com.google.protobuf.GeneratedMessage
-      implements VersionOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.Version)
+      VersionOrBuilder {
     // Use Version.newBuilder() to construct.
     private Version(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -5699,7 +5713,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required uint32 major = 1;
     public static final int MAJOR_FIELD_NUMBER = 1;
     private int major_;
     /**
@@ -5715,7 +5728,6 @@ public final class Uilog {
       return major_;
     }
 
-    // optional uint32 minor = 2;
     public static final int MINOR_FIELD_NUMBER = 2;
     private int minor_;
     /**
@@ -5731,7 +5743,6 @@ public final class Uilog {
       return minor_;
     }
 
-    // optional uint32 micro = 3;
     public static final int MICRO_FIELD_NUMBER = 3;
     private int micro_;
     /**
@@ -5747,7 +5758,6 @@ public final class Uilog {
       return micro_;
     }
 
-    // optional uint32 build = 4;
     public static final int BUILD_FIELD_NUMBER = 4;
     private int build_;
     /**
@@ -5772,7 +5782,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasMajor()) {
         memoizedIsInitialized = 0;
@@ -5904,8 +5915,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.Version}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.VersionOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.Version)
+        jesgoo.uilog.Uilog.VersionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_Version_descriptor;
@@ -6049,7 +6061,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required uint32 major = 1;
       private int major_ ;
       /**
        * <code>required uint32 major = 1;</code>
@@ -6082,7 +6093,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 minor = 2;
       private int minor_ ;
       /**
        * <code>optional uint32 minor = 2;</code>
@@ -6115,7 +6125,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 micro = 3;
       private int micro_ ;
       /**
        * <code>optional uint32 micro = 3;</code>
@@ -6148,7 +6157,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 build = 4;
       private int build_ ;
       /**
        * <code>optional uint32 build = 4;</code>
@@ -6192,10 +6200,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.Version)
   }
 
-  public interface DeviceIdOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface DeviceIdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.DeviceId)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.uilog.DeviceIdType type = 1;
     /**
      * <code>required .jesgoo.uilog.DeviceIdType type = 1;</code>
      */
@@ -6205,7 +6213,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.DeviceIdType getType();
 
-    // required string id = 2;
     /**
      * <code>required string id = 2;</code>
      */
@@ -6220,7 +6227,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getIdBytes();
 
-    // optional bool original = 3;
     /**
      * <code>optional bool original = 3;</code>
      *
@@ -6242,8 +6248,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.DeviceId}
    */
   public static final class DeviceId extends
-      com.google.protobuf.GeneratedMessage
-      implements DeviceIdOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.DeviceId)
+      DeviceIdOrBuilder {
     // Use DeviceId.newBuilder() to construct.
     private DeviceId(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -6301,8 +6308,9 @@ public final class Uilog {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              id_ = input.readBytes();
+              id_ = bs;
               break;
             }
             case 24: {
@@ -6350,7 +6358,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required .jesgoo.uilog.DeviceIdType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private jesgoo.uilog.Uilog.DeviceIdType type_;
     /**
@@ -6366,7 +6373,6 @@ public final class Uilog {
       return type_;
     }
 
-    // required string id = 2;
     public static final int ID_FIELD_NUMBER = 2;
     private java.lang.Object id_;
     /**
@@ -6409,7 +6415,6 @@ public final class Uilog {
       }
     }
 
-    // optional bool original = 3;
     public static final int ORIGINAL_FIELD_NUMBER = 3;
     private boolean original_;
     /**
@@ -6441,7 +6446,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -6570,8 +6576,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.DeviceId}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.DeviceIdOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.DeviceId)
+        jesgoo.uilog.Uilog.DeviceIdOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_DeviceId_descriptor;
@@ -6712,7 +6719,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required .jesgoo.uilog.DeviceIdType type = 1;
       private jesgoo.uilog.Uilog.DeviceIdType type_ = jesgoo.uilog.Uilog.DeviceIdType.DEVID_UNKNOWN;
       /**
        * <code>required .jesgoo.uilog.DeviceIdType type = 1;</code>
@@ -6748,7 +6754,6 @@ public final class Uilog {
         return this;
       }
 
-      // required string id = 2;
       private java.lang.Object id_ = "";
       /**
        * <code>required string id = 2;</code>
@@ -6762,9 +6767,12 @@ public final class Uilog {
       public java.lang.String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          id_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6822,7 +6830,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional bool original = 3;
       private boolean original_ ;
       /**
        * <code>optional bool original = 3;</code>
@@ -6882,10 +6889,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.DeviceId)
   }
 
-  public interface DeviceOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface DeviceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.Device)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.uilog.OSType os = 1;
     /**
      * <code>required .jesgoo.uilog.OSType os = 1;</code>
      */
@@ -6895,7 +6902,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.OSType getOs();
 
-    // required .jesgoo.uilog.Version osversion = 2;
     /**
      * <code>required .jesgoo.uilog.Version osversion = 2;</code>
      */
@@ -6909,7 +6915,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.VersionOrBuilder getOsversionOrBuilder();
 
-    // repeated .jesgoo.uilog.DeviceId ids = 3;
     /**
      * <code>repeated .jesgoo.uilog.DeviceId ids = 3;</code>
      */
@@ -6934,7 +6939,6 @@ public final class Uilog {
     jesgoo.uilog.Uilog.DeviceIdOrBuilder getIdsOrBuilder(
         int index);
 
-    // optional string brand = 4;
     /**
      * <code>optional string brand = 4;</code>
      */
@@ -6949,7 +6953,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getBrandBytes();
 
-    // optional string model = 5;
     /**
      * <code>optional string model = 5;</code>
      */
@@ -6964,7 +6967,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getModelBytes();
 
-    // optional bytes useragent = 6;
     /**
      * <code>optional bytes useragent = 6;</code>
      */
@@ -6974,7 +6976,6 @@ public final class Uilog {
      */
     com.google.protobuf.ByteString getUseragent();
 
-    // optional bytes cookie = 7;
     /**
      * <code>optional bytes cookie = 7;</code>
      */
@@ -6984,7 +6985,6 @@ public final class Uilog {
      */
     com.google.protobuf.ByteString getCookie();
 
-    // optional .jesgoo.uilog.BrowserType browser = 8;
     /**
      * <code>optional .jesgoo.uilog.BrowserType browser = 8;</code>
      */
@@ -6994,7 +6994,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.BrowserType getBrowser();
 
-    // optional string matchimei = 9;
     /**
      * <code>optional string matchimei = 9;</code>
      */
@@ -7009,7 +7008,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getMatchimeiBytes();
 
-    // optional string uid = 10;
     /**
      * <code>optional string uid = 10;</code>
      */
@@ -7028,8 +7026,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.Device}
    */
   public static final class Device extends
-      com.google.protobuf.GeneratedMessage
-      implements DeviceOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.Device)
+      DeviceOrBuilder {
     // Use Device.newBuilder() to construct.
     private Device(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -7108,13 +7107,15 @@ public final class Uilog {
               break;
             }
             case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              brand_ = input.readBytes();
+              brand_ = bs;
               break;
             }
             case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              model_ = input.readBytes();
+              model_ = bs;
               break;
             }
             case 50: {
@@ -7139,13 +7140,15 @@ public final class Uilog {
               break;
             }
             case 74: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000080;
-              matchimei_ = input.readBytes();
+              matchimei_ = bs;
               break;
             }
             case 82: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000100;
-              uid_ = input.readBytes();
+              uid_ = bs;
               break;
             }
           }
@@ -7191,7 +7194,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required .jesgoo.uilog.OSType os = 1;
     public static final int OS_FIELD_NUMBER = 1;
     private jesgoo.uilog.Uilog.OSType os_;
     /**
@@ -7207,7 +7209,6 @@ public final class Uilog {
       return os_;
     }
 
-    // required .jesgoo.uilog.Version osversion = 2;
     public static final int OSVERSION_FIELD_NUMBER = 2;
     private jesgoo.uilog.Uilog.Version osversion_;
     /**
@@ -7229,7 +7230,6 @@ public final class Uilog {
       return osversion_;
     }
 
-    // repeated .jesgoo.uilog.DeviceId ids = 3;
     public static final int IDS_FIELD_NUMBER = 3;
     private java.util.List<jesgoo.uilog.Uilog.DeviceId> ids_;
     /**
@@ -7265,7 +7265,6 @@ public final class Uilog {
       return ids_.get(index);
     }
 
-    // optional string brand = 4;
     public static final int BRAND_FIELD_NUMBER = 4;
     private java.lang.Object brand_;
     /**
@@ -7308,7 +7307,6 @@ public final class Uilog {
       }
     }
 
-    // optional string model = 5;
     public static final int MODEL_FIELD_NUMBER = 5;
     private java.lang.Object model_;
     /**
@@ -7351,7 +7349,6 @@ public final class Uilog {
       }
     }
 
-    // optional bytes useragent = 6;
     public static final int USERAGENT_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString useragent_;
     /**
@@ -7367,7 +7364,6 @@ public final class Uilog {
       return useragent_;
     }
 
-    // optional bytes cookie = 7;
     public static final int COOKIE_FIELD_NUMBER = 7;
     private com.google.protobuf.ByteString cookie_;
     /**
@@ -7383,7 +7379,6 @@ public final class Uilog {
       return cookie_;
     }
 
-    // optional .jesgoo.uilog.BrowserType browser = 8;
     public static final int BROWSER_FIELD_NUMBER = 8;
     private jesgoo.uilog.Uilog.BrowserType browser_;
     /**
@@ -7399,7 +7394,6 @@ public final class Uilog {
       return browser_;
     }
 
-    // optional string matchimei = 9;
     public static final int MATCHIMEI_FIELD_NUMBER = 9;
     private java.lang.Object matchimei_;
     /**
@@ -7442,7 +7436,6 @@ public final class Uilog {
       }
     }
 
-    // optional string uid = 10;
     public static final int UID_FIELD_NUMBER = 10;
     private java.lang.Object uid_;
     /**
@@ -7500,7 +7493,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasOs()) {
         memoizedIsInitialized = 0;
@@ -7688,8 +7682,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.Device}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.DeviceOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.Device)
+        jesgoo.uilog.Uilog.DeviceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_Device_descriptor;
@@ -7951,7 +7946,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required .jesgoo.uilog.OSType os = 1;
       private jesgoo.uilog.Uilog.OSType os_ = jesgoo.uilog.Uilog.OSType.OS_UNKNOWN;
       /**
        * <code>required .jesgoo.uilog.OSType os = 1;</code>
@@ -7987,7 +7981,6 @@ public final class Uilog {
         return this;
       }
 
-      // required .jesgoo.uilog.Version osversion = 2;
       private jesgoo.uilog.Uilog.Version osversion_ = jesgoo.uilog.Uilog.Version.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.Version, jesgoo.uilog.Uilog.Version.Builder, jesgoo.uilog.Uilog.VersionOrBuilder> osversionBuilder_;
@@ -8096,7 +8089,7 @@ public final class Uilog {
         if (osversionBuilder_ == null) {
           osversionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.Version, jesgoo.uilog.Uilog.Version.Builder, jesgoo.uilog.Uilog.VersionOrBuilder>(
-                  osversion_,
+                  getOsversion(),
                   getParentForChildren(),
                   isClean());
           osversion_ = null;
@@ -8104,7 +8097,6 @@ public final class Uilog {
         return osversionBuilder_;
       }
 
-      // repeated .jesgoo.uilog.DeviceId ids = 3;
       private java.util.List<jesgoo.uilog.Uilog.DeviceId> ids_ =
         java.util.Collections.emptyList();
       private void ensureIdsIsMutable() {
@@ -8246,7 +8238,8 @@ public final class Uilog {
           java.lang.Iterable<? extends jesgoo.uilog.Uilog.DeviceId> values) {
         if (idsBuilder_ == null) {
           ensureIdsIsMutable();
-          super.addAll(values, ids_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, ids_);
           onChanged();
         } else {
           idsBuilder_.addAllMessages(values);
@@ -8344,7 +8337,6 @@ public final class Uilog {
         return idsBuilder_;
       }
 
-      // optional string brand = 4;
       private java.lang.Object brand_ = "";
       /**
        * <code>optional string brand = 4;</code>
@@ -8358,9 +8350,12 @@ public final class Uilog {
       public java.lang.String getBrand() {
         java.lang.Object ref = brand_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          brand_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            brand_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8418,7 +8413,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string model = 5;
       private java.lang.Object model_ = "";
       /**
        * <code>optional string model = 5;</code>
@@ -8432,9 +8426,12 @@ public final class Uilog {
       public java.lang.String getModel() {
         java.lang.Object ref = model_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          model_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            model_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8492,7 +8489,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional bytes useragent = 6;
       private com.google.protobuf.ByteString useragent_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes useragent = 6;</code>
@@ -8528,7 +8524,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional bytes cookie = 7;
       private com.google.protobuf.ByteString cookie_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes cookie = 7;</code>
@@ -8564,7 +8559,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional .jesgoo.uilog.BrowserType browser = 8;
       private jesgoo.uilog.Uilog.BrowserType browser_ = jesgoo.uilog.Uilog.BrowserType.UnknownBrowser;
       /**
        * <code>optional .jesgoo.uilog.BrowserType browser = 8;</code>
@@ -8600,7 +8594,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string matchimei = 9;
       private java.lang.Object matchimei_ = "";
       /**
        * <code>optional string matchimei = 9;</code>
@@ -8614,9 +8607,12 @@ public final class Uilog {
       public java.lang.String getMatchimei() {
         java.lang.Object ref = matchimei_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          matchimei_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            matchimei_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8674,7 +8670,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string uid = 10;
       private java.lang.Object uid_ = "";
       /**
        * <code>optional string uid = 10;</code>
@@ -8688,9 +8683,12 @@ public final class Uilog {
       public java.lang.String getUid() {
         java.lang.Object ref = uid_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          uid_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            uid_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8759,10 +8757,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.Device)
   }
 
-  public interface ClientOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface ClientOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.Client)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.uilog.ClientType type = 1;
     /**
      * <code>required .jesgoo.uilog.ClientType type = 1;</code>
      */
@@ -8772,7 +8770,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.ClientType getType();
 
-    // optional .jesgoo.uilog.Version version = 2;
     /**
      * <code>optional .jesgoo.uilog.Version version = 2;</code>
      */
@@ -8790,8 +8787,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.Client}
    */
   public static final class Client extends
-      com.google.protobuf.GeneratedMessage
-      implements ClientOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.Client)
+      ClientOrBuilder {
     // Use Client.newBuilder() to construct.
     private Client(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -8901,7 +8899,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required .jesgoo.uilog.ClientType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private jesgoo.uilog.Uilog.ClientType type_;
     /**
@@ -8917,7 +8914,6 @@ public final class Uilog {
       return type_;
     }
 
-    // optional .jesgoo.uilog.Version version = 2;
     public static final int VERSION_FIELD_NUMBER = 2;
     private jesgoo.uilog.Uilog.Version version_;
     /**
@@ -8946,7 +8942,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -9070,8 +9067,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.Client}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.ClientOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.Client)
+        jesgoo.uilog.Uilog.ClientOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_Client_descriptor;
@@ -9212,7 +9210,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required .jesgoo.uilog.ClientType type = 1;
       private jesgoo.uilog.Uilog.ClientType type_ = jesgoo.uilog.Uilog.ClientType.NATIVESDK;
       /**
        * <code>required .jesgoo.uilog.ClientType type = 1;</code>
@@ -9248,7 +9245,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional .jesgoo.uilog.Version version = 2;
       private jesgoo.uilog.Uilog.Version version_ = jesgoo.uilog.Uilog.Version.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.Version, jesgoo.uilog.Uilog.Version.Builder, jesgoo.uilog.Uilog.VersionOrBuilder> versionBuilder_;
@@ -9357,7 +9353,7 @@ public final class Uilog {
         if (versionBuilder_ == null) {
           versionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.Version, jesgoo.uilog.Uilog.Version.Builder, jesgoo.uilog.Uilog.VersionOrBuilder>(
-                  version_,
+                  getVersion(),
                   getParentForChildren(),
                   isClean());
           version_ = null;
@@ -9376,10 +9372,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.Client)
   }
 
-  public interface AdInfoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface AdInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.AdInfo)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.uilog.AdType type = 1;
     /**
      * <code>required .jesgoo.uilog.AdType type = 1;</code>
      */
@@ -9389,7 +9385,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.AdType getType();
 
-    // required .jesgoo.uilog.AdSrc src = 2;
     /**
      * <code>required .jesgoo.uilog.AdSrc src = 2;</code>
      */
@@ -9399,7 +9394,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.AdSrc getSrc();
 
-    // required .jesgoo.uilog.InteractionType interaction = 3;
     /**
      * <code>required .jesgoo.uilog.InteractionType interaction = 3;</code>
      */
@@ -9409,7 +9403,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.InteractionType getInteraction();
 
-    // optional uint32 adid = 4;
     /**
      * <code>optional uint32 adid = 4;</code>
      */
@@ -9419,7 +9412,6 @@ public final class Uilog {
      */
     int getAdid();
 
-    // optional uint32 groupid = 5;
     /**
      * <code>optional uint32 groupid = 5;</code>
      */
@@ -9429,7 +9421,6 @@ public final class Uilog {
      */
     int getGroupid();
 
-    // optional uint32 planid = 6;
     /**
      * <code>optional uint32 planid = 6;</code>
      */
@@ -9439,7 +9430,6 @@ public final class Uilog {
      */
     int getPlanid();
 
-    // optional uint32 userid = 7;
     /**
      * <code>optional uint32 userid = 7;</code>
      */
@@ -9449,7 +9439,6 @@ public final class Uilog {
      */
     int getUserid();
 
-    // optional uint32 bid = 8;
     /**
      * <code>optional uint32 bid = 8;</code>
      */
@@ -9459,7 +9448,6 @@ public final class Uilog {
      */
     int getBid();
 
-    // optional uint32 price = 9;
     /**
      * <code>optional uint32 price = 9;</code>
      */
@@ -9469,7 +9457,6 @@ public final class Uilog {
      */
     int getPrice();
 
-    // optional uint64 ctr = 10;
     /**
      * <code>optional uint64 ctr = 10;</code>
      */
@@ -9479,7 +9466,6 @@ public final class Uilog {
      */
     long getCtr();
 
-    // optional uint64 cpm = 11;
     /**
      * <code>optional uint64 cpm = 11;</code>
      */
@@ -9489,7 +9475,6 @@ public final class Uilog {
      */
     long getCpm();
 
-    // optional string title = 12;
     /**
      * <code>optional string title = 12;</code>
      */
@@ -9504,7 +9489,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getTitleBytes();
 
-    // optional string description1 = 13;
     /**
      * <code>optional string description1 = 13;</code>
      */
@@ -9519,7 +9503,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getDescription1Bytes();
 
-    // optional string image = 14;
     /**
      * <code>optional string image = 14;</code>
      */
@@ -9534,7 +9517,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getImageBytes();
 
-    // optional string package = 15;
     /**
      * <code>optional string package = 15;</code>
      */
@@ -9549,7 +9531,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getPackageBytes();
 
-    // optional string appname = 16;
     /**
      * <code>optional string appname = 16;</code>
      */
@@ -9564,7 +9545,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getAppnameBytes();
 
-    // optional string dspmediaid = 17;
     /**
      * <code>optional string dspmediaid = 17;</code>
      */
@@ -9579,7 +9559,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getDspmediaidBytes();
 
-    // optional string dspchannelid = 18;
     /**
      * <code>optional string dspchannelid = 18;</code>
      */
@@ -9594,7 +9573,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getDspchannelidBytes();
 
-    // optional string clickurl = 19;
     /**
      * <code>optional string clickurl = 19;</code>
      */
@@ -9609,7 +9587,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getClickurlBytes();
 
-    // optional uint32 score = 20;
     /**
      * <code>optional uint32 score = 20;</code>
      *
@@ -9626,13 +9603,40 @@ public final class Uilog {
      * </pre>
      */
     int getScore();
+
+    /**
+     * <code>optional string html = 21;</code>
+     *
+     * <pre>
+     * HTML 广告的内容cache
+     * </pre>
+     */
+    boolean hasHtml();
+    /**
+     * <code>optional string html = 21;</code>
+     *
+     * <pre>
+     * HTML 广告的内容cache
+     * </pre>
+     */
+    java.lang.String getHtml();
+    /**
+     * <code>optional string html = 21;</code>
+     *
+     * <pre>
+     * HTML 广告的内容cache
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getHtmlBytes();
   }
   /**
    * Protobuf type {@code jesgoo.uilog.AdInfo}
    */
   public static final class AdInfo extends
-      com.google.protobuf.GeneratedMessage
-      implements AdInfoOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.AdInfo)
+      AdInfoOrBuilder {
     // Use AdInfo.newBuilder() to construct.
     private AdInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -9752,48 +9756,62 @@ public final class Uilog {
               break;
             }
             case 98: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000800;
-              title_ = input.readBytes();
+              title_ = bs;
               break;
             }
             case 106: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00001000;
-              description1_ = input.readBytes();
+              description1_ = bs;
               break;
             }
             case 114: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00002000;
-              image_ = input.readBytes();
+              image_ = bs;
               break;
             }
             case 122: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00004000;
-              package_ = input.readBytes();
+              package_ = bs;
               break;
             }
             case 130: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00008000;
-              appname_ = input.readBytes();
+              appname_ = bs;
               break;
             }
             case 138: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00010000;
-              dspmediaid_ = input.readBytes();
+              dspmediaid_ = bs;
               break;
             }
             case 146: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00020000;
-              dspchannelid_ = input.readBytes();
+              dspchannelid_ = bs;
               break;
             }
             case 154: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00040000;
-              clickurl_ = input.readBytes();
+              clickurl_ = bs;
               break;
             }
             case 160: {
               bitField0_ |= 0x00080000;
               score_ = input.readUInt32();
+              break;
+            }
+            case 170: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00100000;
+              html_ = bs;
               break;
             }
           }
@@ -9836,7 +9854,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required .jesgoo.uilog.AdType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private jesgoo.uilog.Uilog.AdType type_;
     /**
@@ -9852,7 +9869,6 @@ public final class Uilog {
       return type_;
     }
 
-    // required .jesgoo.uilog.AdSrc src = 2;
     public static final int SRC_FIELD_NUMBER = 2;
     private jesgoo.uilog.Uilog.AdSrc src_;
     /**
@@ -9868,7 +9884,6 @@ public final class Uilog {
       return src_;
     }
 
-    // required .jesgoo.uilog.InteractionType interaction = 3;
     public static final int INTERACTION_FIELD_NUMBER = 3;
     private jesgoo.uilog.Uilog.InteractionType interaction_;
     /**
@@ -9884,7 +9899,6 @@ public final class Uilog {
       return interaction_;
     }
 
-    // optional uint32 adid = 4;
     public static final int ADID_FIELD_NUMBER = 4;
     private int adid_;
     /**
@@ -9900,7 +9914,6 @@ public final class Uilog {
       return adid_;
     }
 
-    // optional uint32 groupid = 5;
     public static final int GROUPID_FIELD_NUMBER = 5;
     private int groupid_;
     /**
@@ -9916,7 +9929,6 @@ public final class Uilog {
       return groupid_;
     }
 
-    // optional uint32 planid = 6;
     public static final int PLANID_FIELD_NUMBER = 6;
     private int planid_;
     /**
@@ -9932,7 +9944,6 @@ public final class Uilog {
       return planid_;
     }
 
-    // optional uint32 userid = 7;
     public static final int USERID_FIELD_NUMBER = 7;
     private int userid_;
     /**
@@ -9948,7 +9959,6 @@ public final class Uilog {
       return userid_;
     }
 
-    // optional uint32 bid = 8;
     public static final int BID_FIELD_NUMBER = 8;
     private int bid_;
     /**
@@ -9964,7 +9974,6 @@ public final class Uilog {
       return bid_;
     }
 
-    // optional uint32 price = 9;
     public static final int PRICE_FIELD_NUMBER = 9;
     private int price_;
     /**
@@ -9980,7 +9989,6 @@ public final class Uilog {
       return price_;
     }
 
-    // optional uint64 ctr = 10;
     public static final int CTR_FIELD_NUMBER = 10;
     private long ctr_;
     /**
@@ -9996,7 +10004,6 @@ public final class Uilog {
       return ctr_;
     }
 
-    // optional uint64 cpm = 11;
     public static final int CPM_FIELD_NUMBER = 11;
     private long cpm_;
     /**
@@ -10012,7 +10019,6 @@ public final class Uilog {
       return cpm_;
     }
 
-    // optional string title = 12;
     public static final int TITLE_FIELD_NUMBER = 12;
     private java.lang.Object title_;
     /**
@@ -10055,7 +10061,6 @@ public final class Uilog {
       }
     }
 
-    // optional string description1 = 13;
     public static final int DESCRIPTION1_FIELD_NUMBER = 13;
     private java.lang.Object description1_;
     /**
@@ -10098,7 +10103,6 @@ public final class Uilog {
       }
     }
 
-    // optional string image = 14;
     public static final int IMAGE_FIELD_NUMBER = 14;
     private java.lang.Object image_;
     /**
@@ -10141,7 +10145,6 @@ public final class Uilog {
       }
     }
 
-    // optional string package = 15;
     public static final int PACKAGE_FIELD_NUMBER = 15;
     private java.lang.Object package_;
     /**
@@ -10184,7 +10187,6 @@ public final class Uilog {
       }
     }
 
-    // optional string appname = 16;
     public static final int APPNAME_FIELD_NUMBER = 16;
     private java.lang.Object appname_;
     /**
@@ -10227,7 +10229,6 @@ public final class Uilog {
       }
     }
 
-    // optional string dspmediaid = 17;
     public static final int DSPMEDIAID_FIELD_NUMBER = 17;
     private java.lang.Object dspmediaid_;
     /**
@@ -10270,7 +10271,6 @@ public final class Uilog {
       }
     }
 
-    // optional string dspchannelid = 18;
     public static final int DSPCHANNELID_FIELD_NUMBER = 18;
     private java.lang.Object dspchannelid_;
     /**
@@ -10313,7 +10313,6 @@ public final class Uilog {
       }
     }
 
-    // optional string clickurl = 19;
     public static final int CLICKURL_FIELD_NUMBER = 19;
     private java.lang.Object clickurl_;
     /**
@@ -10356,7 +10355,6 @@ public final class Uilog {
       }
     }
 
-    // optional uint32 score = 20;
     public static final int SCORE_FIELD_NUMBER = 20;
     private int score_;
     /**
@@ -10380,6 +10378,60 @@ public final class Uilog {
       return score_;
     }
 
+    public static final int HTML_FIELD_NUMBER = 21;
+    private java.lang.Object html_;
+    /**
+     * <code>optional string html = 21;</code>
+     *
+     * <pre>
+     * HTML 广告的内容cache
+     * </pre>
+     */
+    public boolean hasHtml() {
+      return ((bitField0_ & 0x00100000) == 0x00100000);
+    }
+    /**
+     * <code>optional string html = 21;</code>
+     *
+     * <pre>
+     * HTML 广告的内容cache
+     * </pre>
+     */
+    public java.lang.String getHtml() {
+      java.lang.Object ref = html_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          html_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string html = 21;</code>
+     *
+     * <pre>
+     * HTML 广告的内容cache
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getHtmlBytes() {
+      java.lang.Object ref = html_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        html_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       type_ = jesgoo.uilog.Uilog.AdType.TEXT;
       src_ = jesgoo.uilog.Uilog.AdSrc.JESGOO;
@@ -10401,11 +10453,13 @@ public final class Uilog {
       dspchannelid_ = "";
       clickurl_ = "";
       score_ = 0;
+      html_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -10485,6 +10539,9 @@ public final class Uilog {
       }
       if (((bitField0_ & 0x00080000) == 0x00080000)) {
         output.writeUInt32(20, score_);
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        output.writeBytes(21, getHtmlBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -10575,6 +10632,10 @@ public final class Uilog {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(20, score_);
       }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(21, getHtmlBytes());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -10657,8 +10718,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.AdInfo}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.AdInfoOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.AdInfo)
+        jesgoo.uilog.Uilog.AdInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_AdInfo_descriptor;
@@ -10731,6 +10793,8 @@ public final class Uilog {
         bitField0_ = (bitField0_ & ~0x00040000);
         score_ = 0;
         bitField0_ = (bitField0_ & ~0x00080000);
+        html_ = "";
+        bitField0_ = (bitField0_ & ~0x00100000);
         return this;
       }
 
@@ -10839,6 +10903,10 @@ public final class Uilog {
           to_bitField0_ |= 0x00080000;
         }
         result.score_ = score_;
+        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+          to_bitField0_ |= 0x00100000;
+        }
+        result.html_ = html_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -10931,6 +10999,11 @@ public final class Uilog {
         if (other.hasScore()) {
           setScore(other.getScore());
         }
+        if (other.hasHtml()) {
+          bitField0_ |= 0x00100000;
+          html_ = other.html_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -10970,7 +11043,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required .jesgoo.uilog.AdType type = 1;
       private jesgoo.uilog.Uilog.AdType type_ = jesgoo.uilog.Uilog.AdType.TEXT;
       /**
        * <code>required .jesgoo.uilog.AdType type = 1;</code>
@@ -11006,7 +11078,6 @@ public final class Uilog {
         return this;
       }
 
-      // required .jesgoo.uilog.AdSrc src = 2;
       private jesgoo.uilog.Uilog.AdSrc src_ = jesgoo.uilog.Uilog.AdSrc.JESGOO;
       /**
        * <code>required .jesgoo.uilog.AdSrc src = 2;</code>
@@ -11042,7 +11113,6 @@ public final class Uilog {
         return this;
       }
 
-      // required .jesgoo.uilog.InteractionType interaction = 3;
       private jesgoo.uilog.Uilog.InteractionType interaction_ = jesgoo.uilog.Uilog.InteractionType.NO_INTERACT;
       /**
        * <code>required .jesgoo.uilog.InteractionType interaction = 3;</code>
@@ -11078,7 +11148,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 adid = 4;
       private int adid_ ;
       /**
        * <code>optional uint32 adid = 4;</code>
@@ -11111,7 +11180,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 groupid = 5;
       private int groupid_ ;
       /**
        * <code>optional uint32 groupid = 5;</code>
@@ -11144,7 +11212,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 planid = 6;
       private int planid_ ;
       /**
        * <code>optional uint32 planid = 6;</code>
@@ -11177,7 +11244,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 userid = 7;
       private int userid_ ;
       /**
        * <code>optional uint32 userid = 7;</code>
@@ -11210,7 +11276,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 bid = 8;
       private int bid_ ;
       /**
        * <code>optional uint32 bid = 8;</code>
@@ -11243,7 +11308,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 price = 9;
       private int price_ ;
       /**
        * <code>optional uint32 price = 9;</code>
@@ -11276,7 +11340,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint64 ctr = 10;
       private long ctr_ ;
       /**
        * <code>optional uint64 ctr = 10;</code>
@@ -11309,7 +11372,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint64 cpm = 11;
       private long cpm_ ;
       /**
        * <code>optional uint64 cpm = 11;</code>
@@ -11342,7 +11404,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string title = 12;
       private java.lang.Object title_ = "";
       /**
        * <code>optional string title = 12;</code>
@@ -11356,9 +11417,12 @@ public final class Uilog {
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          title_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            title_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11416,7 +11480,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string description1 = 13;
       private java.lang.Object description1_ = "";
       /**
        * <code>optional string description1 = 13;</code>
@@ -11430,9 +11493,12 @@ public final class Uilog {
       public java.lang.String getDescription1() {
         java.lang.Object ref = description1_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          description1_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            description1_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11490,7 +11556,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string image = 14;
       private java.lang.Object image_ = "";
       /**
        * <code>optional string image = 14;</code>
@@ -11504,9 +11569,12 @@ public final class Uilog {
       public java.lang.String getImage() {
         java.lang.Object ref = image_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          image_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            image_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11564,7 +11632,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string package = 15;
       private java.lang.Object package_ = "";
       /**
        * <code>optional string package = 15;</code>
@@ -11578,9 +11645,12 @@ public final class Uilog {
       public java.lang.String getPackage() {
         java.lang.Object ref = package_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          package_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            package_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11638,7 +11708,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string appname = 16;
       private java.lang.Object appname_ = "";
       /**
        * <code>optional string appname = 16;</code>
@@ -11652,9 +11721,12 @@ public final class Uilog {
       public java.lang.String getAppname() {
         java.lang.Object ref = appname_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          appname_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            appname_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11712,7 +11784,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string dspmediaid = 17;
       private java.lang.Object dspmediaid_ = "";
       /**
        * <code>optional string dspmediaid = 17;</code>
@@ -11726,9 +11797,12 @@ public final class Uilog {
       public java.lang.String getDspmediaid() {
         java.lang.Object ref = dspmediaid_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          dspmediaid_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            dspmediaid_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11786,7 +11860,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string dspchannelid = 18;
       private java.lang.Object dspchannelid_ = "";
       /**
        * <code>optional string dspchannelid = 18;</code>
@@ -11800,9 +11873,12 @@ public final class Uilog {
       public java.lang.String getDspchannelid() {
         java.lang.Object ref = dspchannelid_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          dspchannelid_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            dspchannelid_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11860,7 +11936,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional string clickurl = 19;
       private java.lang.Object clickurl_ = "";
       /**
        * <code>optional string clickurl = 19;</code>
@@ -11874,9 +11949,12 @@ public final class Uilog {
       public java.lang.String getClickurl() {
         java.lang.Object ref = clickurl_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          clickurl_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            clickurl_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11934,7 +12012,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 score = 20;
       private int score_ ;
       /**
        * <code>optional uint32 score = 20;</code>
@@ -11983,6 +12060,106 @@ public final class Uilog {
         return this;
       }
 
+      private java.lang.Object html_ = "";
+      /**
+       * <code>optional string html = 21;</code>
+       *
+       * <pre>
+       * HTML 广告的内容cache
+       * </pre>
+       */
+      public boolean hasHtml() {
+        return ((bitField0_ & 0x00100000) == 0x00100000);
+      }
+      /**
+       * <code>optional string html = 21;</code>
+       *
+       * <pre>
+       * HTML 广告的内容cache
+       * </pre>
+       */
+      public java.lang.String getHtml() {
+        java.lang.Object ref = html_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            html_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string html = 21;</code>
+       *
+       * <pre>
+       * HTML 广告的内容cache
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getHtmlBytes() {
+        java.lang.Object ref = html_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          html_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string html = 21;</code>
+       *
+       * <pre>
+       * HTML 广告的内容cache
+       * </pre>
+       */
+      public Builder setHtml(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00100000;
+        html_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string html = 21;</code>
+       *
+       * <pre>
+       * HTML 广告的内容cache
+       * </pre>
+       */
+      public Builder clearHtml() {
+        bitField0_ = (bitField0_ & ~0x00100000);
+        html_ = getDefaultInstance().getHtml();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string html = 21;</code>
+       *
+       * <pre>
+       * HTML 广告的内容cache
+       * </pre>
+       */
+      public Builder setHtmlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00100000;
+        html_ = value;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:jesgoo.uilog.AdInfo)
     }
 
@@ -11994,10 +12171,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.AdInfo)
   }
 
-  public interface AdDspRetOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface AdDspRetOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.AdDspRet)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .jesgoo.uilog.AdSrc src = 1;
     /**
      * <code>required .jesgoo.uilog.AdSrc src = 1;</code>
      */
@@ -12007,7 +12184,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.AdSrc getSrc();
 
-    // required uint32 adnum = 2;
     /**
      * <code>required uint32 adnum = 2;</code>
      */
@@ -12021,8 +12197,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.AdDspRet}
    */
   public static final class AdDspRet extends
-      com.google.protobuf.GeneratedMessage
-      implements AdDspRetOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.AdDspRet)
+      AdDspRetOrBuilder {
     // Use AdDspRet.newBuilder() to construct.
     private AdDspRet(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -12124,7 +12301,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required .jesgoo.uilog.AdSrc src = 1;
     public static final int SRC_FIELD_NUMBER = 1;
     private jesgoo.uilog.Uilog.AdSrc src_;
     /**
@@ -12140,7 +12316,6 @@ public final class Uilog {
       return src_;
     }
 
-    // required uint32 adnum = 2;
     public static final int ADNUM_FIELD_NUMBER = 2;
     private int adnum_;
     /**
@@ -12163,7 +12338,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasSrc()) {
         memoizedIsInitialized = 0;
@@ -12285,8 +12461,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.AdDspRet}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.AdDspRetOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.AdDspRet)
+        jesgoo.uilog.Uilog.AdDspRetOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_AdDspRet_descriptor;
@@ -12416,7 +12593,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required .jesgoo.uilog.AdSrc src = 1;
       private jesgoo.uilog.Uilog.AdSrc src_ = jesgoo.uilog.Uilog.AdSrc.JESGOO;
       /**
        * <code>required .jesgoo.uilog.AdSrc src = 1;</code>
@@ -12452,7 +12628,6 @@ public final class Uilog {
         return this;
       }
 
-      // required uint32 adnum = 2;
       private int adnum_ ;
       /**
        * <code>required uint32 adnum = 2;</code>
@@ -12496,10 +12671,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.AdDspRet)
   }
 
-  public interface LocationOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface LocationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.Location)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional uint32 country = 1;
     /**
      * <code>optional uint32 country = 1;</code>
      */
@@ -12509,7 +12684,6 @@ public final class Uilog {
      */
     int getCountry();
 
-    // optional uint32 province = 2;
     /**
      * <code>optional uint32 province = 2;</code>
      */
@@ -12519,7 +12693,6 @@ public final class Uilog {
      */
     int getProvince();
 
-    // optional uint32 city = 3;
     /**
      * <code>optional uint32 city = 3;</code>
      */
@@ -12533,8 +12706,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.Location}
    */
   public static final class Location extends
-      com.google.protobuf.GeneratedMessage
-      implements LocationOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.Location)
+      LocationOrBuilder {
     // Use Location.newBuilder() to construct.
     private Location(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -12635,7 +12809,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // optional uint32 country = 1;
     public static final int COUNTRY_FIELD_NUMBER = 1;
     private int country_;
     /**
@@ -12651,7 +12824,6 @@ public final class Uilog {
       return country_;
     }
 
-    // optional uint32 province = 2;
     public static final int PROVINCE_FIELD_NUMBER = 2;
     private int province_;
     /**
@@ -12667,7 +12839,6 @@ public final class Uilog {
       return province_;
     }
 
-    // optional uint32 city = 3;
     public static final int CITY_FIELD_NUMBER = 3;
     private int city_;
     /**
@@ -12691,7 +12862,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -12812,8 +12984,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.Location}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.LocationOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.Location)
+        jesgoo.uilog.Uilog.LocationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_Location_descriptor;
@@ -12944,7 +13117,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // optional uint32 country = 1;
       private int country_ ;
       /**
        * <code>optional uint32 country = 1;</code>
@@ -12977,7 +13149,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 province = 2;
       private int province_ ;
       /**
        * <code>optional uint32 province = 2;</code>
@@ -13010,7 +13181,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 city = 3;
       private int city_ ;
       /**
        * <code>optional uint32 city = 3;</code>
@@ -13054,10 +13224,10 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.Location)
   }
 
-  public interface NoticeLogBodyOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface NoticeLogBodyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jesgoo.uilog.NoticeLogBody)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required string searchid = 1;
     /**
      * <code>required string searchid = 1;</code>
      */
@@ -13072,7 +13242,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getSearchidBytes();
 
-    // required uint32 timestamp = 2;
     /**
      * <code>required uint32 timestamp = 2;</code>
      */
@@ -13082,7 +13251,6 @@ public final class Uilog {
      */
     int getTimestamp();
 
-    // optional .jesgoo.uilog.Media media = 3;
     /**
      * <code>optional .jesgoo.uilog.Media media = 3;</code>
      */
@@ -13096,7 +13264,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.MediaOrBuilder getMediaOrBuilder();
 
-    // repeated .jesgoo.uilog.Adslot adslot = 4;
     /**
      * <code>repeated .jesgoo.uilog.Adslot adslot = 4;</code>
      */
@@ -13121,7 +13288,6 @@ public final class Uilog {
     jesgoo.uilog.Uilog.AdslotOrBuilder getAdslotOrBuilder(
         int index);
 
-    // optional .jesgoo.uilog.Device device = 5;
     /**
      * <code>optional .jesgoo.uilog.Device device = 5;</code>
      */
@@ -13135,7 +13301,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.DeviceOrBuilder getDeviceOrBuilder();
 
-    // repeated .jesgoo.uilog.AdInfo ads = 6;
     /**
      * <code>repeated .jesgoo.uilog.AdInfo ads = 6;</code>
      */
@@ -13160,7 +13325,6 @@ public final class Uilog {
     jesgoo.uilog.Uilog.AdInfoOrBuilder getAdsOrBuilder(
         int index);
 
-    // repeated .jesgoo.uilog.AdDspRet dspret = 7;
     /**
      * <code>repeated .jesgoo.uilog.AdDspRet dspret = 7;</code>
      */
@@ -13185,7 +13349,6 @@ public final class Uilog {
     jesgoo.uilog.Uilog.AdDspRetOrBuilder getDspretOrBuilder(
         int index);
 
-    // optional bool debug = 8;
     /**
      * <code>optional bool debug = 8;</code>
      */
@@ -13195,7 +13358,6 @@ public final class Uilog {
      */
     boolean getDebug();
 
-    // optional .jesgoo.uilog.Client client = 9;
     /**
      * <code>optional .jesgoo.uilog.Client client = 9;</code>
      */
@@ -13209,7 +13371,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.ClientOrBuilder getClientOrBuilder();
 
-    // optional .jesgoo.uilog.Network network = 10;
     /**
      * <code>optional .jesgoo.uilog.Network network = 10;</code>
      */
@@ -13223,12 +13384,11 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.NetworkOrBuilder getNetworkOrBuilder();
 
-    // repeated string exptags = 11;
     /**
      * <code>repeated string exptags = 11;</code>
      */
-    java.util.List<java.lang.String>
-    getExptagsList();
+    com.google.protobuf.ProtocolStringList
+        getExptagsList();
     /**
      * <code>repeated string exptags = 11;</code>
      */
@@ -13243,7 +13403,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getExptagsBytes(int index);
 
-    // optional .jesgoo.uilog.Location location = 12;
     /**
      * <code>optional .jesgoo.uilog.Location location = 12;</code>
      */
@@ -13257,7 +13416,6 @@ public final class Uilog {
      */
     jesgoo.uilog.Uilog.LocationOrBuilder getLocationOrBuilder();
 
-    // optional string sourceip = 13;
     /**
      * <code>optional string sourceip = 13;</code>
      */
@@ -13272,7 +13430,6 @@ public final class Uilog {
     com.google.protobuf.ByteString
         getSourceipBytes();
 
-    // optional uint32 intertype = 14;
     /**
      * <code>optional uint32 intertype = 14;</code>
      *
@@ -13294,8 +13451,9 @@ public final class Uilog {
    * Protobuf type {@code jesgoo.uilog.NoticeLogBody}
    */
   public static final class NoticeLogBody extends
-      com.google.protobuf.GeneratedMessage
-      implements NoticeLogBodyOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:jesgoo.uilog.NoticeLogBody)
+      NoticeLogBodyOrBuilder {
     // Use NoticeLogBody.newBuilder() to construct.
     private NoticeLogBody(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -13342,8 +13500,9 @@ public final class Uilog {
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              searchid_ = input.readBytes();
+              searchid_ = bs;
               break;
             }
             case 16: {
@@ -13433,11 +13592,12 @@ public final class Uilog {
               break;
             }
             case 90: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                 exptags_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000400;
               }
-              exptags_.add(input.readBytes());
+              exptags_.add(bs);
               break;
             }
             case 98: {
@@ -13454,8 +13614,9 @@ public final class Uilog {
               break;
             }
             case 106: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000100;
-              sourceip_ = input.readBytes();
+              sourceip_ = bs;
               break;
             }
             case 112: {
@@ -13481,7 +13642,7 @@ public final class Uilog {
           dspret_ = java.util.Collections.unmodifiableList(dspret_);
         }
         if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-          exptags_ = new com.google.protobuf.UnmodifiableLazyStringList(exptags_);
+          exptags_ = exptags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -13515,7 +13676,6 @@ public final class Uilog {
     }
 
     private int bitField0_;
-    // required string searchid = 1;
     public static final int SEARCHID_FIELD_NUMBER = 1;
     private java.lang.Object searchid_;
     /**
@@ -13558,7 +13718,6 @@ public final class Uilog {
       }
     }
 
-    // required uint32 timestamp = 2;
     public static final int TIMESTAMP_FIELD_NUMBER = 2;
     private int timestamp_;
     /**
@@ -13574,7 +13733,6 @@ public final class Uilog {
       return timestamp_;
     }
 
-    // optional .jesgoo.uilog.Media media = 3;
     public static final int MEDIA_FIELD_NUMBER = 3;
     private jesgoo.uilog.Uilog.Media media_;
     /**
@@ -13596,7 +13754,6 @@ public final class Uilog {
       return media_;
     }
 
-    // repeated .jesgoo.uilog.Adslot adslot = 4;
     public static final int ADSLOT_FIELD_NUMBER = 4;
     private java.util.List<jesgoo.uilog.Uilog.Adslot> adslot_;
     /**
@@ -13632,7 +13789,6 @@ public final class Uilog {
       return adslot_.get(index);
     }
 
-    // optional .jesgoo.uilog.Device device = 5;
     public static final int DEVICE_FIELD_NUMBER = 5;
     private jesgoo.uilog.Uilog.Device device_;
     /**
@@ -13654,7 +13810,6 @@ public final class Uilog {
       return device_;
     }
 
-    // repeated .jesgoo.uilog.AdInfo ads = 6;
     public static final int ADS_FIELD_NUMBER = 6;
     private java.util.List<jesgoo.uilog.Uilog.AdInfo> ads_;
     /**
@@ -13690,7 +13845,6 @@ public final class Uilog {
       return ads_.get(index);
     }
 
-    // repeated .jesgoo.uilog.AdDspRet dspret = 7;
     public static final int DSPRET_FIELD_NUMBER = 7;
     private java.util.List<jesgoo.uilog.Uilog.AdDspRet> dspret_;
     /**
@@ -13726,7 +13880,6 @@ public final class Uilog {
       return dspret_.get(index);
     }
 
-    // optional bool debug = 8;
     public static final int DEBUG_FIELD_NUMBER = 8;
     private boolean debug_;
     /**
@@ -13742,7 +13895,6 @@ public final class Uilog {
       return debug_;
     }
 
-    // optional .jesgoo.uilog.Client client = 9;
     public static final int CLIENT_FIELD_NUMBER = 9;
     private jesgoo.uilog.Uilog.Client client_;
     /**
@@ -13764,7 +13916,6 @@ public final class Uilog {
       return client_;
     }
 
-    // optional .jesgoo.uilog.Network network = 10;
     public static final int NETWORK_FIELD_NUMBER = 10;
     private jesgoo.uilog.Uilog.Network network_;
     /**
@@ -13786,13 +13937,12 @@ public final class Uilog {
       return network_;
     }
 
-    // repeated string exptags = 11;
     public static final int EXPTAGS_FIELD_NUMBER = 11;
     private com.google.protobuf.LazyStringList exptags_;
     /**
      * <code>repeated string exptags = 11;</code>
      */
-    public java.util.List<java.lang.String>
+    public com.google.protobuf.ProtocolStringList
         getExptagsList() {
       return exptags_;
     }
@@ -13816,7 +13966,6 @@ public final class Uilog {
       return exptags_.getByteString(index);
     }
 
-    // optional .jesgoo.uilog.Location location = 12;
     public static final int LOCATION_FIELD_NUMBER = 12;
     private jesgoo.uilog.Uilog.Location location_;
     /**
@@ -13838,7 +13987,6 @@ public final class Uilog {
       return location_;
     }
 
-    // optional string sourceip = 13;
     public static final int SOURCEIP_FIELD_NUMBER = 13;
     private java.lang.Object sourceip_;
     /**
@@ -13881,7 +14029,6 @@ public final class Uilog {
       }
     }
 
-    // optional uint32 intertype = 14;
     public static final int INTERTYPE_FIELD_NUMBER = 14;
     private int intertype_;
     /**
@@ -13924,7 +14071,8 @@ public final class Uilog {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasSearchid()) {
         memoizedIsInitialized = 0;
@@ -14177,8 +14325,9 @@ public final class Uilog {
      * Protobuf type {@code jesgoo.uilog.NoticeLogBody}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements jesgoo.uilog.Uilog.NoticeLogBodyOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jesgoo.uilog.NoticeLogBody)
+        jesgoo.uilog.Uilog.NoticeLogBodyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return jesgoo.uilog.Uilog.internal_static_jesgoo_uilog_NoticeLogBody_descriptor;
@@ -14379,8 +14528,7 @@ public final class Uilog {
           result.network_ = networkBuilder_.build();
         }
         if (((bitField0_ & 0x00000400) == 0x00000400)) {
-          exptags_ = new com.google.protobuf.UnmodifiableLazyStringList(
-              exptags_);
+          exptags_ = exptags_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.exptags_ = exptags_;
@@ -14615,7 +14763,6 @@ public final class Uilog {
       }
       private int bitField0_;
 
-      // required string searchid = 1;
       private java.lang.Object searchid_ = "";
       /**
        * <code>required string searchid = 1;</code>
@@ -14629,9 +14776,12 @@ public final class Uilog {
       public java.lang.String getSearchid() {
         java.lang.Object ref = searchid_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          searchid_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            searchid_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -14689,7 +14839,6 @@ public final class Uilog {
         return this;
       }
 
-      // required uint32 timestamp = 2;
       private int timestamp_ ;
       /**
        * <code>required uint32 timestamp = 2;</code>
@@ -14722,7 +14871,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional .jesgoo.uilog.Media media = 3;
       private jesgoo.uilog.Uilog.Media media_ = jesgoo.uilog.Uilog.Media.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.Media, jesgoo.uilog.Uilog.Media.Builder, jesgoo.uilog.Uilog.MediaOrBuilder> mediaBuilder_;
@@ -14831,7 +14979,7 @@ public final class Uilog {
         if (mediaBuilder_ == null) {
           mediaBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.Media, jesgoo.uilog.Uilog.Media.Builder, jesgoo.uilog.Uilog.MediaOrBuilder>(
-                  media_,
+                  getMedia(),
                   getParentForChildren(),
                   isClean());
           media_ = null;
@@ -14839,7 +14987,6 @@ public final class Uilog {
         return mediaBuilder_;
       }
 
-      // repeated .jesgoo.uilog.Adslot adslot = 4;
       private java.util.List<jesgoo.uilog.Uilog.Adslot> adslot_ =
         java.util.Collections.emptyList();
       private void ensureAdslotIsMutable() {
@@ -14981,7 +15128,8 @@ public final class Uilog {
           java.lang.Iterable<? extends jesgoo.uilog.Uilog.Adslot> values) {
         if (adslotBuilder_ == null) {
           ensureAdslotIsMutable();
-          super.addAll(values, adslot_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, adslot_);
           onChanged();
         } else {
           adslotBuilder_.addAllMessages(values);
@@ -15079,7 +15227,6 @@ public final class Uilog {
         return adslotBuilder_;
       }
 
-      // optional .jesgoo.uilog.Device device = 5;
       private jesgoo.uilog.Uilog.Device device_ = jesgoo.uilog.Uilog.Device.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.Device, jesgoo.uilog.Uilog.Device.Builder, jesgoo.uilog.Uilog.DeviceOrBuilder> deviceBuilder_;
@@ -15188,7 +15335,7 @@ public final class Uilog {
         if (deviceBuilder_ == null) {
           deviceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.Device, jesgoo.uilog.Uilog.Device.Builder, jesgoo.uilog.Uilog.DeviceOrBuilder>(
-                  device_,
+                  getDevice(),
                   getParentForChildren(),
                   isClean());
           device_ = null;
@@ -15196,7 +15343,6 @@ public final class Uilog {
         return deviceBuilder_;
       }
 
-      // repeated .jesgoo.uilog.AdInfo ads = 6;
       private java.util.List<jesgoo.uilog.Uilog.AdInfo> ads_ =
         java.util.Collections.emptyList();
       private void ensureAdsIsMutable() {
@@ -15338,7 +15484,8 @@ public final class Uilog {
           java.lang.Iterable<? extends jesgoo.uilog.Uilog.AdInfo> values) {
         if (adsBuilder_ == null) {
           ensureAdsIsMutable();
-          super.addAll(values, ads_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, ads_);
           onChanged();
         } else {
           adsBuilder_.addAllMessages(values);
@@ -15436,7 +15583,6 @@ public final class Uilog {
         return adsBuilder_;
       }
 
-      // repeated .jesgoo.uilog.AdDspRet dspret = 7;
       private java.util.List<jesgoo.uilog.Uilog.AdDspRet> dspret_ =
         java.util.Collections.emptyList();
       private void ensureDspretIsMutable() {
@@ -15578,7 +15724,8 @@ public final class Uilog {
           java.lang.Iterable<? extends jesgoo.uilog.Uilog.AdDspRet> values) {
         if (dspretBuilder_ == null) {
           ensureDspretIsMutable();
-          super.addAll(values, dspret_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, dspret_);
           onChanged();
         } else {
           dspretBuilder_.addAllMessages(values);
@@ -15676,7 +15823,6 @@ public final class Uilog {
         return dspretBuilder_;
       }
 
-      // optional bool debug = 8;
       private boolean debug_ ;
       /**
        * <code>optional bool debug = 8;</code>
@@ -15709,7 +15855,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional .jesgoo.uilog.Client client = 9;
       private jesgoo.uilog.Uilog.Client client_ = jesgoo.uilog.Uilog.Client.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.Client, jesgoo.uilog.Uilog.Client.Builder, jesgoo.uilog.Uilog.ClientOrBuilder> clientBuilder_;
@@ -15818,7 +15963,7 @@ public final class Uilog {
         if (clientBuilder_ == null) {
           clientBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.Client, jesgoo.uilog.Uilog.Client.Builder, jesgoo.uilog.Uilog.ClientOrBuilder>(
-                  client_,
+                  getClient(),
                   getParentForChildren(),
                   isClean());
           client_ = null;
@@ -15826,7 +15971,6 @@ public final class Uilog {
         return clientBuilder_;
       }
 
-      // optional .jesgoo.uilog.Network network = 10;
       private jesgoo.uilog.Uilog.Network network_ = jesgoo.uilog.Uilog.Network.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.Network, jesgoo.uilog.Uilog.Network.Builder, jesgoo.uilog.Uilog.NetworkOrBuilder> networkBuilder_;
@@ -15935,7 +16079,7 @@ public final class Uilog {
         if (networkBuilder_ == null) {
           networkBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.Network, jesgoo.uilog.Uilog.Network.Builder, jesgoo.uilog.Uilog.NetworkOrBuilder>(
-                  network_,
+                  getNetwork(),
                   getParentForChildren(),
                   isClean());
           network_ = null;
@@ -15943,7 +16087,6 @@ public final class Uilog {
         return networkBuilder_;
       }
 
-      // repeated string exptags = 11;
       private com.google.protobuf.LazyStringList exptags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureExptagsIsMutable() {
         if (!((bitField0_ & 0x00000400) == 0x00000400)) {
@@ -15954,9 +16097,9 @@ public final class Uilog {
       /**
        * <code>repeated string exptags = 11;</code>
        */
-      public java.util.List<java.lang.String>
+      public com.google.protobuf.ProtocolStringList
           getExptagsList() {
-        return java.util.Collections.unmodifiableList(exptags_);
+        return exptags_.getUnmodifiableView();
       }
       /**
        * <code>repeated string exptags = 11;</code>
@@ -16009,7 +16152,8 @@ public final class Uilog {
       public Builder addAllExptags(
           java.lang.Iterable<java.lang.String> values) {
         ensureExptagsIsMutable();
-        super.addAll(values, exptags_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, exptags_);
         onChanged();
         return this;
       }
@@ -16036,7 +16180,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional .jesgoo.uilog.Location location = 12;
       private jesgoo.uilog.Uilog.Location location_ = jesgoo.uilog.Uilog.Location.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           jesgoo.uilog.Uilog.Location, jesgoo.uilog.Uilog.Location.Builder, jesgoo.uilog.Uilog.LocationOrBuilder> locationBuilder_;
@@ -16145,7 +16288,7 @@ public final class Uilog {
         if (locationBuilder_ == null) {
           locationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               jesgoo.uilog.Uilog.Location, jesgoo.uilog.Uilog.Location.Builder, jesgoo.uilog.Uilog.LocationOrBuilder>(
-                  location_,
+                  getLocation(),
                   getParentForChildren(),
                   isClean());
           location_ = null;
@@ -16153,7 +16296,6 @@ public final class Uilog {
         return locationBuilder_;
       }
 
-      // optional string sourceip = 13;
       private java.lang.Object sourceip_ = "";
       /**
        * <code>optional string sourceip = 13;</code>
@@ -16167,9 +16309,12 @@ public final class Uilog {
       public java.lang.String getSourceip() {
         java.lang.Object ref = sourceip_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          sourceip_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            sourceip_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -16227,7 +16372,6 @@ public final class Uilog {
         return this;
       }
 
-      // optional uint32 intertype = 14;
       private int intertype_ ;
       /**
        * <code>optional uint32 intertype = 14;</code>
@@ -16287,72 +16431,72 @@ public final class Uilog {
     // @@protoc_insertion_point(class_scope:jesgoo.uilog.NoticeLogBody)
   }
 
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_AppInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_AppInfo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_SiteInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_SiteInfo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_Size_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_Size_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_Media_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_Media_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_Adslot_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_Adslot_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_Network_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_Network_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_Version_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_Version_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_DeviceId_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_DeviceId_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_Device_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_Device_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_Client_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_Client_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_AdInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_AdInfo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_AdDspRet_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_AdDspRet_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_Location_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_jesgoo_uilog_Location_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jesgoo_uilog_NoticeLogBody_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -16391,7 +16535,7 @@ public final class Uilog {
       "goo.uilog.BrowserType\022\021\n\tmatchimei\030\t \001(\t" +
       "\022\013\n\003uid\030\n \001(\t\"X\n\006Client\022&\n\004type\030\001 \002(\0162\030." +
       "jesgoo.uilog.ClientType\022&\n\007version\030\002 \001(\013" +
-      "2\025.jesgoo.uilog.Version\"\230\003\n\006AdInfo\022\"\n\004ty" +
+      "2\025.jesgoo.uilog.Version\"\246\003\n\006AdInfo\022\"\n\004ty" +
       "pe\030\001 \002(\0162\024.jesgoo.uilog.AdType\022 \n\003src\030\002 " +
       "\002(\0162\023.jesgoo.uilog.AdSrc\0222\n\013interaction\030" +
       "\003 \002(\0162\035.jesgoo.uilog.InteractionType\022\014\n\004" +
@@ -16401,140 +16545,141 @@ public final class Uilog {
       "le\030\014 \001(\t\022\024\n\014description1\030\r \001(\t\022\r\n\005image\030" +
       "\016 \001(\t\022\017\n\007package\030\017 \001(\t\022\017\n\007appname\030\020 \001(\t\022" +
       "\022\n\ndspmediaid\030\021 \001(\t\022\024\n\014dspchannelid\030\022 \001(" +
-      "\t\022\020\n\010clickurl\030\023 \001(\t\022\r\n\005score\030\024 \001(\r\";\n\010Ad" +
-      "DspRet\022 \n\003src\030\001 \002(\0162\023.jesgoo.uilog.AdSrc" +
-      "\022\r\n\005adnum\030\002 \002(\r\";\n\010Location\022\017\n\007country\030\001" +
-      " \001(\r\022\020\n\010province\030\002 \001(\r\022\014\n\004city\030\003 \001(\r\"\254\003\n" +
-      "\rNoticeLogBody\022\020\n\010searchid\030\001 \002(\t\022\021\n\ttime",
-      "stamp\030\002 \002(\r\022\"\n\005media\030\003 \001(\0132\023.jesgoo.uilo" +
-      "g.Media\022$\n\006adslot\030\004 \003(\0132\024.jesgoo.uilog.A" +
-      "dslot\022$\n\006device\030\005 \001(\0132\024.jesgoo.uilog.Dev" +
-      "ice\022!\n\003ads\030\006 \003(\0132\024.jesgoo.uilog.AdInfo\022&" +
-      "\n\006dspret\030\007 \003(\0132\026.jesgoo.uilog.AdDspRet\022\r" +
-      "\n\005debug\030\010 \001(\010\022$\n\006client\030\t \001(\0132\024.jesgoo.u" +
-      "ilog.Client\022&\n\007network\030\n \001(\0132\025.jesgoo.ui" +
-      "log.Network\022\017\n\007exptags\030\013 \003(\t\022(\n\010location" +
-      "\030\014 \001(\0132\026.jesgoo.uilog.Location\022\020\n\010source" +
-      "ip\030\r \001(\t\022\021\n\tintertype\030\016 \001(\r*3\n\tMediaType",
-      "\022\013\n\007UNKNOWN\020\000\022\007\n\003APP\020\001\022\007\n\003WEB\020\002\022\007\n\003WAP\020\003" +
-      "*\216\001\n\nAdslotType\022\n\n\006BANNER\020\001\022\r\n\tOFFERWALL" +
-      "\020\002\022\r\n\tRECOMMEND\020\003\022\022\n\016INITIALIZATION\020\004\022\n\n" +
-      "\006INSERT\020\005\022\010\n\004PUSH\020\006\022\n\n\006NATIVE\020\007\022\n\n\006SQUAR" +
-      "E\020\010\022\n\n\006LOCKER\020\t\022\010\n\004LINK\020\n*P\n\013NetworkType" +
-      "\022\017\n\013NET_UNKNOWN\020\000\022\014\n\010NET_WIFI\020\001\022\n\n\006NET_2" +
-      "G\020\002\022\n\n\006NET_3G\020\003\022\n\n\006NET_4G\020\004*?\n\006OSType\022\016\n" +
-      "\nOS_UNKNOWN\020\000\022\016\n\nOS_ANDROID\020\001\022\n\n\006OS_IOS\020" +
-      "\002\022\t\n\005OS_WP\020\003*\251\001\n\013BrowserType\022\022\n\016UnknownB" +
-      "rowser\020\000\022\016\n\nMQQBrowser\020\001\022\n\n\006Chrome\020\002\022\r\n\t",
-      "UCBrowser\020\003\022\020\n\014BaiduBrowser\020\004\022\017\n\013MiuiBro" +
-      "wser\020\005\022\017\n\013QvodBrowser\020\006\022\023\n\017IEMobileBrows" +
-      "er\020\007\022\022\n\016MicroMessenger\020\010*P\n\014DeviceIdType" +
-      "\022\021\n\rDEVID_UNKNOWN\020\000\022\016\n\nDEVID_IMEI\020\001\022\r\n\tD" +
-      "EVID_MAC\020\002\022\016\n\nDEVID_IDFA\020\003*A\n\006AdType\022\010\n\004" +
-      "TEXT\020\001\022\t\n\005IMAGE\020\002\022\010\n\004HTML\020\003\022\t\n\005VIDEO\020\004\022\r" +
-      "\n\tTEXT_ICON\020\005*E\n\005AdSrc\022\n\n\006JESGOO\020\001\022\t\n\005BA" +
-      "IDU\020\002\022\013\n\007TENCENT\020\003\022\010\n\004TANX\020\004\022\006\n\002CY\020\005\022\006\n\002" +
-      "XF\020\006*a\n\017InteractionType\022\017\n\013NO_INTERACT\020\000" +
-      "\022\013\n\007SURFING\020\001\022\014\n\010DOWNLOAD\020\002\022\013\n\007DIALING\020\003",
-      "\022\013\n\007MESSAGE\020\004\022\010\n\004MAIL\020\005*3\n\nClientType\022\r\n" +
-      "\tNATIVESDK\020\001\022\t\n\005JSSDK\020\002\022\013\n\007OPENAPI\020\003"
+      "\t\022\020\n\010clickurl\030\023 \001(\t\022\r\n\005score\030\024 \001(\r\022\014\n\004ht" +
+      "ml\030\025 \001(\t\";\n\010AdDspRet\022 \n\003src\030\001 \002(\0162\023.jesg" +
+      "oo.uilog.AdSrc\022\r\n\005adnum\030\002 \002(\r\";\n\010Locatio" +
+      "n\022\017\n\007country\030\001 \001(\r\022\020\n\010province\030\002 \001(\r\022\014\n\004" +
+      "city\030\003 \001(\r\"\254\003\n\rNoticeLogBody\022\020\n\010searchid",
+      "\030\001 \002(\t\022\021\n\ttimestamp\030\002 \002(\r\022\"\n\005media\030\003 \001(\013" +
+      "2\023.jesgoo.uilog.Media\022$\n\006adslot\030\004 \003(\0132\024." +
+      "jesgoo.uilog.Adslot\022$\n\006device\030\005 \001(\0132\024.je" +
+      "sgoo.uilog.Device\022!\n\003ads\030\006 \003(\0132\024.jesgoo." +
+      "uilog.AdInfo\022&\n\006dspret\030\007 \003(\0132\026.jesgoo.ui" +
+      "log.AdDspRet\022\r\n\005debug\030\010 \001(\010\022$\n\006client\030\t " +
+      "\001(\0132\024.jesgoo.uilog.Client\022&\n\007network\030\n \001" +
+      "(\0132\025.jesgoo.uilog.Network\022\017\n\007exptags\030\013 \003" +
+      "(\t\022(\n\010location\030\014 \001(\0132\026.jesgoo.uilog.Loca" +
+      "tion\022\020\n\010sourceip\030\r \001(\t\022\021\n\tintertype\030\016 \001(",
+      "\r*3\n\tMediaType\022\013\n\007UNKNOWN\020\000\022\007\n\003APP\020\001\022\007\n\003" +
+      "WEB\020\002\022\007\n\003WAP\020\003*\216\001\n\nAdslotType\022\n\n\006BANNER\020" +
+      "\001\022\r\n\tOFFERWALL\020\002\022\r\n\tRECOMMEND\020\003\022\022\n\016INITI" +
+      "ALIZATION\020\004\022\n\n\006INSERT\020\005\022\010\n\004PUSH\020\006\022\n\n\006NAT" +
+      "IVE\020\007\022\n\n\006SQUARE\020\010\022\n\n\006LOCKER\020\t\022\010\n\004LINK\020\n*" +
+      "P\n\013NetworkType\022\017\n\013NET_UNKNOWN\020\000\022\014\n\010NET_W" +
+      "IFI\020\001\022\n\n\006NET_2G\020\002\022\n\n\006NET_3G\020\003\022\n\n\006NET_4G\020" +
+      "\004*?\n\006OSType\022\016\n\nOS_UNKNOWN\020\000\022\016\n\nOS_ANDROI" +
+      "D\020\001\022\n\n\006OS_IOS\020\002\022\t\n\005OS_WP\020\003*\251\001\n\013BrowserTy" +
+      "pe\022\022\n\016UnknownBrowser\020\000\022\016\n\nMQQBrowser\020\001\022\n",
+      "\n\006Chrome\020\002\022\r\n\tUCBrowser\020\003\022\020\n\014BaiduBrowse" +
+      "r\020\004\022\017\n\013MiuiBrowser\020\005\022\017\n\013QvodBrowser\020\006\022\023\n" +
+      "\017IEMobileBrowser\020\007\022\022\n\016MicroMessenger\020\010*P" +
+      "\n\014DeviceIdType\022\021\n\rDEVID_UNKNOWN\020\000\022\016\n\nDEV" +
+      "ID_IMEI\020\001\022\r\n\tDEVID_MAC\020\002\022\016\n\nDEVID_IDFA\020\003" +
+      "*A\n\006AdType\022\010\n\004TEXT\020\001\022\t\n\005IMAGE\020\002\022\010\n\004HTML\020" +
+      "\003\022\t\n\005VIDEO\020\004\022\r\n\tTEXT_ICON\020\005*\\\n\005AdSrc\022\n\n\006" +
+      "JESGOO\020\001\022\t\n\005BAIDU\020\002\022\013\n\007TENCENT\020\003\022\010\n\004TANX" +
+      "\020\004\022\006\n\002CY\020\005\022\006\n\002XF\020\006\022\n\n\006BIDDER\020\007\022\t\n\005YOUKU\020" +
+      "\010*a\n\017InteractionType\022\017\n\013NO_INTERACT\020\000\022\013\n",
+      "\007SURFING\020\001\022\014\n\010DOWNLOAD\020\002\022\013\n\007DIALING\020\003\022\013\n" +
+      "\007MESSAGE\020\004\022\010\n\004MAIL\020\005*3\n\nClientType\022\r\n\tNA" +
+      "TIVESDK\020\001\022\t\n\005JSSDK\020\002\022\013\n\007OPENAPI\020\003"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_jesgoo_uilog_AppInfo_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_jesgoo_uilog_AppInfo_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_AppInfo_descriptor,
-              new java.lang.String[] { "Packagename", });
-          internal_static_jesgoo_uilog_SiteInfo_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_jesgoo_uilog_SiteInfo_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_SiteInfo_descriptor,
-              new java.lang.String[] { "Domain", "Urls", });
-          internal_static_jesgoo_uilog_Size_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-          internal_static_jesgoo_uilog_Size_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_Size_descriptor,
-              new java.lang.String[] { "Height", "Width", });
-          internal_static_jesgoo_uilog_Media_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_jesgoo_uilog_Media_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_Media_descriptor,
-              new java.lang.String[] { "Type", "Appsid", "Channelid", "App", "Site", "Category", });
-          internal_static_jesgoo_uilog_Adslot_descriptor =
-            getDescriptor().getMessageTypes().get(4);
-          internal_static_jesgoo_uilog_Adslot_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_Adslot_descriptor,
-              new java.lang.String[] { "Id", "Type", "Size", "Capacity", "Inittime", });
-          internal_static_jesgoo_uilog_Network_descriptor =
-            getDescriptor().getMessageTypes().get(5);
-          internal_static_jesgoo_uilog_Network_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_Network_descriptor,
-              new java.lang.String[] { "Type", "Ip", });
-          internal_static_jesgoo_uilog_Version_descriptor =
-            getDescriptor().getMessageTypes().get(6);
-          internal_static_jesgoo_uilog_Version_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_Version_descriptor,
-              new java.lang.String[] { "Major", "Minor", "Micro", "Build", });
-          internal_static_jesgoo_uilog_DeviceId_descriptor =
-            getDescriptor().getMessageTypes().get(7);
-          internal_static_jesgoo_uilog_DeviceId_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_DeviceId_descriptor,
-              new java.lang.String[] { "Type", "Id", "Original", });
-          internal_static_jesgoo_uilog_Device_descriptor =
-            getDescriptor().getMessageTypes().get(8);
-          internal_static_jesgoo_uilog_Device_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_Device_descriptor,
-              new java.lang.String[] { "Os", "Osversion", "Ids", "Brand", "Model", "Useragent", "Cookie", "Browser", "Matchimei", "Uid", });
-          internal_static_jesgoo_uilog_Client_descriptor =
-            getDescriptor().getMessageTypes().get(9);
-          internal_static_jesgoo_uilog_Client_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_Client_descriptor,
-              new java.lang.String[] { "Type", "Version", });
-          internal_static_jesgoo_uilog_AdInfo_descriptor =
-            getDescriptor().getMessageTypes().get(10);
-          internal_static_jesgoo_uilog_AdInfo_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_AdInfo_descriptor,
-              new java.lang.String[] { "Type", "Src", "Interaction", "Adid", "Groupid", "Planid", "Userid", "Bid", "Price", "Ctr", "Cpm", "Title", "Description1", "Image", "Package", "Appname", "Dspmediaid", "Dspchannelid", "Clickurl", "Score", });
-          internal_static_jesgoo_uilog_AdDspRet_descriptor =
-            getDescriptor().getMessageTypes().get(11);
-          internal_static_jesgoo_uilog_AdDspRet_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_AdDspRet_descriptor,
-              new java.lang.String[] { "Src", "Adnum", });
-          internal_static_jesgoo_uilog_Location_descriptor =
-            getDescriptor().getMessageTypes().get(12);
-          internal_static_jesgoo_uilog_Location_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_Location_descriptor,
-              new java.lang.String[] { "Country", "Province", "City", });
-          internal_static_jesgoo_uilog_NoticeLogBody_descriptor =
-            getDescriptor().getMessageTypes().get(13);
-          internal_static_jesgoo_uilog_NoticeLogBody_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_jesgoo_uilog_NoticeLogBody_descriptor,
-              new java.lang.String[] { "Searchid", "Timestamp", "Media", "Adslot", "Device", "Ads", "Dspret", "Debug", "Client", "Network", "Exptags", "Location", "Sourceip", "Intertype", });
-          return null;
-        }
-      };
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_jesgoo_uilog_AppInfo_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_jesgoo_uilog_AppInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_AppInfo_descriptor,
+        new java.lang.String[] { "Packagename", });
+    internal_static_jesgoo_uilog_SiteInfo_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_jesgoo_uilog_SiteInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_SiteInfo_descriptor,
+        new java.lang.String[] { "Domain", "Urls", });
+    internal_static_jesgoo_uilog_Size_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_jesgoo_uilog_Size_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_Size_descriptor,
+        new java.lang.String[] { "Height", "Width", });
+    internal_static_jesgoo_uilog_Media_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_jesgoo_uilog_Media_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_Media_descriptor,
+        new java.lang.String[] { "Type", "Appsid", "Channelid", "App", "Site", "Category", });
+    internal_static_jesgoo_uilog_Adslot_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_jesgoo_uilog_Adslot_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_Adslot_descriptor,
+        new java.lang.String[] { "Id", "Type", "Size", "Capacity", "Inittime", });
+    internal_static_jesgoo_uilog_Network_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_jesgoo_uilog_Network_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_Network_descriptor,
+        new java.lang.String[] { "Type", "Ip", });
+    internal_static_jesgoo_uilog_Version_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_jesgoo_uilog_Version_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_Version_descriptor,
+        new java.lang.String[] { "Major", "Minor", "Micro", "Build", });
+    internal_static_jesgoo_uilog_DeviceId_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_jesgoo_uilog_DeviceId_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_DeviceId_descriptor,
+        new java.lang.String[] { "Type", "Id", "Original", });
+    internal_static_jesgoo_uilog_Device_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_jesgoo_uilog_Device_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_Device_descriptor,
+        new java.lang.String[] { "Os", "Osversion", "Ids", "Brand", "Model", "Useragent", "Cookie", "Browser", "Matchimei", "Uid", });
+    internal_static_jesgoo_uilog_Client_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_jesgoo_uilog_Client_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_Client_descriptor,
+        new java.lang.String[] { "Type", "Version", });
+    internal_static_jesgoo_uilog_AdInfo_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_jesgoo_uilog_AdInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_AdInfo_descriptor,
+        new java.lang.String[] { "Type", "Src", "Interaction", "Adid", "Groupid", "Planid", "Userid", "Bid", "Price", "Ctr", "Cpm", "Title", "Description1", "Image", "Package", "Appname", "Dspmediaid", "Dspchannelid", "Clickurl", "Score", "Html", });
+    internal_static_jesgoo_uilog_AdDspRet_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_jesgoo_uilog_AdDspRet_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_AdDspRet_descriptor,
+        new java.lang.String[] { "Src", "Adnum", });
+    internal_static_jesgoo_uilog_Location_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_jesgoo_uilog_Location_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_Location_descriptor,
+        new java.lang.String[] { "Country", "Province", "City", });
+    internal_static_jesgoo_uilog_NoticeLogBody_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_jesgoo_uilog_NoticeLogBody_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_jesgoo_uilog_NoticeLogBody_descriptor,
+        new java.lang.String[] { "Searchid", "Timestamp", "Media", "Adslot", "Device", "Ads", "Dspret", "Debug", "Client", "Network", "Exptags", "Location", "Sourceip", "Intertype", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
