@@ -4,11 +4,12 @@ class TellContext {
   
   var config = new TellConfig
   
+  var matrix_period_default=(config.getLong("time.slice", 1000/10)).toLong
   def TABLE_TTL_MS = config.getLong("table.ttl.ms",8000)
   
   def TAIL_FILES = config.get("tail.files","")
   
-  def MATRIX_PERIOD = config.getLong("matrix.period", 2000)
+  def MATRIX_PERIOD = config.getLong("matrix.period", matrix_period_default)
   
   def TIME_SLICE = config.getLong("time.slice", 1000)
   
@@ -27,6 +28,7 @@ class TellContext {
     if(!config.equals(configv)){
         println("update new config")
         config = configv
+        matrix_period_default=(config.getLong("time.slice", 1000/10)).toLong
         true
     }else{
       false

@@ -29,10 +29,13 @@ object TMain {
 
   val tcontext = new TellContext
   val map_ids = new HashMap[String, String]
-  val item_ids = new HashMap[String, String]
+  var item_ids = new HashMap[String, String]
 
   val protobuf_actor = new HashMap[String, ActorRef]
-  
+
+  var slice = tcontext.TIME_SLICE
+  var metrix = tcontext.MATRIX_PERIOD
+
   implicit val system = ActorSystem("Main")
   import system.dispatcher
   def init = {
@@ -47,10 +50,14 @@ object TMain {
     }
     val m_items = tcontext.EXCUTE_ITEM.trim()
     if (m_items != "") {
+      val i_id = new HashMap[String, String]
       for (skv <- m_items.split(";")) {
         val tmpsdk_arr = skv.split(":")
-        item_ids += (tmpsdk_arr(0) -> tmpsdk_arr(1))
+        i_id += (tmpsdk_arr(0) -> tmpsdk_arr(1))
       }
+      item_ids = i_id
+    } else {
+      item_ids.clear()
     }
   }
 
@@ -58,16 +65,21 @@ object TMain {
     val tail_files = tcontext.TAIL_FILES
     for (f <- tail_files.split(",")) {
       val name = Utils.basename(f)
-      if (item_ids.size > 0 && map_ids.contains(name) && item_ids.contains(name)) {
+      if (map_ids.contains(name)) {
         var protobuf: ActorRef = null
         if (map_ids.get(name).get.toUpperCase() == "EVENT") {
           protobuf = system.actorOf(Props(new EventExcuteProtoBufCounter(matrix_actor, null)), name = name + "_event_protobuf")
         } else if (map_ids.get(name).get.toUpperCase() == "UI") {
           protobuf = system.actorOf(Props(new UiExcuteProtoBufCounter(matrix_actor, null)), name = name + "_ui_protobuf")
+        } else {
+          println(map_ids.get(name).get + " unkown")
+          System.exit(2)
         }
-        protobuf ! UPDATE_CUT(item_ids.get(name).get)
-        protobuf_actor += (name -> protobuf)
+        if (item_ids.contains(name)) {
+          protobuf ! UPDATE_CUT(item_ids.get(name).get)
+        }
         if (protobuf != null) {
+          protobuf_actor += (name -> protobuf)
           val parser = system.actorOf(Props(new ParserMessage(matrix_actor, protobuf)), name = name + "_parser_message")
           val normal_actor = system.actorOf(Props(new NormalCounter(matrix_actor, null)),
             name = name + "_normalCounter")
@@ -76,7 +88,7 @@ object TMain {
           tail_actor ! START
         }
       } else {
-        val normal_actor = system.actorOf(Props(new NormalCounter(matrix_actor, null)),name = name+"normal_actor")
+        val normal_actor = system.actorOf(Props(new NormalCounter(matrix_actor, null)), name = name + "normal_actor")
         val tail_actor = system.actorOf(Props(new TailSource(f, Array(normal_actor))),
           name = "tail_" + name)
         tail_actor ! START
@@ -91,26 +103,45 @@ object TMain {
     //load之前的tables
     val snap_actor = system.actorOf(Props(new SnapshotDriver(tblm_actor)), name = "snapshot_driver")
     snap_actor ! LOAD_DATA
-    
+
     //初始化 各个counter
     initActor(matrix_actor)
     //start http server
     println("start http server")
     val handler = system.actorOf(Props(new HttpHandle(tblm_actor)), name = "handler")
-    IO(Http) ! Http.Bind(handler, interface = "0.0.0.0",port = tcontext.HTTP_PORT)
-    
-    val cancellable_matrix = system.scheduler.schedule(0 milliseconds,
-        tcontext.MATRIX_PERIOD milliseconds, matrix_actor, START)
-    
-    val cancellable_snapshot = system.scheduler.schedule((tcontext.TIME_SLICE*0.9).toLong milliseconds,
-       (tcontext.TIME_SLICE*0.9).toLong milliseconds, snap_actor, STORE_DATA)
-        
-    while(true){
-      if(tcontext.newConfig){
+    IO(Http) ! Http.Bind(handler, interface = "0.0.0.0", port = tcontext.HTTP_PORT)
+
+    var cancellable_matrix = system.scheduler.schedule(0 milliseconds,
+      tcontext.MATRIX_PERIOD milliseconds, matrix_actor, START)
+
+    var cancellable_snapshot = system.scheduler.schedule((tcontext.TIME_SLICE * 0.9).toLong milliseconds,
+      (tcontext.TIME_SLICE * 0.9).toLong milliseconds, snap_actor, STORE_DATA)
+
+    while (true) {
+      try {
+        if (tcontext.newConfig) {
           init
-          for(acf_name <- protobuf_actor.keysIterator){
-            protobuf_actor.get(acf_name).get ! UPDATE_CUT(item_ids.get(acf_name).get)
+          for (acf_name <- protobuf_actor.keysIterator) {
+            protobuf_actor.get(acf_name).get ! UPDATE_CUT(item_ids.getOrElse(acf_name, ""))
           }
+          if (slice != tcontext.TIME_SLICE) {
+            cancellable_snapshot.cancel()
+          }
+          if (metrix != tcontext.MATRIX_PERIOD) {
+            cancellable_matrix.cancel()
+          }
+        }
+        if (cancellable_matrix.isCancelled) {
+          cancellable_matrix = system.scheduler.schedule(0 milliseconds,
+            tcontext.MATRIX_PERIOD milliseconds, matrix_actor, START)
+        }
+        if (cancellable_snapshot.cancel()) {
+          cancellable_snapshot = system.scheduler.schedule((tcontext.TIME_SLICE * 0.9).toLong milliseconds,
+            (tcontext.TIME_SLICE * 0.9).toLong milliseconds, snap_actor, STORE_DATA)
+        }
+      } catch {
+        case e: Exception =>
+          e.printStackTrace()
       }
       Thread.sleep(tcontext.CONFIG_UPDATE_PERIOD)
     }

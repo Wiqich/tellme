@@ -23,6 +23,9 @@ class TableManager extends Actor {
     case ClearTable =>
       for (t <- tables.values) {
         t.clearCounter()
+        if(t.counterlist.size == 0){
+          tables-=(t.tname)
+        }
       }
     case GETALL =>
       sender ! TABLES_HASHMAP(tables)

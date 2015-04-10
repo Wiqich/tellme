@@ -24,9 +24,9 @@ class MatrixContext(tblm_actor: ActorRef) extends Actor {
   def follow_feel(cur_time: Long): Boolean = {
     val m = Utils.get_minute(cur_time)
     val slice = TMain.tcontext.TIME_SLICE / 1000 / 60
-    if(slice == 0){
-       true
-    }else{
+    if (slice == 0) {
+      true
+    } else {
       m % slice == 0
     }
   }
@@ -36,9 +36,11 @@ class MatrixContext(tblm_actor: ActorRef) extends Actor {
       val cur_time = System.currentTimeMillis()
       if (cur_time - last_time >= (TMain.tcontext.TIME_SLICE * (if (TMain.tcontext.TIME_SLICE >= 120000) 0.95 else 1)) && follow_feel(cur_time)) {
         for (key <- counterNUM.keys) {
-          val coun = new Counter(counterNUM.get(key).get)
-          counterNUM += (key -> 0)
-          tblm_actor ! InsertCountor(key, coun)
+            val coun = new Counter(counterNUM.get(key).get)
+            counterNUM += (key -> 0)
+            if(coun.lines != 0 || TMain.item_ids.contains(key)){
+               tblm_actor ! InsertCountor(key, coun)
+            }
         }
         last_time = cur_time
         tblm_actor ! ClearTable
