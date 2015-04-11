@@ -30,11 +30,21 @@ class MatrixContext(tblm_actor: ActorRef) extends Actor {
       m % slice == 0
     }
   }
-
+  var time_slace = TMain.tcontext.TIME_SLICE
+  
+  def follow_you_heart(cur_time:Long){
+    val tt = cur_time/60000*60000
+    val _slace = TMain.tcontext.TIME_SLICE
+    time_slace = _slace - (cur_time -tt)
+    if(time_slace <0 || time_slace>_slace){
+      time_slace = _slace
+    }
+  }
+  
   override def receive = {
     case START =>
       val cur_time = System.currentTimeMillis()
-      if (((cur_time - last_time) >= TMain.tcontext.TIME_SLICE) && follow_feel(cur_time)) {
+      if (((cur_time - last_time) >= time_slace) && follow_feel(cur_time)) {
         //println(follow_feel(cur_time)+" "+cur_time+" ...="+TMain.tcontext.TIME_SLICE / 60000+"  minute="+ Utils.get_minute(cur_time))
         for (key <- counterNUM.keys) {
             val coun = new Counter(counterNUM.get(key).get,cur_time)
@@ -43,6 +53,7 @@ class MatrixContext(tblm_actor: ActorRef) extends Actor {
                tblm_actor ! InsertCountor(key, coun)
             }
         }
+        follow_you_heart(cur_time)
         last_time = cur_time
         tblm_actor ! ClearTable
       }
