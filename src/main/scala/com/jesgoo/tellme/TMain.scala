@@ -3,7 +3,6 @@ package com.jesgoo.tellme
 import scala.collection.mutable.HashMap
 import scala.concurrent.duration.DurationInt
 import scala.concurrent.duration.DurationLong
-
 import com.jesgoo.tellme.config.TellContext
 import com.jesgoo.tellme.driver.EventExcuteProtoBufCounter
 import com.jesgoo.tellme.driver.NormalCounter
@@ -18,13 +17,13 @@ import com.jesgoo.tellme.matrix.STORE_DATA
 import com.jesgoo.tellme.matrix.SnapshotDriver
 import com.jesgoo.tellme.matrix.TableManager
 import com.jesgoo.tellme.tools.Utils
-
 import akka.actor.ActorRef
 import akka.actor.ActorSystem
 import akka.actor.Props
 import akka.actor.actorRef2Scala
 import akka.io.IO
 import spray.can.Http
+import com.jesgoo.tellme.matrix.PostToThird
 object TMain {
 
   val tcontext = new TellContext
@@ -99,8 +98,12 @@ object TMain {
   def main(args: Array[String]) {
     init
     val tblm_actor = system.actorOf(Props[TableManager], name = "table_manager")
-    val matrix_actor = system.actorOf(Props(new MatrixContext(tblm_actor)), name = "matrixContext")
+
+    val postTo = system.actorOf(Props[PostToThird], name = "postToThird")
+
+    val matrix_actor = system.actorOf(Props(new MatrixContext(tblm_actor, postTo)), name = "matrixContext")
     //load之前的tables
+
     val snap_actor = system.actorOf(Props(new SnapshotDriver(tblm_actor)), name = "snapshot_driver")
     snap_actor ! LOAD_DATA
 

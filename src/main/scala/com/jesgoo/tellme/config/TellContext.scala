@@ -22,6 +22,8 @@ class TellContext {
   
   def CONFIG_UPDATE_PERIOD = config.getInt("config.update.period",60000)
   
+  def POST_COUNTER_PORT = config.getInt("post.counter.port", 8894)
+  
   def newConfig : Boolean = {
     val configv = new TellConfig
     if(!config.equals(configv)){
